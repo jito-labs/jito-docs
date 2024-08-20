@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Jito Docs'
+copyright = '2024, Jito Labs'
+author = 'mdr0id'
 
 release = '0.1'
 version = '0.1.0'
@@ -17,6 +17,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
+    'myst_parser',
 ]
 
 intersphinx_mapping = {
@@ -30,6 +31,21 @@ templates_path = ['_templates']
 # -- Options for HTML output
 
 html_theme = 'sphinx_rtd_theme'
+
+# source_suffix = ['.rst', '.md']
+source_suffix = ['.rst', '.md']
+
+# The master toctree document.
+master_doc = 'index'
+
+myst_enable_extensions = [
+    "deflist",
+    "colon_fence",
+    "substitution",
+]
+
+# Optional: Configure MyST to support more Sphinx-like syntax in Markdown
+
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
