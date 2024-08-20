@@ -18,7 +18,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'myst_parser',
-    'sphinxemoji.sphinxemoji',
+#    'sphinxemoji.sphinxemoji',
 ]
 
 intersphinx_mapping = {
