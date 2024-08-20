@@ -2,3 +2,4 @@ sphinx==7.1.2
 sphinx-rtd-theme==2.0.0
 docutils>=0.19
 myst-parser==4.0.0
+sphinxemoji==0.3.0

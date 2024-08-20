@@ -1,0 +1,37 @@
+name: Build and Deploy Docs
+
+on:
+  push:
+    branches:
+      - master  # Trigger the workflow on pushes to the master branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'  # Specify your Python version
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Build documentation
+      run: |
+        make html
+
+    - name: Trigger Read the Docs build
+      run: |
+        curl -X POST \
+        -H "Authorization: Token ${{ secrets.READTHEDOCS_TOKEN }}" \
+        https://readthedocs.org/api/v2/webhook/jito-docs/276813/
+      env:
+        READTHEDOCS_TOKEN: ${{ secrets.READTHEDOCS_TOKEN }}
+
