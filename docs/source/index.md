@@ -1,19 +1,19 @@
-# Welcome to Lumache's documentation!
+# About Jito
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the [Open Food Facts database](https://world.openfoodfacts.org/)
-and offers a *simple* and *intuitive* API.
+Developing high-performance systems to enhance Solana's scalability and maximize rewards for validators and stakers
 
-Check out the [usage](usage.md) section for further information, including
-how to install the project.
+Jito Labs develops high-performance MEV infrastructure for Solana with the following goals:
 
-> **Note:**  
-> This project is under active development.
+  1. Enhancing Solana's efficiency 💡
+
+  2. Minimizing the negative impact of MEV on users 📉
+
+  3. Maximizing MEV returns to users and stakers 📈
 
 ```{toctree}
 :maxdepth: 2
-:caption: Contents:
+:hidden:
 
-usage.md
-api.md
+Intro <prodandaudience.md>
+Low Latency Trasnaction Sending <lowlatencytxnsend.md>
+Low Latency Transaction Feed (ShreadStream) <lowlatencytxnfeed.md>
