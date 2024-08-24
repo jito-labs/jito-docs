@@ -2,7 +2,7 @@
 
 ## What are Jito’s products and who are they built for?
 
-Jito provides specialized solutions tailored to the needs of Solana users:
+Jito provides specialized solutions tailored to the needs of Solana MEV users:
 
 - Fast Transaction Sending: Essential for any Solana MEV user requiring rapid and reliable transaction execution.
 - Bundles: Offers MEV protection, fast transaction landing, support for multiple transactions, and revert protection, making it ideal for developers of Telegram bots and automated trading systems.

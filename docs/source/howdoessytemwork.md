@@ -1,4 +1,4 @@
-# How does the system work
+## How does the system work
 
 What do bundles do?
 How do they work?

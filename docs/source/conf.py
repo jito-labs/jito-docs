@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
     'myst_parser',
+    'sphinx_fontawesome',
 #    'sphinxemoji.sphinxemoji',
 ]
 
@@ -50,3 +51,7 @@ myst_enable_extensions = [
 
 # -- Options for EPUB output
 epub_show_urls = 'footnote'
+
+html_css_files = [
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
+]
