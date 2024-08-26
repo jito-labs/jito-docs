@@ -44,7 +44,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 
 View logs with `docker logs -f jito-shredstream-proxy`
 
-### Host Networking (Recommended)
+### 🐳 Host Networking (Recommended)
 
 This exposes all ports, bypassing Docker NAT.
 
@@ -62,7 +62,7 @@ docker run -d \
 jitolabs/jito-shredstream-proxy shredstream
 ```
 
-### Bridge Networking
+### 🚝 Bridge Networking
 
 Use bridge networking in environments where Docker host networking is unavailable. This setup requires manual exposure of each destination. For shred listeners running locally on the Docker host, use Docker's bridge IP (typically `172.17.0.1`). For non-local endpoints, use their regular IP addresses. Note that Docker's bridge IP can vary, so confirm it by running: `ip -brief address show dev docker0`.
 
@@ -82,7 +82,8 @@ docker run -d \
 jitolabs/jito-shredstream-proxy shredstream
 ```
 
-### Running Natively
+### 🦾 Running Natively
+
 
 ```bash
 git clone https://github.com/jito-labs/shredstream-proxy.git --recurse-submodules
@@ -94,29 +95,17 @@ RUST_LOG=info cargo run --release --bin jito-shredstream-proxy -- shredstream \
     --dest-ip-ports 127.0.0.1:8001,10.0.0.1:8001
 ```
 
-### Firewall Configuration
+### 📛 Firewall Configuration
 
 If you use a firewall, allow access to the following IPs:
 
-**Amsterdam**
-- 74.118.140.240
-- 202.8.8.174
-
-**Frankfurt**
-- 145.40.93.84
-- 145.40.93.41
-
-**New York**
-- 141.98.216.96
-- 64.130.48.56
-
-**SLC**
-- 64.130.53.8
-- 64.130.53.57
-
-**Tokyo**
-- 202.8.9.160
-- 202.8.9.19
+| Location        | IP Addresses                                     |
+|-----------------|--------------------------------------------------|
+| 🇳🇱 Amsterdam       | `74.118.140.240`, `202.8.8.174`                  |
+| 🇩🇪 Frankfurt       | `145.40.93.84`, `145.40.93.41`                   |
+| 🇺🇸 New York        | `141.98.216.96`, `64.130.48.56`                  |
+| 🇺🇸 Salt Lake City  | `64.130.53.8`, `64.130.53.57`                    |
+| 🇯🇵 Tokyo           | `202.8.9.160`, `202.8.9.19`                      |
 
 ## Troubleshooting
 
@@ -126,3 +115,4 @@ To verify, query the number of packets received before and after configuring Shr
 
 ```sql
 SELECT shred_count FROM "shred_fetch" WHERE time > now() - 1h
+```

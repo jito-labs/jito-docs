@@ -19,6 +19,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'myst_parser',
     'sphinx_fontawesome',
+    'sphinx_copybutton',
 #    'sphinxemoji.sphinxemoji',
 ]
 
