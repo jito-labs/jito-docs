@@ -435,18 +435,16 @@ WebSocket showing tip amounts: ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip
 
 ## Rate limits
 What are the defaults?
-5 requests per second per IP per region
+5 requests per second per IP per region.
 
 How do they work?
-You no longer need an approved auth key for default sends
+You no longer need an approved auth key for default sends.
 
 What happens if the rate limit is exceeded?
 429 or rate limit error indicating what you hit
 
 Put signup form here
-Please ensure to provide valid contact information so we can send you a starter UUID
-
-https://forms.gle/8jZmKX1KZA71jXp38
+Please ensure to provide valid contact information so we can send you acknowledgment [submit form](https://forms.gle/8jZmKX1KZA71jXp38)
 
 ## Troubleshooting
 How to know how much to set priority fee?
