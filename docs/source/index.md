@@ -15,5 +15,9 @@ Jito Labs develops high-performance MEV infrastructure for Solana with the follo
 :hidden:
 
 Intro <prodandaudience.md>
-Low Latency Trasnaction Sending <lowlatencytxnsend.md>
-Low Latency Transaction Feed (ShreadStream) <lowlatencytxnfeed.md>
+
+⚡ Low Latency Transaction Sending <lowlatencytxnsend.md>
+
+
+➤ Low Latency Transaction Feed (ShreadStream) <lowlatencytxnfeed.md>
+
