@@ -4,7 +4,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 
 ![Decision Matrix Txns](../images/matrixtxns.png)
 
-## How does the system work
+## System Overview
 
 How does the system work?
 
