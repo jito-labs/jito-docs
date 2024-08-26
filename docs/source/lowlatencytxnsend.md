@@ -6,7 +6,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 
 ## System Overview
 
-How does the system work?
+### 🌐 How does the system work?
 
 - Jito provides a modified Solana validator client called J- ito-Solana that enables MEV extraction and rewards
 - It uses a block engine to simulate and process MEV trades
@@ -14,7 +14,7 @@ How does the system work?
 - Validators running Jito-Solana can receive MEV rewards in addition to regular staking rewards
 - JitoSOL is a liquid staking token that allows users to stake SOL and receive MEV rewards
 
-What do Bundles do?
+### 💼 What do Bundles do?
 
 - Bundles are groups of transactions packaged together
 - They allow traders to propose profitable transaction orderings
@@ -22,7 +22,7 @@ What do Bundles do?
 - They can include tips to validators for priority treatment
 - Bundles enable complex MEV strategies like atomic arbitrage
 
-How do Bundles work?
+### 📬 How do Bundles work?
 
 - Traders submit bundle bids to block engines
 - Block engines simulate bundles to determine the most profitable combinations
@@ -30,7 +30,7 @@ How do Bundles work?
 - Validators execute bundles atomically and collect tips
 - MEV rewards from bundles are distributed to validators and stakers
 
-What is the auction?
+### ⚖️ What is the auction?
 
 - Traders submit bids for bundle execution in an auction process
 - Block engines run simulations to determine highest value bundles
@@ -39,19 +39,25 @@ What is the auction?
 - It reduces network spam and congestion from MEV trading
 - Auction proceeds are distributed to validators and stakers as rewards
 
+---
+
 ## API
 You can send JSON-RPC requests to any Block Engine using the following URLs. To route to a specific region, specify the desired region:
 
-- **Mainnet:** `https://mainnet.block-engine.jito.wtf`
-- **Amsterdam:** `https://amsterdam.mainnet.block-engine.jito.wtf`
-- **Frankfurt:** `https://frankfurt.mainnet.block-engine.jito.wtf`
-- **New York:** `https://ny.mainnet.block-engine.jito.wtf`
-- **Tokyo:** `https://tokyo.mainnet.block-engine.jito.wtf`
-- **Salt Lake City:** `https://slc.mainnet.block-engine.jito.wtf`
+| Location        | URL                                                     |
+|-----------------|---------------------------------------------------------|
+| 🌍 🌎 🌏 **Mainnet**         | `https://mainnet.block-engine.jito.wtf`             |
+| 🇳🇱 **Amsterdam**         | `https://amsterdam.mainnet.block-engine.jito.wtf`     |
+| 🇩🇪 **Frankfurt**         | `https://frankfurt.mainnet.block-engine.jito.wtf`     |
+| 🇺🇸 **New York**          | `https://ny.mainnet.block-engine.jito.wtf`            |
+| 🇯🇵 **Tokyo**             | `https://tokyo.mainnet.block-engine.jito.wtf`         |
+| 🇺🇸 **Salt Lake City**    | `https://slc.mainnet.block-engine.jito.wtf`           |
 
-### Transactions
+
+### 📨 Transactions(`/api/v1/transactions`)
 
 For single transaction-related methods, use the URL path `/api/v1/transactions`
+
 For example: `https://mainnet.block-engine.jito.wtf/api/v1/transactions`
 
 #### sendTransaction
@@ -117,7 +123,7 @@ Do we offer mev-protection here?
 
         Example: api/v1/bundles?uuid=<uuid>
 
-### Bundles
+### 💼 Bundles (`/api/v1/bundles`)
 
 Bundles are a list of up to 5 transactions that execute sequentially and atomically, ensuring an all-or-nothing outcome. Here’s what that means:
 
@@ -129,7 +135,7 @@ Bundles are a list of up to 5 transactions that execute sequentially and atomica
 
 This guarantees that all transactions in a bundle are executed in sequence and either all succeed or none are executed.
 
-For bundle-related methods, use the URL path /api/v1/bundles. Refer to the documentation to see the available JSON-RPC endpoints for bundles.
+For bundle-related methods, use the URL path `/api/v1/bundles`. Refer to the documentation to see the available JSON-RPC endpoints for bundles.
 
 #### sendBundle
 
@@ -405,12 +411,11 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 }
 ```
 
-
-
 ## Tips
 
-### Tip Amount
+### 🪙 Tip Amount
 
+#### sendTransaction
 When using `sendTransaction`, it is recommended to use a 70/30 split between priority fee and jito tip.
 
 Example:
@@ -424,14 +429,16 @@ So, when using sendTransaction:
     You would allocate 0.7 SOL as the priority fee.
     And 0.3 SOL as the Jito tip.
 
-
+#### sendBundle
 When using `sendBundle`, only the Jito tip matters.
 
 
-### Get Tip Info
-REST API endpoint showing most recent tip amounts: http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor
+### 💸 Get Tip Information
+REST API endpoint showing most recent tip amounts:
+`http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor`
 
-WebSocket showing tip amounts: ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream
+WebSocket showing tip amounts:
+`ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream`
 
 ## Rate limits
 What are the defaults?
