@@ -416,13 +416,15 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 ### 🪙 Tip Amount
 
 #### sendTransaction
-When using `sendTransaction`, it is recommended to use a 70/30 split between priority fee and jito tip.
+When using `sendTransaction`, it is recommended to use a 70/30 split between priority fee and jito tip(e.g.):
 
-Example:
-
-    Total Fee: 1.0 SOL
+```
     Priority Fee (70%): 0.7 SOL
+    +
     Jito Tip (30%): 0.3 SOL
+    ===========================
+    Total Fee: 1.0 SOL
+```
 
 So, when using sendTransaction:
 
@@ -434,29 +436,49 @@ When using `sendBundle`, only the Jito tip matters.
 
 
 ### 💸 Get Tip Information
-REST API endpoint showing most recent tip amounts:
-`http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor`
+REST API endpoint showing most recent tip amounts:<br>
+`curl http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor`
 
-WebSocket showing tip amounts:
+WebSocket showing tip amounts:<br>
 `ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream`
 
-## Rate limits
-What are the defaults?
-5 requests per second per IP per region.
+## Rate Limits
+❓ What are the defaults? <br/>
 
-How do they work?
-You no longer need an approved auth key for default sends.
+  5 requests per second per IP per region.
 
-What happens if the rate limit is exceeded?
-429 or rate limit error indicating what you hit
+❓ How do they work? <br/>
 
-Put signup form here
+  You no longer need an approved auth key for default sends.
+
+❓ What happens if the rate limit is exceeded? <br/>
+
+  429 or rate limit error indicating what you hit.
+
+❓ What happens if see `The supplied pubkey is not authorized to generate a token`? </br>
+
+  This indicates that you're either using the auth-key parameter or your keypair variable is being set to check for this key unnecessarily. In most cases, you can simply use Null or None for these fields. Many of the new SDKs will have this built-in by default, so you won't need to specify it manually.
+
+## Rate Limits Form
+
 Please ensure to provide valid contact information so we can send you acknowledgment [submit form](https://forms.gle/8jZmKX1KZA71jXp38)
 
 ## Troubleshooting
-How to know how much to set priority fee?
-How to know how much to set a tip?
-My bundle/tx is not landing, how do I check?
+❓ How to know how much to set priority fee?
+
+  Please see [Tip Amount for sendTransaction](#tip-amount)
+
+❓ How to know how much to set a tip?
+
+  The minumim tips is 1000 lamports
+
+❓ My bundle/tx is not landing, how do I check?
+
+  If this is your first time using bundles, please ensure you transaction are valid through `simulateTransaction`, and Jito-Solana RPC should support `simulateBundle` to verify bundles.
+
+  If you have the `bundleID`, you can look over [Jito explorer](https://explorer.jito.wtf/), otherwise you can see basic inflight knowledge **within the last 5 minutes** through `getInflightBundleStatuses`.
+
+  The minimum tip is 1000 lamports, but if you're targeting a highly competitive MEV opportunity, you'll need to be strategic with your tip. Consider adjusting your tip amount, based on the [current pricing](#get-tip-information) of tips in the system, and also take into account the latency to each component you're interacting with to maximize your chances of success.
 
 
 
