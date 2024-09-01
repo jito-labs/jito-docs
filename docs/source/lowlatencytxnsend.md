@@ -412,7 +412,7 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 ## Tips
 
 ### 🪙 Tip Amount
-
+(tip-amount)=
 #### sendTransaction
 When using `sendTransaction`, it is recommended to use a 70/30 split between priority fee and jito tip(e.g.):
 
@@ -432,7 +432,7 @@ So, when using sendTransaction:
 #### sendBundle
 When using `sendBundle`, only the Jito tip matters.
 
-
+(get-tip-information)=
 ### 💸 Get Tip Information
 REST API endpoint showing most recent tip amounts:<br>
 
