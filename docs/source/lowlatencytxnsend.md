@@ -127,11 +127,9 @@ Do we offer mev-protection here?
 
 Bundles are a list of up to 5 transactions that execute sequentially and atomically, ensuring an all-or-nothing outcome. Here’s what that means:
 
-    Sequentially: Transactions in a bundle are guaranteed to execute in the order they are listed.
-
-    Atomically: Bundles execute within the same slot(e.g. a bundle cannot cross slot boundaries). If the entire bundle executes successfully, all transactions are committed to the chain.
-
-    All-or-Nothing: Bundles can only contain successful transactions. If any transaction in a bundle fails, none of the transactions in the bundle will be committed to the chain.
+  - **Sequentially:** Transactions in a bundle are guaranteed to execute in the order they are listed.
+  - **Atomically:** Bundles execute within the same slot(e.g. a bundle cannot cross slot boundaries). If the entire bundle executes successfully, all transactions are committed to the chain.
+  - **All-or-Nothing:** Bundles can only contain successful transactions. If any transaction in a bundle fails, none of the transactions in the bundle will be committed to the chain.
 
 This guarantees that all transactions in a bundle are executed in sequence and either all succeed or none are executed.
 
