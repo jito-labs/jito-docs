@@ -437,10 +437,29 @@ When using `sendBundle`, only the Jito tip matters.
 
 ### 💸 Get Tip Information
 REST API endpoint showing most recent tip amounts:<br>
-`curl http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor`
 
-WebSocket showing tip amounts:<br>
-`ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream`
+```
+curl http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor
+```
+
+```
+[
+  {
+    "time": "2024-09-01T12:58:00Z",
+    "landed_tips_25th_percentile": 6.001000000000001e-06,
+    "landed_tips_50th_percentile": 1e-05,
+    "landed_tips_75th_percentile": 3.6196500000000005e-05,
+    "landed_tips_95th_percentile": 0.0014479055000000002,
+    "landed_tips_99th_percentile": 0.010007999,
+    "ema_landed_tips_50th_percentile": 9.836078125000002e-06
+  }
+]
+```
+
+WebSocket showing tip amounts:
+```
+wscat -c ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream
+```
 
 ## Rate Limits
 ❓ What are the defaults? <br/>
