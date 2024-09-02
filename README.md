@@ -1,3 +1,7 @@
+[![Documentation Status](https://readthedocs.org/projects/jito-docs/badge/?version=latest)](https://jito-docs.readthedocs.io/en/latest/?badge=latest)
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+
+
 Jito Docs
 =======================================
 
