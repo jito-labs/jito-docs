@@ -1,10 +1,12 @@
 # ⚡ Low Latency Transaction Send
 
 Jito provides Solana MEV users with superior transaction execution through fast landing, MEV protection, and revert protection, available for both single transactions and multiple transactions(bundles) via gRPC and JSON-RPC services, ensuring optimal performance in the highly competitive Solana ecosystem."
-
 ![Decision Matrix Txns](../images/matrixtxnsv2.png)
 
+---
+
 ## System Overview
+![System Diag](../images/systemdiagram.png)
 
 ### 🌐 How does the system work?
 
@@ -16,7 +18,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 
 ### 💼 What do Bundles do?
 
-- Bundles are groups of transactions packaged together
+- Bundles are groups of transactions(max 5) packaged together
 - They allow traders to propose profitable transaction orderings
 - Bundles are executed sequentially, atomically, and all-or-nothing
 - They can include tips to validators for priority treatment
@@ -24,7 +26,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 
 ### 📬 How do Bundles work?
 
-- Traders submit bundle bids to block engines
+- Traders submit bundle to block engines
 - Block engines simulate bundles to determine the most profitable combinations
 - Winning bundles are sent to validators to include in blocks
 - Validators execute bundles atomically and collect tips
@@ -32,7 +34,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 
 ### ⚖️ What is the auction?
 
-- Traders submit bids for bundle execution in an auction process
+- Traders submit bundle ids for bundle execution in an auction process
 - Block engines run simulations to determine highest value bundles
 - Winning bids are sent to validators to include in blocks
 - This auction mechanism replaces disorganized MEV extraction
