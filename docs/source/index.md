@@ -7,10 +7,13 @@ A suite of tools that provide a turbocharged Solana trading experience.
   - **Low latency blockchain/shred data**
   - **Around the clock developer support**
 
-# Who needs Jito?
-- **Low latency transaction sending**
-- **Low latency blockchain/shred data**
-- **Around the clock developer support**
+# Who should use Jito?
+- **Telegram Bots**
+- **High Frequency Traders & Searchers**
+- **dApps**
+
+If your use case requires low-latency transaction sending, MEV protection, and/or cross-transaction
+atomicity, then Jito is right for you.
 ```{toctree}
 :maxdepth: 2
 :hidden:
