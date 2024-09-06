@@ -1,14 +1,16 @@
 ![Jito Labs](../images/Jitolabs_Logo_Green.svg)
-# About Jito
+# What is Jito?
+A suite of tools that provide a turbocharged Solana trading experience.
 
-Developing high-performance systems to enhance Solana's scalability and maximize rewards for validators and stakers
+# What does Jito offer?
+  - **Low latency transaction sending**
+  - **Low latency blockchain/shred data**
+  - **Around the clock developer support**
 
-Jito Labs develops high-performance MEV infrastructure for Solana with the following goals:
-
-  - **Enhancing Solana's efficiency 💡**
-  - **Minimizing the negative impact of MEV on users 📉**
-  - **Maximizing MEV returns to users and stakers 📈**
-
+# Who needs Jito?
+- **Low latency transaction sending**
+- **Low latency blockchain/shred data**
+- **Around the clock developer support**
 ```{toctree}
 :maxdepth: 2
 :hidden:
