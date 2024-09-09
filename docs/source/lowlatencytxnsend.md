@@ -8,19 +8,19 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 ## System Overview
 
 ### 🌐 How does the system work?
-- Validators run a modified Agave validator client called Jito-Solana that enables higher value capture for them and their stakers.
-  - The validator then connects to the Jito Block-Engine and Jito-Relayer.
-  - The Block-Engine submits profitable bundles to the validator.
-  - The Relayer acts as a proxy to filter and verify transactions for validators.
+- Validators run a modified Agave validator client called Jito-Solana that enables higher value capture for them and their stakers
+  - The validator then connects to the Jito Block-Engine and Jito-Relayer
+  - The Block-Engine submits profitable bundles to the validator
+  - The Relayer acts as a proxy to filter and verify transactions for validators
 - Searchers, dApps, Telegram bots and others connect to the Block-Engine and submit transactions & bundles.
-  - Submissions can be over gRPC or json-rpc.
-  - Bundles have tips bids associated with them; these bids are then redistributed to the validators and their stakers.
+  - Submissions can be over gRPC or JSON-RPC
+  - Bundles have tips bids associated with them; these bids are then redistributed to the validators and their stakers
 
 ### 💼 What are bundles?
-- Bundles are groups of transactions (max 5) bundled together.
-- The transactions are executed sequentially and atomically meaning all-or-nothing.
-- Bundles enable complex MEV strategies like atomic arbitrage.
-- Bundles compete against other bundles on tips to the validator.
+- Bundles are groups of transactions (max 5) bundled together
+- The transactions are executed sequentially and atomically meaning all-or-nothing
+- Bundles enable complex MEV strategies like atomic arbitrage
+- Bundles compete against other bundles on tips to the validator
 
 ### 📬 How do Bundles work?
 - Traders submit bundle to block engines
@@ -30,13 +30,13 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 - MEV rewards from bundles are distributed to validators and stakers
 
 ### ⚖️ What is the auction?
-- Bundles submitted by traders are put thru a priority auction.
-  - An auction is needed since opportunities and blockspace are scarce.
-  - One bundle landing may invalidate another, so Jito selects the higher value of the two.
-- Parallel auctions are run at 200ms ticks.
-  - Bundles touching different accounts will run in different parallel auctions.
-  - Bundles write locking the same accounts end up in the same auction.
-- Jito submits the highest paying combination of bundles to the validator up to some CU limit.
+- Bundles submitted by traders are put through a priority auction
+  - An auction is needed since opportunities and blockspace are scarce
+  - One bundle landing may invalidate another, so Jito selects the higher value of the two
+- Parallel auctions are run at 200ms ticks
+  - Bundles touching different accounts will run in different parallel auctions
+  - Bundles write locking the same accounts end up in the same auction
+- Jito submits the highest paying combination of bundles to the validator up to some CU limit
 
 ---
 
