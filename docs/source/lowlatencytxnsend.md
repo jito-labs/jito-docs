@@ -409,6 +409,30 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 }
 ```
 
+## Getting Started
+
+Welcome to the Jito MEV ecosystem! If you're looking to integrate Jito's advanced MEV solutions into your projects, we have a suite of developer tools designed to make your journey seamless, no matter your preferred language.
+
+- 🐍 **Python Developers**: The [Jito Py JSON-RPC](https://github.com/jito-labs/jito-py-rpc) library provides a robust SDK for interacting with Jito’s Block Engine, allowing you to send transactions, bundles, and more directly from your Python applications.
+
+- **JavaScript/TypeScript Developers**: The [Jito JS JSON-RPC](https://github.com/jito-labs/jito-js-rpc) library offers similar capabilities tailored for Node.js and browser environments, optimized for efficient MEV interactions.
+
+- 🦀 **Rust Developers**: Explore the [Jito Rust JSON-RPC](https://github.com/jito-labs/jito-rust-rpc), a performant SDK designed to leverage the power of Rust for interacting with Jito’s infrastructure on Solana.
+
+- **Go Developers**(Coming soon): The [Jito Go JSON-RPC](https://github.com/jito-labs/jito-go-rpc) library provides a Go-based SDK that brings the same low-latency, high-performance MEV solutions to your Go applications.
+
+### Key Endpoints Supported by These Libraries:
+**Bundles**
+- `get_inflight_bundle_statuses`: Retrieve the status of in-flight bundles.
+- `get_bundle_statuses`: Fetch the statuses of submitted bundles.
+- `get_tip_accounts`: Get accounts eligible for tips.
+- `send_bundle`: Submit bundles to the Jito Block Engine.
+
+**Transactions**
+- `send_transaction`: Submit transactions with enhanced priority and speed.
+
+These endpoints are specifically designed to optimize your MEV strategies, offering precise control over bundle and transaction management on Solana. Dive into the repos to get started, explore detailed documentation, and discover how you can integrate these powerful tools into your MEV workflows.
+
 ## Tips
 
 ### 🪙 Tip Amount
