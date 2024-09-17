@@ -28,5 +28,5 @@ These use cases offer a competitive edge to traders, bot developers, and anyone 
 :maxdepth: 2
 :hidden:
 ⚡ Low Latency Transaction Sending <lowlatencytxnsend.md>
-➤ Low Latency Block Updates (ShreadStream) <lowlatencytxnfeed.md>
+➤ Low Latency Block Updates (ShredStream) <lowlatencytxnfeed.md>
 
