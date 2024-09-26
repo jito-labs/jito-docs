@@ -64,7 +64,7 @@ For example: `https://mainnet.block-engine.jito.wtf/api/v1/transactions`
 
 This method acts as a direct proxy to the Solana sendTransaction RPC method, but forwards your transaction directly to the validator. By default, it submits the transaction with providing MEV protection.
 
-Please note that Jito enforces a minimum tip of 1000 lamports for bundles. During high-demand periods, this minimum tip might not be sufficient to successfully navigate the auction, so it’s crucial to set both a priority fee and an additional Jito tip to optimize your transaction's chances. Please see [Tip Amounts](#Tip Amounts)
+Please note that Jito enforces a minimum tip of 1000 lamports for bundles. During high-demand periods, this minimum tip might not be sufficient to successfully navigate the auction, so it’s crucial to set both a priority fee and an additional Jito tip to optimize your transaction's chances. Please see [Tip Amounts](#tip-amount)
 
 For added security, you can enable revert protection by setting the query parameter bundleOnly=true. With this setting, the transaction is sent exclusively as a single transaction bundle.
 
@@ -435,8 +435,9 @@ These endpoints are specifically designed to optimize your MEV strategies, offer
 
 ## Tips
 
-### 🪙 Tip Amount
 (tip-amount)=
+### 🪙 Tip Amount
+
 #### sendTransaction
 When using `sendTransaction`, it is recommended to use a 70/30 split between priority fee and jito tip(e.g.):
 
