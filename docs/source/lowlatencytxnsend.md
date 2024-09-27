@@ -419,7 +419,7 @@ Welcome to the Jito MEV ecosystem! If you're looking to integrate Jito's advance
 
 - 🦀 **Rust Developers**: Explore the [Jito Rust JSON-RPC](https://github.com/jito-labs/jito-rust-rpc), a performant SDK designed to leverage the power of Rust for interacting with Jito’s infrastructure on Solana.
 
-- **Go Developers**(Coming soon): The [Jito Go JSON-RPC](https://github.com/jito-labs/jito-go-rpc) library provides a Go-based SDK that brings the same low-latency, high-performance MEV solutions to your Go applications.
+- **Go Developers**: The [Jito Go JSON-RPC](https://github.com/jito-labs/jito-go-rpc) library provides a Go-based SDK that brings the same low-latency, high-performance MEV solutions to your Go applications.
 
 ### Key Endpoints Supported by These Libraries:
 **Bundles**
