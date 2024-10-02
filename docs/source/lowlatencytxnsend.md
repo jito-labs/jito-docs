@@ -455,12 +455,11 @@ When using `sendBundle`, only the Jito tip matters.
 
 (get-tip-information)=
 ### 💸 Get Tip Information
-REST API endpoint showing most recent tip amounts:<br>
-
+#### REST API endpoint showing most recent tip amounts:<br>
 ```
 curl http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor
 ```
-
+Response:
 ```
 [
   {
@@ -475,10 +474,13 @@ curl http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor
 ]
 ```
 
-WebSocket showing tip amounts:
+#### WebSocket showing tip amounts:
 ```
 wscat -c ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream
 ```
+
+#### Tip Dashboard
+To view dashboard please [click here](https://jito-labs.metabaseapp.com/public/dashboard/016d4d60-e168-4a8f-93c7-4cd5ec6c7c8d) .
 
 ## Rate Limits
 ❓ What are the defaults? <br/>
