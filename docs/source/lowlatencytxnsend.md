@@ -107,15 +107,11 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Conte
 }
 ```
 
+#### JSON-RPC Authentication (UUID):
 
-**Have more code examples for json-rpc sendTransaction
-**Link to APIs
+Please include the following when authenticating with a URL using a UUID:
 
-
-Auth:
-Do we offer mev-protection here?
-
-      Header Field: Include the API key in the x-jito-auth header.
+    Header Field: Include the API key in the x-jito-auth header.
 
         Example: x-jito-auth: <uuid>
 
