@@ -431,6 +431,12 @@ These endpoints are specifically designed to optimize your MEV strategies, offer
 
 ## Tips
 
+**Best Practices for Tipping:**
+
+1. Integrate tip instructions within your main transaction alongside core logic.
+2. If transaction space is constrained, implement post-transaction checks or add assertions in a separate tipping transaction to verify expected states.
+3. Exercise caution when sending tips as standalone transactions in bundles, as this may increase vulnerability to uncle bandit scenarios.
+
 (tip-amount)=
 ### 🪙 Tip Amount
 
@@ -520,5 +526,26 @@ Please ensure to provide valid contact information so we can send you acknowledg
 
   The minimum tip is 1000 lamports, but if you're targeting a highly competitive MEV opportunity, you'll need to be strategic with your tip. Consider adjusting your tip amount, based on the [current pricing](#get-tip-information) of tips in the system, and also take into account the latency to each component you're interacting with to maximize your chances of success.
 
+❓ Why is my txn/bundle failing, but lands on explorers?
 
+  **Uncled Blocks**
 
+  As more users have been starting to send bundles through Jito's block engine, we think it would be important to highlight uncled blocks on Solana and why some of you may be seeing your bundles landing as transactions that may fail. 
+
+  Solana has skipped slots, this is where a block is built by a leader and not accepted by the supermajority. These are known as uncled blocks. When this happens, any party that received these blocks may rebroadcast any of these transactions and get them landed/reverted on chain. It's important to note this has always been an issue on Solana and most other blockchains.
+
+  So in the case of bundles, imagine transactions from a bundle end up on an uncled block and some party rebroadcasts some or all of the bundle transactions. Those transactions will hit the normal banking stage which does not respect the bundle atomicity and reversion protection rules.
+
+  You might then run into the problem where you see your bundles land on chain failing; this is why.
+
+  **Mitigations**
+
+  We're working through some solutions; however, given the complexity of the network and this problem, it may take some time to fully get there. In the meantime it's extremely important that:
+
+  1. You protect yourself from bundles being 'unbundled'. This means having pre/post account checks and other safeguards that'll protect you in the case your bundle is rebroadcasted.
+  2. Make sure you minimize your bundles from being leaked; if you send to Jito you are never going to be explicitly leaked by Jito. However, be aware that during uncled block situations you are exposed to this.
+  3. Always make sure your Jito tip transaction is in the same transaction that is running the MEV strategy; this way if the transaction fails, you don't pay the Jito tip:
+
+  - Ideally, include your tip instruction in the same transaction as your main logic, along with appropriate post-transaction checks.
+  - If space is limited in your main transaction, consider adding assertions in your tipping transaction to verify the expected state (e.g., slot check, balance check).
+  - Be aware that sending tips as standalone transactions in bundles may increase exposure to uncle bandit situations.
