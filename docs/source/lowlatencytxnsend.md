@@ -264,7 +264,7 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 
 #### getTipAccounts
 
-Retrieves the tip accounts designated for tip payments for bundles. The tip accounts have remained constant and can also be found [here](https://mainnet.block-engine.jito.wtf).
+Retrieves the tip accounts designated for tip payments for bundles. The tip accounts have remained constant and can also be found [here](#response-example-tips).
 
 ##### Request
 
@@ -291,6 +291,7 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 |---------|-------|------------------------------------|
 | `result` | array | Tip accounts as a list of strings. |
 
+(response-example-tips)=
 ##### Response Example
 
 ```json
