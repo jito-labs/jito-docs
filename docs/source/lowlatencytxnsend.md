@@ -49,7 +49,7 @@ You can send JSON-RPC requests to any Block Engine using the following URLs. To 
 | 🌍 🌎 🌏 **Mainnet** | `https://mainnet.block-engine.jito.wtf` | - | - | - |
 | 🇳🇱 **Amsterdam** | `https://amsterdam.mainnet.block-engine.jito.wtf` | `74.118.140.240:1002` | `http://amsterdam.mainnet.relayer.jito.wtf:8100` | `ntp.amsterdam.jito.wtf` |
 | 🇩🇪 **Frankfurt** | `https://frankfurt.mainnet.block-engine.jito.wtf` | `145.40.93.84:1002` | `http://frankfurt.mainnet.relayer.jito.wtf:8100` | `ntp.frankfurt.jito.wtf` |
-| 🇺🇸 **New York** | `https://ny.mainnet.block-engine.jito.wtf` | `141.98.216.96:1002` | `http://ny.mainnet.relayer.jito.wtf:8100` | `ntp.ny.jito.wtf` |
+| 🇺🇸 **New York** | `https://ny.mainnet.block-engine.jito.wtf` | `141.98.216.96:1002` | `http://ny.mainnet.relayer.jito.wtf:8100` | `ntp.dallas.jito.wtf` |
 | 🇯🇵 **Tokyo** | `https://tokyo.mainnet.block-engine.jito.wtf` | `202.8.9.160:1002` | `http://tokyo.mainnet.relayer.jito.wtf:8100` | `ntp.tokyo.jito.wtf` |
 | 🇺🇸 **Salt Lake City** | `https://slc.mainnet.block-engine.jito.wtf` | `64.130.53.8:1002` | `http://slc.mainnet.relayer.jito.wtf:8100` | `ntp.slc.jito.wtf` |
 | | | | | |
