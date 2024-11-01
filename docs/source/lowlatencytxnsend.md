@@ -84,7 +84,7 @@ Additionally, this method always sets skip_preflight=true, which means the trans
 
 | Parameter | Type   | Description                                                                                      |
 |-----------|--------|--------------------------------------------------------------------------------------------------|
-| `params`  | string | **REQUIRED**: First Transaction Signature embedded in the transaction, as base-58 encoded string |
+| `params`  | string | **REQUIRED**: First Transaction Signature embedded in the transaction, as base-58 or base-64 encoded string |
 
 
 ##### Request Example
