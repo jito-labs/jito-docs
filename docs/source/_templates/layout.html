@@ -1,0 +1,73 @@
+{% extends "!layout.html" %}
+
+{% block extrahead %}
+    {{ super() }}
+    <style>
+        /* Social header styling */
+        .social-header {
+            position: fixed;
+            top: 0;
+            right: 20px;
+            z-index: 9999;
+            padding: 10px;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            color: #7ec699;
+            background-color: #2d2d2d;
+            border: 1px solid #444;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background-color: #3a3a3a;
+            color: white;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .social-link i {
+            font-size: 18px;
+        }
+
+        /* Mobile adjustments */
+        @media screen and (max-width: 768px) {
+            .social-header {
+                right: 10px;
+            }
+            
+            .social-link {
+                width: 32px;
+                height: 32px;
+            }
+            
+            .social-link i {
+                font-size: 16px;
+            }
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="social-header">
+        <a href="https://discord.gg/jito" class="social-link" target="_blank" title="Join our Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+        <a href="https://twitter.com/jito_labs" class="social-link" target="_blank" title="Follow us on Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://github.com/jito-labs/jito-docs" class="social-link" target="_blank" title="View on GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+    </div>
+    {{ super() }}
+{% endblock %}

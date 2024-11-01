@@ -1,12 +1,18 @@
 # ⚡ Low Latency Transaction Send
 
 Jito provides Solana MEV users with superior transaction execution through fast landing, MEV protection, and revert protection, available for both single transactions and multiple transactions(bundles) via gRPC and JSON-RPC services, ensuring optimal performance in the highly competitive Solana ecosystem."
-![Decision Matrix Txns](../images/matrixtxnsv2.png)
+:::{figure} ../images/matrixtxnsv4.png
+:class: diagram
+:::
 
 ---
 
 ## System Overview
-![System Diag](../images/systemdiagram.png)
+
+:::{figure} ../images/systemdiagramv2.png
+:class: diagram
+:::
+
 
 ### 🌐 How does the system work?
 - Validators run a modified Agave validator client called Jito-Solana that enables higher value capture for them and their stakers
@@ -414,13 +420,45 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 
 Welcome to the Jito MEV ecosystem! If you're looking to integrate Jito's advanced MEV solutions into your projects, we have a suite of developer tools designed to make your journey seamless, no matter your preferred language.
 
-- 🐍 **Python Developers**: The [Jito Py JSON-RPC](https://github.com/jito-labs/jito-py-rpc) library provides a robust SDK for interacting with Jito’s Block Engine, allowing you to send transactions, bundles, and more directly from your Python applications.
+<div class="language-card">
+    <div class="language-icon">
+        <i class="fab fa-python"></i>
+    </div>
+    <div class="language-content">
+        <h3>Python Developers</h3>
+        <p>The <a href="https://github.com/jito-labs/jito-py-rpc">Jito Py JSON-RPC</a> library provides a robust SDK for interacting with Jito's Block Engine, allowing you to send transactions, bundles, and more directly from your Python applications.</p>
+    </div>
+</div>
 
-- **JavaScript/TypeScript Developers**: The [Jito JS JSON-RPC](https://github.com/jito-labs/jito-js-rpc) library offers similar capabilities tailored for Node.js and browser environments, optimized for efficient MEV interactions.
+<div class="language-card">
+    <div class="language-icon">
+        <i class="fab fa-js"></i>
+    </div>
+    <div class="language-content">
+        <h3>JavaScript/TypeScript Developers</h3>
+        <p>The <a href="https://github.com/jito-labs/jito-js-rpc">Jito JS JSON-RPC</a> library offers similar capabilities tailored for Node.js and browser environments, optimized for efficient MEV interactions.</p>
+    </div>
+</div>
 
-- 🦀 **Rust Developers**: Explore the [Jito Rust JSON-RPC](https://github.com/jito-labs/jito-rust-rpc), a performant SDK designed to leverage the power of Rust for interacting with Jito’s infrastructure on Solana.
+<div class="language-card">
+    <div class="language-icon">
+        <i class="fab fa-rust" style="color: #14F195;"></i>
+    </div>
+    <div class="language-content">
+        <h3>Rust Developers</h3>
+        <p>Explore the <a href="https://github.com/jito-labs/jito-rust-rpc">Jito Rust JSON-RPC</a>, a performant SDK designed to leverage the power of Rust for interacting with Jito's infrastructure on Solana.</p>
+    </div>
+</div>
 
-- **Go Developers**: The [Jito Go JSON-RPC](https://github.com/jito-labs/jito-go-rpc) library provides a Go-based SDK that brings the same low-latency, high-performance MEV solutions to your Go applications.
+<div class="language-card">
+    <div class="language-icon">
+        <i class="fab fa-golang"></i>
+    </div>
+    <div class="language-content">
+        <h3>Go Developers</h3>
+        <p>The <a href="https://github.com/jito-labs/jito-go-rpc">Jito Go JSON-RPC</a> library provides a Go-based SDK that brings the same low-latency, high-performance MEV solutions to your Go applications.</p>
+    </div>
+</div>
 
 ### Key Endpoints Supported by These Libraries:
 **Bundles**
@@ -494,63 +532,74 @@ wscat -c ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream
 To view dashboard please [click here](https://jito-labs.metabaseapp.com/public/dashboard/016d4d60-e168-4a8f-93c7-4cd5ec6c7c8d) .
 
 ## Rate Limits
-❓ What are the defaults? <br/>
 
-  5 requests per second per IP per region.
+### Default Limits
+**Q: What are the defaults?**
 
-❓ How do they work? <br/>
+5 requests per second per IP per region.
 
-  You no longer need an approved auth key for default sends.
+### Rate Limit Operation
+**Q: How do they work?**
 
-❓ What happens if the rate limit is exceeded? <br/>
+You no longer need an approved auth key for default sends.
 
-  429 or rate limit error indicating what you hit.
+### Exceeding Limits
+**Q: What happens if the rate limit is exceeded?**
 
-❓ What happens if see `The supplied pubkey is not authorized to generate a token`? </br>
+429 or rate limit error indicating what you hit.
 
-  This indicates that you're either using the auth-key parameter or your keypair variable is being set to check for this key unnecessarily. In most cases, you can simply use Null or None for these fields. Many of the new SDKs will have this built-in by default, so you won't need to specify it manually.
+### Authorization Issues
+**Q: What happens if I see `The supplied pubkey is not authorized to generate a token`?**
+
+This indicates that you're either using the auth-key parameter or your keypair variable is being set to check for this key unnecessarily. In most cases, you can simply use Null or None for these fields. Many of the new SDKs will have this built-in by default, so you won't need to specify it manually.
 
 ## Rate Limits Form
 
 Please ensure to provide valid contact information so we can send you acknowledgment [submit form](https://forms.gle/8jZmKX1KZA71jXp38)
 
+
 ## Troubleshooting
-❓ How to know how much to set priority fee?
 
-  Please see [Tip Amount for sendTransaction](#tip-amount)
+### Priority Fee
+**Q: How to know how much to set priority fee?**
 
-❓ How to know how much to set a tip?
+Please see [Tip Amount for sendTransaction](#tip-amount)
 
-  The minumim tips is 1000 lamports
+### Tip Amount
+**Q: How to know how much to set a tip?**
 
-❓ My bundle/tx is not landing, how do I check?
+The minimum tips is 1000 lamports
 
-  If this is your first time using bundles, please ensure you transaction are valid through `simulateTransaction`, and Jito-Solana RPC should support `simulateBundle` to verify bundles.
+### Bundle Landing
+**Q: My bundle/tx is not landing, how do I check?**
 
-  If you have the `bundleID`, you can look over [Jito explorer](https://explorer.jito.wtf/), otherwise you can see basic inflight knowledge **within the last 5 minutes** through `getInflightBundleStatuses`.
+If this is your first time using bundles, please ensure you transaction are valid through `simulateTransaction`, and Jito-Solana RPC should support `simulateBundle` to verify bundles.
 
-  The minimum tip is 1000 lamports, but if you're targeting a highly competitive MEV opportunity, you'll need to be strategic with your tip. Consider adjusting your tip amount, based on the [current pricing](#get-tip-information) of tips in the system, and also take into account the latency to each component you're interacting with to maximize your chances of success.
+If you have the `bundleID`, you can look over [Jito explorer](https://explorer.jito.wtf/), otherwise you can see basic inflight knowledge **within the last 5 minutes** through `getInflightBundleStatuses`.
 
-❓ Why is my txn/bundle failing, but lands on explorers?
+The minimum tip is 1000 lamports, but if you're targeting a highly competitive MEV opportunity, you'll need to be strategic with your tip. Consider adjusting your tip amount, based on the [current pricing](#get-tip-information) of tips in the system, and also take into account the latency to each component you're interacting with to maximize your chances of success.
 
-  **Uncled Blocks**
+### Failed Transactions
+**Q: Why is my txn/bundle failing, but lands on explorers?**
 
-  As more users have been starting to send bundles through Jito's block engine, we think it would be important to highlight uncled blocks on Solana and why some of you may be seeing your bundles landing as transactions that may fail. 
+#### Uncled Blocks
 
-  Solana has skipped slots, this is where a block is built by a leader and not accepted by the supermajority. These are known as uncled blocks. When this happens, any party that received these blocks may rebroadcast any of these transactions and get them landed/reverted on chain. It's important to note this has always been an issue on Solana and most other blockchains.
+As more users have been starting to send bundles through Jito's block engine, we think it would be important to highlight uncled blocks on Solana and why some of you may be seeing your bundles landing as transactions that may fail.
 
-  So in the case of bundles, imagine transactions from a bundle end up on an uncled block and some party rebroadcasts some or all of the bundle transactions. Those transactions will hit the normal banking stage which does not respect the bundle atomicity and reversion protection rules.
+Solana has skipped slots, this is where a block is built by a leader and not accepted by the supermajority. These are known as uncled blocks. When this happens, any party that received these blocks may rebroadcast any of these transactions and get them landed/reverted on chain. It's important to note this has always been an issue on Solana and most other blockchains.
 
-  You might then run into the problem where you see your bundles land on chain failing; this is why.
+So in the case of bundles, imagine transactions from a bundle end up on an uncled block and some party rebroadcasts some or all of the bundle transactions. Those transactions will hit the normal banking stage which does not respect the bundle atomicity and reversion protection rules.
 
-  **Mitigations**
+#### Mitigations
 
-  We're working through some solutions; however, given the complexity of the network and this problem, it may take some time to fully get there. In the meantime it's extremely important that:
+We're working through some solutions; however, given the complexity of the network and this problem, it may take some time to fully get there. In the meantime it's extremely important that:
 
-  1. You protect yourself from bundles being 'unbundled'. This means having pre/post account checks and other safeguards that'll protect you in the case your bundle is rebroadcasted.
-  2. Make sure you minimize your bundles from being leaked; if you send to Jito you are never going to be explicitly leaked by Jito. However, be aware that during uncled block situations you are exposed to this.
-  3. Always make sure your Jito tip transaction is in the same transaction that is running the MEV strategy; this way if the transaction fails, you don't pay the Jito tip:
+1. You protect yourself from bundles being 'unbundled'. This means having pre/post account checks and other safeguards that'll protect you in the case your bundle is rebroadcasted.
 
-  - Ideally, include your tip instruction in the same transaction as your main logic, along with appropriate post-transaction checks.
-  - If space is limited in your main transaction, consider adding assertions in your tipping transaction to verify the expected state (e.g., slot check, balance check).
-  - Be aware that sending tips as standalone transactions in bundles may increase exposure to uncle bandit situations.
+2. Make sure you minimize your bundles from being leaked; if you send to Jito you are never going to be explicitly leaked by Jito. However, be aware that during uncled block situations you are exposed to this.
+
+3. Always make sure your Jito tip transaction is in the same transaction that is running the MEV strategy; this way if the transaction fails, you don't pay the Jito tip:
+
+   - Ideally, include your tip instruction in the same transaction as your main logic, along with appropriate post-transaction checks.
+   - If space is limited in your main transaction, consider adding assertions in your tipping transaction to verify the expected state (e.g., slot check, balance check).
+   - Be aware that sending tips as standalone transactions in bundles may increase exposure to uncle bandit situations.
