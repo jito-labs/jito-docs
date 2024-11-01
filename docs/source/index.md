@@ -1,22 +1,52 @@
-![Jito Labs](../images/Jitolabs_Logo_Green.svg)
 # What is Jito?
-Turbocharged Solana trading experience.
 
-# What does Jito offer?
-  - **Low latency transaction sending**
-  - **Low latency blockchain/shred data**
-  - **Around the clock developer support**
+<div class="feature-card hero-card">
+    <span class="icon">⚡</span>
+    <span>Turbocharged Solana trading experience</span>
+</div>
 
-# Who should use Jito?
-- **Solana Validators**
-- **Telegram Bots**
-- **High Frequency Traders & Searchers**
-- **dApps**
+## What does Jito offer?
+
+<div class="feature-card">
+    <span class="icon">🚀</span>
+    <span>Low latency transaction sending</span>
+</div>
+
+<div class="feature-card">
+    <span class="icon">⛓️</span>
+    <span>Low latency blockchain/shred data</span>
+</div>
+
+<div class="feature-card">
+    <span class="icon">🔄</span>
+    <span>Around the clock developer support</span>
+</div>
+
+## Who should use Jito?
+
+<div class="user-types-grid">
+    <div class="user-type">
+        <span class="user-icon">🏢</span>
+        <h3>Solana Validators</h3>
+    </div>
+    <div class="user-type">
+        <span class="user-icon">🤖</span>
+        <h3>Telegram Bots</h3>
+    </div>
+    <div class="user-type">
+        <span class="user-icon">📈</span>
+        <h3>High Frequency Traders & Searchers</h3>
+    </div>
+    <div class="user-type">
+        <span class="user-icon">📱</span>
+        <h3>dApps</h3>
+    </div>
+</div>
 
 If your use case requires low-latency transaction sending and turbine streaming, MEV protection, and/or cross-transaction
 atomicity, then Jito is right for you.
 
-## Jito's Products
+### Jito's Products
 Jito provides specialized solutions tailored to the needs of Solana MEV users:
 - 🌪️ **Fast Transaction Sending:** Essential for any Solana MEV user requiring rapid and reliable transaction execution.
 - 💼 **Bundles:** Offers MEV protection, fast transaction landing, support for multiple transactions, and revert protection, making it ideal for developers of Telegram bots and automated trading systems.
