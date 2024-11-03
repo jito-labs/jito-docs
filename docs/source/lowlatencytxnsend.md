@@ -480,6 +480,9 @@ These endpoints are specifically designed to optimize your MEV strategies, offer
 2. If transaction space is constrained, implement post-transaction checks or add assertions in a separate tipping transaction to verify expected states.
 3. Exercise caution when sending tips as standalone transactions in bundles, as this may increase vulnerability to uncle bandit scenarios.
 
+> ⚠️ **Warning**  
+> When tipping make sure to not use Address Lookup Tables for the tip accounts. Tips do not prioritize transactions for validators that are not Jito-Solana leaders, so tipping in these cases will be ineffective and a waste of money
+
 (tip-amount)=
 ### 🪙 Tip Amount
 
