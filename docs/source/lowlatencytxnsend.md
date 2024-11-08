@@ -39,10 +39,12 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 ### ⚖️ What is the auction?
 - Bundles submitted by traders are put through a priority auction
   - An auction is needed since opportunities and blockspace are scarce
-  - One bundle landing may invalidate another, so Jito selects the higher value of the two
+  - The auction creates a stream bundles that maximizes tips in a block.
+    Parallelism in locking patterns is leveraged where possible to allow for local state auctions.
 - Parallel auctions are run at 200ms ticks
-  - Bundles touching different accounts will run in different parallel auctions
-  - Bundles write locking the same accounts end up in the same auction
+  - Bundles with intersecting locking patterns on a particular account [(w, w) or (r, w) or (w, r)] are run in a single auction.
+  - Bundles that do not touch the same accounts are run in separate auctions, as well as bundles that have non-intersecting locking patterns (r, r) on accounts.
+  - Bundle orderings within a single auction are optimized for maximum tip (note: we will be changing to tip/cu in coming upgrade).
 - Jito submits the highest paying combination of bundles to the validator up to some CU limit
 
 ---
