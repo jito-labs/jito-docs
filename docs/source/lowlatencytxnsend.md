@@ -103,20 +103,22 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Conte
   ]
 }'
 ```
+
 ##### Request Example base64
-```
+```bash
 curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Content-Type: application/json" -d '
 {
-  "jsonrpc": "2.0",
   "id": 1,
+  "jsonrpc": "2.0",
   "method": "sendTransaction",
   "params": [
-    "4hXTCkRzt9WyecNzV1XPgCDfGAZzQKNxLXgynz5QDuWWPSAZBZSHptvWRL3BjCvzUXRdKvHL2b7yGrRQcWyaqsaBCncVG7BFggS8w9snUts67BSh3EqKpXLUm5UMHfD7ZBe9GhARjbNQMLJ1QD3Spr6oMTBU6EhdB4RD8CP2xUxr2u3d6fos36PD98XS6oX8TQjLpsMwncs5DAMiD4nNnR8NBfyghGCWvCVifVwvA8B8TJxE1aiyiv2L429BCWfyzAme5sZW8rDb14NeCQHhZbtNqfXhcp2tAnaAT",
+    "AVXo5X7UNzpuOmYzkZ+fqHDGiRLTSMlWlUCcZKzEV5CIKlrdvZa3/2GrJJfPrXgZqJbYDaGiOnP99tI/sRJfiwwBAAEDRQ/n5E5CLbMbHanUG3+iVvBAWZu0WFM6NoB5xfybQ7kNwwgfIhv6odn2qTUu/gOisDtaeCW1qlwW/gx3ccr/4wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvsInicc+E3IZzLqeA+iM5cn9kSaeFzOuClz1Z2kZQy0BAgIAAQwCAAAAAPIFKgEAAAA=",
     {
       "encoding": "base64"
     }
   ]
-}'
+}
+'
 ```
 
 ##### Response
@@ -170,8 +172,10 @@ A tip is necessary for the bundle to be considered. The tip can be any instructi
 | Parameter | Type           | Description                                                                                                                   |
 |-----------|----------------|-------------------------------------------------------------------------------------------------------------------------------|
 | `params`  | array[string]   | **REQUIRED**: Fully-signed transactions, as base-58 encoded strings (up to a maximum of 5). Base-64 encoded transactions are not supported at this time. |
+| `encoding`| string | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58` |
 
-##### Request Example
+
+##### Request Example base58
 
 ```bash
 curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Type: application/json" -d '
@@ -184,6 +188,30 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
       "4VbvoRYXFaXzDBUYfMXP1irhMZ9XRE6F1keS8GbYzKxgdpEasZtRv6GXxbygPp3yBVeSR4wN9JEauSTnVTKjuq3ktM3JpMebYpdGxZWUttJv9N2DzxBm4vhySdq2hbu1LQX7WxS2xsHG6vNwVCjP33Z2ZLP7S5dZujcan1Xq5Z2HibbbK3M3LD59QVuczyK44Fe3k27kVQ43oRH5L7KgpUS1vBoqTd9ZTzC32H62WPHJeLrQiNkmSB668FivXBAfMg13Svgiu9E",
       "6HZu11s3SDBz5ytDj1tyBuoeUnwa1wPoKvq6ffivmfhTGahe3xvGpizJkofHCeDn1UgPN8sLABueKE326aGLXkn5yQyrrpuRF9q1TPZqqBMzcDvoJS1khPBprxnXcxNhMUbV78cS2R8LrCU29wjYk5b4JpVtF23ys4ZBZoNZKmPekAW9odcPVXb9HoMnWvx8xwqd7GsVB56R343vAX6HGUMoiB1WgR9jznG655WiXQTff5gPsCP3QJFTXC7iYEYtrcA3dUeZ3q4YK9ipdYZsgAS9H46i9dhDP2Zx3"
     ]
+  ]
+}
+'
+```
+
+##### Request Example base64
+
+```bash
+curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Content-Type: application/json" -d '
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "sendBundle",
+  "params": [
+    [
+      "AbKi19sammgVRlYLdvIwJ8DGEBCk5TmwgRmwWw+IAlkmIqvIXBfY/qYxrFwQGJZq4UvBXDAqmCTkDvQueLsJGAUBAAECZAJMcn3luKBgXdzj8FTKBu8ndFClGLdh/38acclb7JwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM5VmqzBOi86PgXATWyyLk9tLPT8SstEH1LaVXnHY/BoAQECAAAMAgAAAAAAAAAAAAAA",
+      "AbJIDFwE1L4b0XraibdKWtKm3gJrGUhrdnfaSJnj9r0QVx3gGjwFB8ZkwWDcg0JXU6BH9ELCuU1uK98Ndud7wwQBAAECZAJMcn3luKBgXdzj8FTKBu8ndFClGLdh/38acclb7JwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM5VmqzBOi86PgXATWyyLk9tLPT8SstEH1LaVXnHY/BoAQECAAAMAgAAAAEAAAAAAAAA",
+      "AWfyRMfbDTJWbhCX4I8LGTarxXhQbPXw4qkwEMlNwb6fyjll6oEd0pdChDyjKFhz0zPZh/W8avZ7e3sX0O0OHAYBAAECZAJMcn3luKBgXdzj8FTKBu8ndFClGLdh/38acclb7JwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM5VmqzBOi86PgXATWyyLk9tLPT8SstEH1LaVXnHY/BoAQECAAAMAgAAAAIAAAAAAAAA",
+      "AW1qg6ac61EwnsaV05CC1wk84EDUWR75wUzKLRArGy2oA6DFQffpS9mfmxBsYaoJQXZQPkxDYj7H0YdUjcAGuwIBAAECZAJMcn3luKBgXdzj8FTKBu8ndFClGLdh/38acclb7JwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAM5VmqzBOi86PgXATWyyLk9tLPT8SstEH1LaVXnHY/BoAQECAAAMAgAAAAMAAAAAAAAA",
+      "AfrPPQSnIBDrEXHWUV8l7rMa7Whibfdj69/d12d44PaLxhfQtROXz/x7obKe5M3oJK/fMiMlzoKLU8tno4D4MwYBAAEDZAJMcn3luKBgXdzj8FTKBu8ndFClGLdh/38acclb7Jx4Uhyxec67hYm1VqLV7JTSSYaC/fm7KvWtZOSRzEFT2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzlWarME6Lzo+BcBNbLIuT20s9PxKy0QfUtpVecdj8GgBAgIAAQwCAAAAAAAAAAAAAAA="
+    ],
+    {
+      "encoding": "base64"
+    }
   ]
 }
 '
