@@ -11,6 +11,9 @@ version = '0.1.0'
 # URL settings
 set_url = 'https://docs.jito.wtf'
 
+# Output options
+html_output = '_build/html'
+
 # -- General configuration
 extensions = [
     'sphinx.ext.duration',
@@ -46,6 +49,7 @@ intersphinx_mapping = {
 intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output
 html_theme = 'sphinx_rtd_theme'
@@ -55,7 +59,6 @@ html_css_files = [
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
 ]
 html_images_path = ['../images']
-html_static_path = ['../_static']
 
 # SEO: Enhanced metadata
 html_title = "Jito Labs Documentation - High Performance Solana Infrastructure"
@@ -74,11 +77,11 @@ html_theme_options = {
     'collapse_navigation': False,
     'include_hidden': False,
     'navigation_depth': 4,
+    'use_directory_urls': False,  # Changed to False
     # SEO: Add Open Graph metadata
     'display_version': True,
     'canonical_url': set_url,
     'path_to_docs': '',
-    'use_directory_urls': True,
     'analytics_id': '',  # Add your Google Analytics ID
     'analytics_anonymize_ip': False,
     'use_meta_description': True,
@@ -96,8 +99,8 @@ source_suffix = {
     '.rst': 'restructuredtext',
     '.md': 'markdown'
 }
+root_doc = 'index'
 master_doc = 'index'
-root_doc = 'index' 
 
 # Additional configurations
 html_show_sourcelink = False
@@ -114,6 +117,8 @@ html_extra_path = ['robots.txt']
 # URL handling
 html_split_index = False
 html_absolute_url = True
+html_use_index = True
+html_domain_indices = True
 
 # SEO: Search engine directives
 html_robots = {
@@ -136,10 +141,11 @@ language = 'en'
 locale_dirs = ['locale/']
 gettext_compact = False
 
-# Additional URL settings
-html_secnumber_suffix = ". "
+# Build settings
+html_codeblock_linenos_style = 'table'
+html_scaled_image_link = False
+html_show_copyright = True
 html_last_updated_fmt = ''
-html_domain_indices = False
-html_use_index = False
-html_copy_source = False
-html_show_sourcelink = False
+
+# Make sure epub title is set
+epub_title = project
