@@ -19,6 +19,7 @@ extensions = [
     'sphinx_design',
     'sphinx_copybutton',
     'sphinx_tabs.tabs',
+    'sphinx_sitemap',  # Added for SEO
 ]
 
 myst_enable_extensions = [
@@ -31,6 +32,9 @@ myst_enable_extensions = [
     "tasklist",
     "attrs_inline",
 ]
+
+# SEO: Enable heading anchors for better deep linking
+myst_heading_anchors = 3
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
@@ -50,6 +54,12 @@ html_css_files = [
 html_images_path = ['../images']
 html_static_path = ['../_static']
 
+# SEO: Enhanced metadata
+html_title = "Jito Labs Documentation - High Performance Solana Infrastructure"
+html_short_title = "Jito Docs"
+html_baseurl = 'https://docs.jito.wtf'
+sitemap_url_scheme = "{link}"
+
 # Theme options
 html_theme_options = {
     'style_nav_header_background': '#0a0a0a',
@@ -57,6 +67,15 @@ html_theme_options = {
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
     'sticky_navigation': True,
+    # SEO: Add Open Graph metadata
+    'display_version': True,
+    'canonical_url': 'https://docs.jito.wtf/',
+    'analytics_id': '',  # Add your Google Analytics ID
+    'analytics_anonymize_ip': False,
+    'use_meta_description': True,
+    'og_description': 'Documentation for Jito Labs - High Performance Solana Infrastructure, Block Engine, and MEV Solutions',
+    'og_type': 'website',
+    'og_image': '../images/Jitolabs_Logo_White.png',
 }
 
 # Logo configuration
@@ -75,16 +94,29 @@ html_show_sourcelink = False
 html_show_sphinx = False
 html_copy_source = False
 
-# Remove .html suffix and clean up URLs
+# Clean URLs
 html_link_suffix = ''
 html_file_suffix = None
-
-# Enable canonical URLs (helpful for SEO)
-html_baseurl = 'https://docs.jito.wtf'
-
-# Optional: Improve URL/slug generation
 html_permalinks = True
 html_permalink_builder = True
 
+# SEO: Search engine directives
+html_robots = {
+    'index': True,
+    'follow': True,
+    'Archive': False,
+}
+
 # Syntax highlighting
 pygments_style = 'monokai'
+
+# SEO: Better search engine handling
+html_context = {
+    'description': 'Official documentation for Jito Labs - Solana MEV, Block Engine, and high-performance infrastructure.',
+    'keywords': 'solana, jito, mev, block engine, blockchain, trading, infrastructure',
+}
+
+# Language settings
+language = 'en'
+locale_dirs = ['locale/']
+gettext_compact = False
