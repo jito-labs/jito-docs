@@ -8,6 +8,9 @@ author = 'mdr0id'
 release = '0.1'
 version = '0.1.0'
 
+# URL settings
+set_url = 'https://docs.jito.wtf'
+
 # -- General configuration
 extensions = [
     'sphinx.ext.duration',
@@ -57,7 +60,8 @@ html_static_path = ['../_static']
 # SEO: Enhanced metadata
 html_title = "Jito Labs Documentation - High Performance Solana Infrastructure"
 html_short_title = "Jito Docs"
-html_baseurl = 'https://docs.jito.wtf'
+html_baseurl = set_url
+html_use_opensearch = set_url
 sitemap_url_scheme = "{link}"
 
 # Theme options
@@ -67,9 +71,14 @@ html_theme_options = {
     'prev_next_buttons_location': 'bottom',
     'style_external_links': True,
     'sticky_navigation': True,
+    'collapse_navigation': False,
+    'include_hidden': False,
+    'navigation_depth': 4,
     # SEO: Add Open Graph metadata
     'display_version': True,
-    'canonical_url': 'https://docs.jito.wtf/',
+    'canonical_url': set_url,
+    'path_to_docs': '',
+    'use_directory_urls': True,
     'analytics_id': '',  # Add your Google Analytics ID
     'analytics_anonymize_ip': False,
     'use_meta_description': True,
@@ -96,10 +105,14 @@ html_copy_source = False
 
 # Clean URLs
 html_link_suffix = ''
-html_file_suffix = None
+html_file_suffix = ''  # Changed from None
 html_permalinks = True
 html_permalink_builder = True
 html_extra_path = ['robots.txt']
+
+# URL handling
+html_split_index = False
+html_absolute_url = True
 
 # SEO: Search engine directives
 html_robots = {
@@ -121,3 +134,11 @@ html_context = {
 language = 'en'
 locale_dirs = ['locale/']
 gettext_compact = False
+
+# Additional URL settings
+html_secnumber_suffix = ". "
+html_last_updated_fmt = ''
+html_domain_indices = False
+html_use_index = False
+html_copy_source = False
+html_show_sourcelink = False
