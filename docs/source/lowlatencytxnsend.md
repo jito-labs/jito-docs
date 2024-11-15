@@ -163,7 +163,7 @@ For bundle-related methods, use the URL path `/api/v1/bundles`. Refer to the doc
 
 #### sendBundle
 
-Submits a bundled list of signed transactions (base-58 encoded strings) to the cluster for processing. The transactions are atomically processed in order, meaning if any transaction fails, the entire bundle is rejected (all or nothing). This method relays the bundle created by clients to the leader without any modifications. If the bundle is set to expire after the next Jito-Solana leader, this method immediately returns a success response with a `bundle_id`, indicating the bundle has been received. This does not guarantee the bundle will be processed or land on-chain. To check the bundle status, use `getBundleStatuses` with the `bundle_id`.
+Submits a bundled list of signed transactions to the cluster for processing. The transactions are atomically processed in order, meaning if any transaction fails, the entire bundle is rejected (all or nothing). This method relays the bundle created by clients to the leader without any modifications. If the bundle is set to expire after the next Jito-Solana leader, this method immediately returns a success response with a `bundle_id`, indicating the bundle has been received. This does not guarantee the bundle will be processed or land on-chain. To check the bundle status, use `getBundleStatuses` with the `bundle_id`.
 
 A tip is necessary for the bundle to be considered. The tip can be any instruction, top-level or CPI, that transfers SOL to one of the 8 tip accounts. Clients should ensure they have sufficient balance and state assertions allowing the tip to go through conditionally, especially if tipping as a separate transaction. If the tip is too low, the bundle might not be selected during the auction. Use `getTipAccounts` to retrieve the tip accounts. Ideally, select one of the accounts at random to reduce contention.
 
@@ -171,7 +171,7 @@ A tip is necessary for the bundle to be considered. The tip can be any instructi
 
 | Parameter | Type           | Description                                                                                                                   |
 |-----------|----------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `params`  | array[string]   | **REQUIRED**: Fully-signed transactions, as base-58 encoded strings (up to a maximum of 5). Base-64 encoded transactions are not supported at this time. |
+| `params`  | array[string]   | **REQUIRED**: Fully-signed transactions, as base-58 encoded strings (up to a maximum of 5). |
 | `encoding`| string | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58` |
 
 
