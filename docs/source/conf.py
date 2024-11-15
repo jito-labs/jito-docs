@@ -76,8 +76,8 @@ html_theme_options = {
     'sticky_navigation': True,
     'collapse_navigation': False,
     'navigation_depth': 4,
-    'analytics_id': '',  # Add your Google Analytics ID
-    'analytics_anonymize_ip': False,
+    'includehidden': True,
+    'titles_only': False,
 }
 
 # Logo configuration
