@@ -78,7 +78,6 @@ html_theme_options = {
     'navigation_depth': 4,
     'analytics_id': '',  # Add your Google Analytics ID
     'analytics_anonymize_ip': False,
-    'use_directory_urls': True,
 }
 
 # Logo configuration
