@@ -99,7 +99,7 @@ html_copy_source = False
 
 # Clean URLs
 html_link_suffix = ''
-html_file_suffix = ''
+html_file_suffix = '.html'
 html_permalinks = True
 html_permalink_builder = True
 html_extra_path = ['robots.txt']
