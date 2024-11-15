@@ -2,6 +2,14 @@
 
 {% block extrahead %}
     {{ super() }}
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Documentation for Jito Labs - High Performance Solana Infrastructure, Block Engine, and MEV Solutions">
+    <meta name="keywords" content="solana, jito, mev, block engine, blockchain, trading, infrastructure">
+    <meta property="og:title" content="{{ title|striptags|e }} - Jito Labs Documentation">
+    <meta property="og:description" content="Documentation for Jito Labs - High Performance Solana Infrastructure, Block Engine, and MEV Solutions">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://docs.jito.wtf{{ pagename }}">
+    <meta property="og:image" content="https://docs.jito.wtf/_static/images/Jitolabs_Logo_White.png">
     <style>
         /* Social header styling */
         .social-header {
@@ -37,6 +45,27 @@
 
         .social-link i {
             font-size: 18px;
+        }
+
+        /* Read the Docs Theme Customizations */
+        .wy-nav-side {
+            background: #0a0a0a;
+        }
+
+        .wy-side-nav-search {
+            background-color: #0a0a0a;
+        }
+
+        .wy-menu-vertical header, .wy-menu-vertical p.caption {
+            color: #7ec699;
+        }
+
+        .wy-menu-vertical a {
+            color: #ffffff;
+        }
+
+        .wy-menu-vertical a:hover {
+            background-color: #2d2d2d;
         }
 
         /* Mobile adjustments */
