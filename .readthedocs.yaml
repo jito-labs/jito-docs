@@ -30,3 +30,5 @@ formats:
 python:
    install:
    - requirements: docs/requirements.txt
+
+single_version: true
