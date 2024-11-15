@@ -97,6 +97,7 @@ source_suffix = {
     '.md': 'markdown'
 }
 master_doc = 'index'
+root_doc = 'index' 
 
 # Additional configurations
 html_show_sourcelink = False
