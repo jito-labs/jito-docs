@@ -75,5 +75,16 @@ html_show_sourcelink = False
 html_show_sphinx = False
 html_copy_source = False
 
+# Remove .html suffix and clean up URLs
+html_link_suffix = ''
+html_file_suffix = None
+
+# Enable canonical URLs (helpful for SEO)
+html_baseurl = 'https://docs.jito.wtf'
+
+# Optional: Improve URL/slug generation
+html_permalinks = True
+html_permalink_builder = True
+
 # Syntax highlighting
 pygments_style = 'monokai'
