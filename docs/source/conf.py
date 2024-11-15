@@ -63,8 +63,8 @@ html_images_path = ['../images']  # Updated path
 # SEO: Enhanced metadata
 html_title = "Jito Labs Documentation - High Performance Solana Infrastructure"
 html_short_title = "Jito Docs"
-html_baseurl = set_url
-html_use_opensearch = set_url
+html_baseurl = 'https://docs.jito.wtf'
+html_use_opensearch =  'https://docs.jito.wtf'
 sitemap_url_scheme = "{link}"
 
 # Theme options
@@ -78,6 +78,7 @@ html_theme_options = {
     'navigation_depth': 4,
     'analytics_id': '',  # Add your Google Analytics ID
     'analytics_anonymize_ip': False,
+    'use_directory_urls': True,
 }
 
 # Logo configuration
@@ -99,7 +100,7 @@ html_copy_source = False
 
 # Clean URLs
 html_link_suffix = ''
-html_file_suffix = '.html'
+html_file_suffix = None
 html_permalinks = True
 html_permalink_builder = True
 html_extra_path = ['robots.txt']
