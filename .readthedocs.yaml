@@ -22,8 +22,9 @@ sphinx:
   fail_on_warning: false
 
 # Optionally build your docs in additional formats such as PDF and ePub
-formats:
-   - pdf
+#formats:
+#   - pdf
+#Todo see what versions are breaking in default add on swtich from reat the docs
 
 # Optional but recommended, declare the Python requirements required
 # to build your documentation
