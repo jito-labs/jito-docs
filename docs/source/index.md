@@ -59,6 +59,6 @@ These use cases offer a competitive edge to traders, bot developers, and anyone 
 :caption: Documentation
 :hidden:
 
-lowlatencytxnsend
-lowlatencytxnfeed
+/lowlatencytxnsend
+/lowlatencytxnfeed
 ```
