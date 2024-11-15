@@ -53,12 +53,12 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output
 html_theme = 'sphinx_rtd_theme'
-html_static_path = ['../../_static']  # Updated path
+html_static_path = ['../_static']  # Updated path
 html_css_files = [
     'css/custom.css',
     'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
 ]
-html_images_path = ['../../images']  # Updated path
+html_images_path = ['../images']  # Updated path
 
 # SEO: Enhanced metadata
 html_title = "Jito Labs Documentation - High Performance Solana Infrastructure"
@@ -81,8 +81,8 @@ html_theme_options = {
 }
 
 # Logo configuration
-html_logo = '../../images/Jitolabs_Logo_White.png'  # Updated path
-html_favicon = '../../images/Jitolabs_Logo_White.png'  # Updated path
+html_logo = '../images/Jitolabs_Logo_White.png' 
+html_favicon = '../images/Jitolabs_Logo_White.png'
 
 # Source configuration
 source_suffix = {
@@ -127,7 +127,7 @@ html_context = {
     # Add Open Graph metadata here instead of theme options
     'og_description': 'Documentation for Jito Labs - High Performance Solana Infrastructure, Block Engine, and MEV Solutions',
     'og_type': 'website',
-    'og_image': '../../images/Jitolabs_Logo_White.png',  # Updated path
+    'og_image': '../images/Jitolabs_Logo_White.png',  # Updated path
     'canonical_url': set_url,
 }
 
