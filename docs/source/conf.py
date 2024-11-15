@@ -99,6 +99,7 @@ html_link_suffix = ''
 html_file_suffix = None
 html_permalinks = True
 html_permalink_builder = True
+html_extra_path = ['robots.txt']
 
 # SEO: Search engine directives
 html_robots = {
