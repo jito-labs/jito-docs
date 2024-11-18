@@ -557,7 +557,7 @@ When using `sendBundle`, only the Jito tip matters.
 ### 💸 Get Tip Information
 #### REST API endpoint showing most recent tip amounts:<br>
 ```
-curl http://bundles-api-rest.jito.wtf/api/v1/bundles/tip_floor
+curl https://bundles.jito.wtf/api/v1/bundles/tip_floor
 ```
 Response:
 ```
