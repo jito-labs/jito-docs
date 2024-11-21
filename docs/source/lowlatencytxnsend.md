@@ -13,7 +13,6 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 :class: diagram
 :::
 
-
 ### 🌐 How does the system work?
 - Validators run a modified Agave validator client called Jito-Solana that enables higher value capture for them and their stakers
   - The validator then connects to the Jito Block-Engine and Jito-Relayer
