@@ -25,6 +25,7 @@ These use cases offer a competitive edge to traders, bot developers, and anyone 
 
 ```{toctree}
 :maxdepth: 6
+:hidden:
 
 ⚡ Low Latency Transaction Send <lowlatencytxnsend>
 ➤ Low Latency Block Updates (ShredStream) <lowlatencytxnfeed>
