@@ -16,7 +16,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 
 ## Preparation
 
-1. Get your Solana [pubic key approved](https://web.miniextensions.com/WV3gZjFwqNqITsMufIEp)
+1. Get your Solana [public key approved](https://web.miniextensions.com/WV3gZjFwqNqITsMufIEp)
 
 2. Ensure your firewall is open.
     - Default port for incoming shreds is 20000/udp.
