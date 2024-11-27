@@ -372,9 +372,9 @@ Returns the status of submitted bundles within the last five minutes, allowing u
 
 ##### Request
 
-| Parameter | Type           | Description                                                                                       |
-|-----------|----------------|---------------------------------------------------------------------------------------------------|
-| `params`  | array[string]   | **REQUIRED**: An array of bundle IDs to confirm (up to a maximum of 5).                           |
+| Parameter | Type          | Description                                                             |
+|-----------|---------------|-------------------------------------------------------------------------|
+| `params`  | array[string] | **REQUIRED**: An array of bundle IDs to confirm (up to a maximum of 5). |
 
 ##### Request Example
 
@@ -399,10 +399,10 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 
 ##### Response
 
-| Field        | Type   | Description                                                                                                                                                       |
-|--------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `null`       | null   | If the bundle(s) is not found.                                                                                                                                     |
-| `object`     | object | If the bundle is found, an array of objects with the following fields:                                                                                             |
+| Field    | Type   | Description                                                            |
+|----------|--------|------------------------------------------------------------------------|
+| `null`   | null   | If the bundle(s) is not found.                                         |
+| `object` | object | If the bundle is found, an array of objects with the following fields: |
 
 ###### Object Fields
 
@@ -617,7 +617,7 @@ Please see [Tip Amount for sendTransaction](#tip-amount)
 The minimum tips is 1000 lamports
 
 ### Bundle Landing
-**Q: My bundle/tx is not landing, how do I check?**
+**Q: My bundle/transaction is not landing, how do I check?**
 
 If this is your first time using bundles, please ensure you transaction are valid through `simulateTransaction`, and Jito-Solana RPC should support `simulateBundle` to verify bundles.
 
@@ -626,7 +626,7 @@ If you have the `bundleID`, you can look over [Jito explorer](https://explorer.j
 The minimum tip is 1000 lamports, but if you're targeting a highly competitive MEV opportunity, you'll need to be strategic with your tip. Consider adjusting your tip amount, based on the [current pricing](#get-tip-information) of tips in the system, and also take into account the latency to each component you're interacting with to maximize your chances of success.
 
 ### Failed Transactions
-**Q: Why is my txn/bundle failing, but lands on explorers?**
+**Q: Why is my transaction/bundle failing, but lands on explorers?**
 
 #### Uncled Blocks
 
