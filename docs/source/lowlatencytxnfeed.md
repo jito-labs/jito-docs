@@ -12,7 +12,7 @@ Shreds help in fast and efficient data propagation, maintaining Solana's high th
 
 ## Jito ShredStream Proxy
 
-The proxy client connects to the Jito Block Engine and authenticates using the provided keypair. It sends a heartbeat to keep shreds flowing. Received shreds are distributed to all DEST_IP_PORTS. We recommend running a proxy instance for each region where you have validators or RPCs.
+The proxy client connects to the Jito Block Engine and authenticates using the provided keypair. It sends a heartbeat to keep shreds flowing. Received shreds are distributed to all DEST_IP_PORTS. We recommend running a proxy instance for each region where you have RPCs.
 
 ## Preparation
 
@@ -25,7 +25,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 
 3. Find your TVU port
     - Run get_tvu_port.sh to find your port
-    - Example on machine with solana validator: 
+    - Example on machine with Solana RPC: 
       ```bash
       export LEDGER_DIR=MY_LEDGER_DIR; bash -c "$(curl -fsSL https://raw.githubusercontent.com/jito-labs/shredstream-proxy/master/scripts/get_tvu_port.sh)"
       ```
@@ -35,7 +35,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
       ```
 
 4. Run via docker or natively and set the following parameters
-    - `BLOCK_ENGINE_URL`: set to the closest region to your validator/RPC node
+    - `BLOCK_ENGINE_URL`: set to the closest region to your RPC node
     - `DESIRED_REGIONS`: set to regions you want to receive shreds from. Same regions as for Block Engine
     - `DEST_IP_PORTS`: IP:Port combinations to receive shreds on
     - Note: these examples will receive shreds from amsterdam and ny, and directly connect to ny region
@@ -84,7 +84,6 @@ jitolabs/jito-shredstream-proxy shredstream
 
 ### 🦾 Running Natively
 
-
 ```bash
 git clone https://github.com/jito-labs/shredstream-proxy.git --recurse-submodules
 
@@ -99,19 +98,19 @@ RUST_LOG=info cargo run --release --bin jito-shredstream-proxy -- shredstream \
 
 If you use a firewall, allow access to the following IPs:
 
-| Location        | IP Addresses                                     |
-|-----------------|--------------------------------------------------|
-| 🇳🇱 Amsterdam       | `74.118.140.240`, `202.8.8.174`, `64.130.52.138`                  |
-| 🇩🇪 Frankfurt       | `145.40.93.84`, `145.40.93.41`, `64.130.50.99`, `64.130.57.46`    |
-| 🇺🇸 New York        | `141.98.216.96`, `64.130.48.56`, `64.130.51.137`                  |
-| 🇺🇸 Salt Lake City  | `64.130.53.8`, `64.130.53.57`                    |
-| 🇯🇵 Tokyo           | `202.8.9.160`, `202.8.9.19`                      |
+| Location            | IP Addresses                                                                   |
+|---------------------|--------------------------------------------------------------------------------|
+| 🇳🇱 Amsterdam      | `74.118.140.240`, `202.8.8.174`, `64.130.52.138`                               |
+| 🇩🇪 Frankfurt      | `145.40.93.84`, `145.40.93.41`, `64.130.50.14`, `64.130.50.99`, `64.130.57.46` |
+| 🇺🇸 New York       | `141.98.216.96`, `64.130.48.56`, `64.130.51.137`                               |
+| 🇺🇸 Salt Lake City | `64.130.53.8`, `64.130.53.57`                                                  |
+| 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.19`, `202.8.9.22`                                      |
 
 ## Troubleshooting
 
 Ensure ShredStream is running correctly by configuring the `SOLANA_METRICS_CONFIG` in your RPC setup. Refer to [Solana Clusters Documentation](https://docs.solana.com/clusters) for details.
 
-To verify, query the number of packets received before and after configuring ShredStream using:
+To verify, query the number of packets received before and after configuring ShredStream in InfluxDB:
 
 ```sql
 SELECT shred_count FROM "shred_fetch" WHERE time > now() - 1h
