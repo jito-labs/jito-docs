@@ -83,11 +83,26 @@ Additionally, this method always sets skip_preflight=true, which means the trans
 
 ##### Request
 
-| Parameter | Type   | Description                                                                                      |
-|-----------|--------|--------------------------------------------------------------------------------------------------|
-| `params`  | string | **REQUIRED**: First Transaction Signature embedded in the transaction, as base-58(default) or base-64 encoded string |
-| `encoding`| string | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58` |
+| Parameter  | Type   | Description                                                                                                                   |
+|------------|--------|-------------------------------------------------------------------------------------------------------------------------------|
+| `params`   | string | **REQUIRED**: First Transaction Signature embedded in the transaction, as base58 (slow, DEPRECATED) or base64 encoded string. |
+| `encoding` | string | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58`      |
 
+##### Request Example base64
+```bash
+curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Content-Type: application/json" -d '
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "sendTransaction",
+  "params": [
+    "AVXo5X7UNzpuOmYzkZ+fqHDGiRLTSMlWlUCcZKzEV5CIKlrdvZa3/2GrJJfPrXgZqJbYDaGiOnP99tI/sRJfiwwBAAEDRQ/n5E5CLbMbHanUG3+iVvBAWZu0WFM6NoB5xfybQ7kNwwgfIhv6odn2qTUu/gOisDtaeCW1qlwW/gx3ccr/4wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvsInicc+E3IZzLqeA+iM5cn9kSaeFzOuClz1Z2kZQy0BAgIAAQwCAAAAAPIFKgEAAAA=",
+    {
+      "encoding": "base64"
+    }
+  ]
+}'
+```
 
 ##### Request Example base58
 
@@ -103,28 +118,12 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Conte
 }'
 ```
 
-##### Request Example base64
-```bash
-curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Content-Type: application/json" -d '
-{
-  "id": 1,
-  "jsonrpc": "2.0",
-  "method": "sendTransaction",
-  "params": [
-    "AVXo5X7UNzpuOmYzkZ+fqHDGiRLTSMlWlUCcZKzEV5CIKlrdvZa3/2GrJJfPrXgZqJbYDaGiOnP99tI/sRJfiwwBAAEDRQ/n5E5CLbMbHanUG3+iVvBAWZu0WFM6NoB5xfybQ7kNwwgfIhv6odn2qTUu/gOisDtaeCW1qlwW/gx3ccr/4wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAvsInicc+E3IZzLqeA+iM5cn9kSaeFzOuClz1Z2kZQy0BAgIAAQwCAAAAAPIFKgEAAAA=",
-    {
-      "encoding": "base64"
-    }
-  ]
-}
-'
-```
 
 ##### Response
 
-| Field   | Type   | Description                                                                                                                                                         |
-|---------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `result` | string | The result will be the same as described in the Solana RPC documentation. If sending as a bundle was successful, you can get the `bundle_id` for further querying from the custom header in the response `x-bundle-id`. |
+| Field    | Type   | Description                                                                                                                                                                                                                                          |
+|----------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `result` | string | The result will be the same as described in the [Solana RPC documentation](https://solana.com/docs/rpc/http/sendtransaction). If sending as a bundle was successful, you can get the `bundle_id` from the `x-bundle-id` HTTP header in the response. |
 
 ##### Response Example
 
@@ -168,31 +167,10 @@ A tip is necessary for the bundle to be considered. The tip can be any instructi
 
 ##### Request
 
-| Parameter | Type           | Description                                                                                                                   |
-|-----------|----------------|-------------------------------------------------------------------------------------------------------------------------------|
-| `params`  | array[string]   | **REQUIRED**: Fully-signed transactions, as base-58 encoded strings (up to a maximum of 5). |
-| `encoding`| string | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58` |
-
-
-##### Request Example base58
-
-```bash
-curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Content-Type: application/json" -d '{                        
-    "id": 1,
-    "jsonrpc": "2.0",
-    "method": "sendBundle",
-    "params": [
-        [
-            "AKkzFdN4gPSEKhWoavYAEg7uGiKmuAwsMEVJ5uM8jxP27c86GERzygxbzGMWDQiPhKKmkwtZh9s8LdeBvuXLY8TEjxtsn7AnZ6JYJP8hsnbNAEprxFVfP4FpVRJM2n35u3DGX4pXsAVQ2ABxGuoRkDQTADCQExcQYf7BzLPFKgyd79MyuHwUBHr3mLbTpLsrRt1Hh5xuuZzuS6dKUSEaH1zWcxNAV57p2yQDnbL21ZQVPijcqgYutCVe7",
-            "APtbdutAzvCRteQbcARea4yG88mxABQzzhuyzQYDYtXGjhqdnucwC2VBZhx7ebvnUDsMpU6tBZRzZzwF7C7Qd3GfbgNCgcqoyckRfazUUqWkPHGTtYZsi17tdJAwC2ptHtR7Rt3rnKCBog16tERmu2AJbezFdFnPfDTvH2YTWnzycgkah4u8Y2d5CJZewd8fyQxyWHWARfBmhrxtaC5gALvyYDUKyiehkN2VLNnKH3zwVoBJvRGhe8bPM",
-            "DXPV292U8Q3kzS1BVroCWd563WG4yvMCZYcHfbTitkSDEPt49u2ivX2fpYag82MqekNn7E8KD2eM3Uy1whqEU6nNbpMPtkGZn4ukq9arsCdTB5QGR5h1vsWJA7ho8fmzbsrLBDNaV1SeqyeWo85v43YzVyjyv8WDF2ki46Wzvd1BYJ4gu9WJVNryMLknjq747oKsq8xT4tUSDSZNVcfzHN99d3FevzU8FHjyg7paSYdHW8HsDj16Hezzj",
-            "HbyLbLGUai4zgdFm1FDq9qXRHjTC4kneK8UsoFDpi447SsJiL7Xr9i4wG6iEzEvGT2MdGXrqzAHHxojQRGKCsbfFNKpQMnZ2BDih9He5XD5ViTQGLQ6fYyF9mCpPkZn91vRAeBbWjPoxdcj5UYjJpKS4zRCfPFnYrRCW2y9k9GdA6N2Rcr9S9kgg96WQoiG4drtoiiYAmx3WqckQs4X3dbe4DV6SAH3ZmZJR8gi87DCSfb8xCerwsXeeT",
-
-"4kSrVZjKnonsMTFqJwaV7riKfLnxvek5RtF4WuyQGGoUqWVqqLveGjZivVZyn3NGseo6TvFfG1dZPA45V6rjvmKeBuVJdZztaoqifwnYxXH2H6LMMwvz89dHN74kjM5D9Ky7cvNSfEW6uVkiLkXi1aMmSP5gicZf2bWVQk9xA2Ab8WSqaDqEoNEQkTN2ULyxt1N1b9UqqDBQGp4XHrtwnXex6fbWQYkp8ji1gY1NKmz8W7E4KWhCM38ZE21qyzXjivtrny7mK5WbHP2ZM1BPhyNB2qo7fdGYVmhRq"
-        ]
-    ]
-}'
-```
+| Parameter  | Type          |   | Description                                                                                                                 |
+|------------|---------------|:--|-----------------------------------------------------------------------------------------------------------------------------|
+| `params`   | array[string] |   | **REQUIRED**: Fully-signed transactions, as base58 (slow, DEPRECATED) or base64 encoded strings. Maximum of 5 transactions. |
+| `encoding` | string        |   | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58`    |
 
 ##### Request Example base64
 
@@ -214,14 +192,32 @@ curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Conten
       "encoding": "base64"
     }
   ]
-}
-'
+}'
+```
+
+##### Request Example base58
+
+```bash
+curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Content-Type: application/json" -d '{                        
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "sendBundle",
+  "params": [
+    [
+      "AKkzFdN4gPSEKhWoavYAEg7uGiKmuAwsMEVJ5uM8jxP27c86GERzygxbzGMWDQiPhKKmkwtZh9s8LdeBvuXLY8TEjxtsn7AnZ6JYJP8hsnbNAEprxFVfP4FpVRJM2n35u3DGX4pXsAVQ2ABxGuoRkDQTADCQExcQYf7BzLPFKgyd79MyuHwUBHr3mLbTpLsrRt1Hh5xuuZzuS6dKUSEaH1zWcxNAV57p2yQDnbL21ZQVPijcqgYutCVe7",
+      "APtbdutAzvCRteQbcARea4yG88mxABQzzhuyzQYDYtXGjhqdnucwC2VBZhx7ebvnUDsMpU6tBZRzZzwF7C7Qd3GfbgNCgcqoyckRfazUUqWkPHGTtYZsi17tdJAwC2ptHtR7Rt3rnKCBog16tERmu2AJbezFdFnPfDTvH2YTWnzycgkah4u8Y2d5CJZewd8fyQxyWHWARfBmhrxtaC5gALvyYDUKyiehkN2VLNnKH3zwVoBJvRGhe8bPM",
+      "DXPV292U8Q3kzS1BVroCWd563WG4yvMCZYcHfbTitkSDEPt49u2ivX2fpYag82MqekNn7E8KD2eM3Uy1whqEU6nNbpMPtkGZn4ukq9arsCdTB5QGR5h1vsWJA7ho8fmzbsrLBDNaV1SeqyeWo85v43YzVyjyv8WDF2ki46Wzvd1BYJ4gu9WJVNryMLknjq747oKsq8xT4tUSDSZNVcfzHN99d3FevzU8FHjyg7paSYdHW8HsDj16Hezzj",
+      "HbyLbLGUai4zgdFm1FDq9qXRHjTC4kneK8UsoFDpi447SsJiL7Xr9i4wG6iEzEvGT2MdGXrqzAHHxojQRGKCsbfFNKpQMnZ2BDih9He5XD5ViTQGLQ6fYyF9mCpPkZn91vRAeBbWjPoxdcj5UYjJpKS4zRCfPFnYrRCW2y9k9GdA6N2Rcr9S9kgg96WQoiG4drtoiiYAmx3WqckQs4X3dbe4DV6SAH3ZmZJR8gi87DCSfb8xCerwsXeeT",
+      "4kSrVZjKnonsMTFqJwaV7riKfLnxvek5RtF4WuyQGGoUqWVqqLveGjZivVZyn3NGseo6TvFfG1dZPA45V6rjvmKeBuVJdZztaoqifwnYxXH2H6LMMwvz89dHN74kjM5D9Ky7cvNSfEW6uVkiLkXi1aMmSP5gicZf2bWVQk9xA2Ab8WSqaDqEoNEQkTN2ULyxt1N1b9UqqDBQGp4XHrtwnXex6fbWQYkp8ji1gY1NKmz8W7E4KWhCM38ZE21qyzXjivtrny7mK5WbHP2ZM1BPhyNB2qo7fdGYVmhRq"
+    ]
+  ]
+}'
 ```
 
 ##### Response
 
-| Field    | Type   | Description                                                                                           |
-|----------|--------|-------------------------------------------------------------------------------------------------------|
+| Field    | Type   | Description                                                                                                |
+|----------|--------|------------------------------------------------------------------------------------------------------------|
 | `result` | string | A bundle ID, used to identify the bundle. This is the SHA-256 hash of the bundle's transaction signatures. |
 
 ##### Response Example
@@ -242,9 +238,9 @@ We use `getSignatureStatuses` with the default value of `searchTransactionHistor
 
 ##### Request
 
-| Parameter | Type           | Description                                                                                       |
-|-----------|----------------|---------------------------------------------------------------------------------------------------|
-| `params`  | array[string]   | **REQUIRED**: An array of bundle IDs to confirm, as base-58 encoded strings (up to a maximum of 5). |
+| Parameter | Type          | Description                                                    |
+|-----------|---------------|----------------------------------------------------------------|
+| `params`  | array[string] | **REQUIRED**: An array of bundle IDs to confirm. Maximum of 5. |
 
 ##### Request Example
 
@@ -265,10 +261,10 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Ty
 
 ##### Response
 
-| Field     | Type   | Description                                                                                     |
-|-----------|--------|-------------------------------------------------------------------------------------------------|
-| `null`    | null   | If the bundle is not found.                                                                      |
-| `object`  | object | If the bundle is found, an array of objects with the following fields:                           |
+| Field    | Type   | Description                                                            |
+|----------|--------|------------------------------------------------------------------------|
+| `null`   | null   | If the bundle is not found.                                            |
+| `object` | object | If the bundle is found, an array of objects with the following fields: |
 
 ###### Object Fields
 
