@@ -77,7 +77,7 @@ This method acts as a direct proxy to the Solana sendTransaction RPC method, but
 
 Please note that Jito enforces a minimum tip of 1000 lamports for bundles. During high-demand periods, this minimum tip might not be sufficient to successfully navigate the auction, so it’s crucial to set both a priority fee and an additional Jito tip to optimize your transaction's chances. Please see [Tip Amounts](#tip-amount)
 
-For added security, you can enable revert protection by setting the query parameter bundleOnly=true. With this setting, the transaction is sent exclusively as a single transaction bundle.
+For cost efficiency, you can enable revert protection by setting the query parameter bundleOnly=true. With this setting, the transaction is sent exclusively as a single transaction bundle.
 
 Additionally, this method always sets skip_preflight=true, which means the transaction won't be simulated in the RPC before being sent to the leader.
 
