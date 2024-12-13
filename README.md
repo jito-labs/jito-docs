@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/jito-docs/badge/?version=latest)](https://jito-docs.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/jito-docs/badge/?version=latest)](https://jito-docs.readthedocs.io/)
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 [![Discord](https://img.shields.io/discord/938287290806042626?label=Discord&logo=discord&style=flat&color=7289DA)](https://discord.gg/jTSmEzaR)
 
