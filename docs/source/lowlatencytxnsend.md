@@ -43,7 +43,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 - Parallel auctions are run at 200ms ticks
   - Bundles with intersecting locking patterns on a particular account [(w, w) or (r, w) or (w, r)] are run in a single auction.
   - Bundles that do not touch the same accounts are run in separate auctions, as well as bundles that have non-intersecting locking patterns (r, r) on accounts.
-  - Bundle orderings within a single auction are optimized for maximum tip (note: we will be changing to tip/cu in coming upgrade).
+  - Bundle orderings within a single auction are prioritized in the auction based on requested tip/cus-requested efficiency.
 - Jito submits the highest paying combination of bundles to the validator up to some CU limit
 
 ---
