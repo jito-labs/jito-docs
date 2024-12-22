@@ -12,7 +12,7 @@ Shreds help in fast and efficient data propagation, maintaining Solana's high th
 
 ## Jito ShredStream Proxy
 
-The proxy client connects to the Jito Block Engine and authenticates using the provided keypair. It sends a heartbeat to keep shreds flowing. Received shreds are distributed to all DEST_IP_PORTS. We recommend running a proxy instance for each region where you have RPCs.
+The proxy client connects to the Jito Block Engine and authenticates using the provided keypair. It sends a heartbeat to keep shreds flowing. Received shreds are distributed to all `DEST_IP_PORTS`. We recommend running a proxy instance for each region where you have RPCs.
 
 ## Preparation
 
@@ -35,10 +35,10 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
       ```
 
 4. Run via docker or natively and set the following parameters
-    - `BLOCK_ENGINE_URL`: set to the closest region to your RPC node
-    - `DESIRED_REGIONS`: set to regions you want to receive shreds from. Same regions as for Block Engine
-    - `DEST_IP_PORTS`: IP:Port combinations to receive shreds on
-    - Note: these examples will receive shreds from amsterdam and ny, and directly connect to ny region
+    - `BLOCK_ENGINE_URL`: https://mainnet.block-engine.jito.wtf
+    - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from. Same regions as for Block Engine
+    - `DEST_IP_PORTS`: Comma-delimited IP:Port combinations to receive shreds on
+    - Note: these examples will receive shreds from `amsterdam` and `ny` regions
 
 ## Running via Docker
 
@@ -53,7 +53,7 @@ docker run -d \
 --name jito-shredstream-proxy \
 --rm \
 --env RUST_LOG=info \
---env BLOCK_ENGINE_URL=https://ny.mainnet.block-engine.jito.wtf \
+--env BLOCK_ENGINE_URL=https://mainnet.block-engine.jito.wtf \
 --env AUTH_KEYPAIR=my_keypair.json \
 --env DESIRED_REGIONS=amsterdam,ny \
 --env DEST_IP_PORTS=127.0.0.1:8001,10.0.0.1:8001 \
@@ -71,7 +71,7 @@ docker run -d \
 --name jito-shredstream-proxy \
 --rm \
 --env RUST_LOG=info \
---env BLOCK_ENGINE_URL=https://ny.mainnet.block-engine.jito.wtf \
+--env BLOCK_ENGINE_URL=https://mainnet.block-engine.jito.wtf \
 --env AUTH_KEYPAIR=my_keypair.json \
 --env DESIRED_REGIONS=amsterdam,ny \
 --env SRC_BIND_PORT=20000 \
@@ -88,7 +88,7 @@ jitolabs/jito-shredstream-proxy shredstream
 git clone https://github.com/jito-labs/shredstream-proxy.git --recurse-submodules
 
 RUST_LOG=info cargo run --release --bin jito-shredstream-proxy -- shredstream \
-    --block-engine-url https://ny.mainnet.block-engine.jito.wtf \
+    --block-engine-url https://mainnet.block-engine.jito.wtf \
     --auth-keypair my_keypair.json \
     --desired-regions amsterdam,ny \
     --dest-ip-ports 127.0.0.1:8001,10.0.0.1:8001
@@ -98,13 +98,13 @@ RUST_LOG=info cargo run --release --bin jito-shredstream-proxy -- shredstream \
 
 If you use a firewall, allow access to the following IPs:
 
-| Location            | IP Addresses                                                                                                    |
-|---------------------|-----------------------------------------------------------------------------------------------------------------|
-| 🇳🇱 Amsterdam      | `74.118.140.240`, `202.8.8.174`, `64.130.52.138`, `64.130.52.73`, `64.130.55.26`, `64.130.55.174`               |
-| 🇩🇪 Frankfurt      | `145.40.93.84`, `145.40.93.41`, `64.130.50.14`, `64.130.50.99`, `64.130.57.46`, `64.130.57.99`, `64.130.57.171` |
-| 🇺🇸 New York       | `141.98.216.96`, `64.130.48.56`, `64.130.51.137`                                                                |
-| 🇺🇸 Salt Lake City | `64.130.53.8`, `64.130.53.57`, `64.130.53.88`, `64.130.53.90`                                                   |
-| 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.19`, `202.8.9.22`, `64.130.49.118`                                                      |
+| Location            | IP Addresses                                                                                    |
+|---------------------|-------------------------------------------------------------------------------------------------|
+| 🇳🇱 Amsterdam      | `74.118.140.240`, `202.8.8.174`, `64.130.52.138`, `64.130.55.26`, `64.130.55.174`               |
+| 🇩🇪 Frankfurt      | `145.40.93.84`, `145.40.93.41`, `64.130.50.14`, `64.130.57.46`, `64.130.57.99`, `64.130.57.171` |
+| 🇺🇸 New York       | `141.98.216.96`, `64.130.48.56`, `64.130.51.137`                                                |
+| 🇺🇸 Salt Lake City | `64.130.53.8`, `64.130.53.57`, `64.130.53.88`, `64.130.53.90`                                   |
+| 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.19`, `202.8.9.22`                                                       |
 
 ## Troubleshooting
 
