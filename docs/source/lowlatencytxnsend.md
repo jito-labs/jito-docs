@@ -571,7 +571,7 @@ Response:
 
 #### WebSocket showing tip amounts:
 ```
-wscat -c ws://bundles-api-rest.jito.wtf/api/v1/bundles/tip_stream
+wscat -c ws://bundles.jito.wtf/api/v1/bundles/tip_stream
 ```
 
 #### Tip Dashboard
