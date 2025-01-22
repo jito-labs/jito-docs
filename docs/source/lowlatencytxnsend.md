@@ -245,7 +245,7 @@ We use `getSignatureStatuses` with the default value of `searchTransactionHistor
 ##### Request Example
 
 ```bash
-curl https://mainnet.block-engine.jito.wtf/api/v1/bundles -X POST -H "Content-Type: application/json" -d '
+curl https://mainnet.block-engine.jito.wtf/api/v1/getBundleStatuses -X POST -H "Content-Type: application/json" -d '
 {
     "jsonrpc": "2.0",
     "id": 1,
