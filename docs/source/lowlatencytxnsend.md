@@ -582,7 +582,7 @@ To view dashboard please [click here](https://jito-labs.metabaseapp.com/public/d
 ### Default Limits
 **Q: What are the defaults?**
 
-5 requests per second per IP per region.
+1 request per second per IP per region.
 
 ### Rate Limit Operation
 **Q: How do they work?**
