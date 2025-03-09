@@ -106,6 +106,13 @@ If you use a firewall, allow access to the following IPs:
 | 🇺🇸 Salt Lake City | `64.130.53.8`, `64.130.53.57`, `64.130.53.88`, `64.130.53.90`                                   |
 | 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.19`, `202.8.9.22`                                                       |
 
+### Deshred
+
+There may be scenarios where you just want to receive the shreds and immediately deshred them without running a full node. The proxy has a built in deshredder.
+You can enable it by setting the `DESHRED_LISTEN_ADDRESS=<IP>:<PORT>` environment variable for docker mode or `--deshred-listen-address <IP>:<PORT>` for native mode.
+
+A gRPC server will be spun up on the port specified in `DESHRED_LISTEN_ADDRESS`. You can use a gRPC client and get latest entries deshredded. See the [proto file](https://github.com/sbs2001/mev-protos/blob/master/shredstream.proto) for more details. A sample client implementation is available [here](https://github.com/sbs2001/shredstream-proxy/tree/deshred/examples/deshred).
+
 ## Troubleshooting
 
 Ensure ShredStream is running correctly by configuring the `SOLANA_METRICS_CONFIG` in your RPC setup. Refer to [Solana Clusters Documentation](https://docs.solana.com/clusters) for details.
