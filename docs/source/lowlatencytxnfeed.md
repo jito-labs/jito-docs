@@ -94,9 +94,9 @@ RUST_LOG=info cargo run --release --bin jito-shredstream-proxy -- shredstream \
     --dest-ip-ports 127.0.0.1:8001,10.0.0.1:8001
 ```
 
-### Deshred
+### Decoding shreds
 
-To decode shreds and access transactions without running a full Solana node, and the `GRPC_SERVICE_PORT=<PORT>` environment variable or `--grpc-service-port:<PORT>` arg. A gRPC server will listen on the port specified. You can use a gRPC client to get latest transactions. See the [Entry type](https://github.com/jito-labs/mev-protos/blob/master/shredstream.proto#L48) of the protobuf for more details. A sample client implementation is available under the [deshred](https://github.com/sbs2001/shredstream-proxy/tree/deshred/examples/deshred.rs) example.
+Decoding shreds lets you access transactions without running a full Solana node. Add `GRPC_SERVICE_PORT=<PORT>` environment variable or `--grpc-service-port:<PORT>` arg to start a gRPC server, streaming out transactions to gRPC clients. See the [Entry type](https://github.com/jito-labs/mev-protos/blob/master/shredstream.proto#L48) of the protobuf for more details. A sample client implementation is available in the [deshred](https://github.com/sbs2001/shredstream-proxy/tree/deshred/examples/deshred.rs) example.
 
 ### 📛 Firewall Configuration
 
