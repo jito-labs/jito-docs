@@ -89,7 +89,7 @@ Additionally, this method always sets skip_preflight=true, which means the trans
 | `params`   | string | **REQUIRED**: First Transaction Signature embedded in the transaction, as base64 (**recommended**) or base58 (slow, DEPRECATED) encoded string. |
 | `encoding` | string | **OPTIONAL**: Encoding used for the transaction data. Values: `base64` (**recommended**) or `base58` (slow, DEPRECATED). Default: `base58`      |
 
-##### Request Example base64
+##### Transaction Request Example base64
 ```bash
 curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Content-Type: application/json" -d '
 {
@@ -105,7 +105,7 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Conte
 }'
 ```
 
-##### Request Example base58
+##### Transaction Request Example base58
 Note: base58 has been deprecated.
 ```bash
 curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Content-Type: application/json" -d '
@@ -176,7 +176,7 @@ A tip is necessary for the bundle to be considered. The tip can be any instructi
 | `params`   | array[string] |   | **REQUIRED**: Fully-signed transactions, as base64 (**recommended**) or base58 (slow, DEPRECATED) encoded strings. Maximum of 5 transactions. |
 | `encoding` | string        |   | **OPTIONAL**: Encoding used for the transaction data. Values: `base64` (**recommended**) or `base58` (slow, DEPRECATED). Default: `base58`    |
 
-##### Request Example base64
+##### Bundle Request Example base64
 
 ```bash
 curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Content-Type: application/json" -d '
@@ -199,7 +199,7 @@ curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Conten
 }'
 ```
 
-##### Request Example base58
+##### Bundle Request Example base58
 Note: base58 has been deprecated.
 ```bash
 curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Content-Type: application/json" -d '{                        
