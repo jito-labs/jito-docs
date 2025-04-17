@@ -84,12 +84,12 @@ Additionally, this method always sets skip_preflight=true, which means the trans
 
 ##### Request
 
-| Parameter  | Type   | Description                                                                                                                   |
-|------------|--------|-------------------------------------------------------------------------------------------------------------------------------|
-| `params`   | string | **REQUIRED**: First Transaction Signature embedded in the transaction, as base58 (slow, DEPRECATED) or base64 encoded string. |
-| `encoding` | string | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58`      |
+| Parameter  | Type   | Description                                                                                                                                     |
+|------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------|
+| `params`   | string | **REQUIRED**: First Transaction Signature embedded in the transaction, as base64 (**recommended**) or base58 (slow, DEPRECATED) encoded string. |
+| `encoding` | string | **OPTIONAL**: Encoding used for the transaction data. Values: `base64` (**recommended**) or `base58` (slow, DEPRECATED). Default: `base58`      |
 
-##### Request Example base64
+##### Transaction Request Example base64
 ```bash
 curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Content-Type: application/json" -d '
 {
@@ -105,8 +105,8 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Conte
 }'
 ```
 
-##### Request Example base58
-
+##### Transaction Request Example base58
+Note: base58 has been deprecated.
 ```bash
 curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Content-Type: application/json" -d '
 {
@@ -114,7 +114,10 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Conte
   "id": 1,
   "method": "sendTransaction",
   "params": [
-    "4hXTCkRzt9WyecNzV1XPgCDfGAZzQKNxLXgynz5QDuWWPSAZBZSHptvWRL3BjCvzUXRdKvHL2b7yGrRQcWyaqsaBCncVG7BFggS8w9snUts67BSh3EqKpXLUm5UMHfD7ZBe9GhARjbNQMLJ1QD3Spr6oMTBU6EhdB4RD8CP2xUxr2u3d6fos36PD98XS6oX8TQjLpsMwncs5DAMiD4nNnR8NBfyghGCWvCVifVwvA8B8TJxE1aiyiv2L429BCWfyzAme5sZW8rDb14NeCQHhZbtNqfXhcp2tAnaAT"
+    "4hXTCkRzt9WyecNzV1XPgCDfGAZzQKNxLXgynz5QDuWWPSAZBZSHptvWRL3BjCvzUXRdKvHL2b7yGrRQcWyaqsaBCncVG7BFggS8w9snUts67BSh3EqKpXLUm5UMHfD7ZBe9GhARjbNQMLJ1QD3Spr6oMTBU6EhdB4RD8CP2xUxr2u3d6fos36PD98XS6oX8TQjLpsMwncs5DAMiD4nNnR8NBfyghGCWvCVifVwvA8B8TJxE1aiyiv2L429BCWfyzAme5sZW8rDb14NeCQHhZbtNqfXhcp2tAnaAT",
+    {
+      "encoding": "base58"
+    }
   ]
 }'
 ```
@@ -168,12 +171,12 @@ A tip is necessary for the bundle to be considered. The tip can be any instructi
 
 ##### Request
 
-| Parameter  | Type          |   | Description                                                                                                                 |
-|------------|---------------|:--|-----------------------------------------------------------------------------------------------------------------------------|
-| `params`   | array[string] |   | **REQUIRED**: Fully-signed transactions, as base58 (slow, DEPRECATED) or base64 encoded strings. Maximum of 5 transactions. |
-| `encoding` | string        |   | **OPTIONAL**: Encoding used for the transaction data. Values: `base58` (slow, DEPRECATED) or `base64`. Default: `base58`    |
+| Parameter  | Type          |   | Description                                                                                                                                   |
+|------------|---------------|:--|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `params`   | array[string] |   | **REQUIRED**: Fully-signed transactions, as base64 (**recommended**) or base58 (slow, DEPRECATED) encoded strings. Maximum of 5 transactions. |
+| `encoding` | string        |   | **OPTIONAL**: Encoding used for the transaction data. Values: `base64` (**recommended**) or `base58` (slow, DEPRECATED). Default: `base58`    |
 
-##### Request Example base64
+##### Bundle Request Example base64
 
 ```bash
 curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Content-Type: application/json" -d '
@@ -196,8 +199,8 @@ curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Conten
 }'
 ```
 
-##### Request Example base58
-
+##### Bundle Request Example base58
+Note: base58 has been deprecated.
 ```bash
 curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Content-Type: application/json" -d '{                        
   "id": 1,
@@ -210,7 +213,10 @@ curl https://mainnet.block-engine.jito.wtf:443/api/v1/bundles -X POST -H "Conten
       "DXPV292U8Q3kzS1BVroCWd563WG4yvMCZYcHfbTitkSDEPt49u2ivX2fpYag82MqekNn7E8KD2eM3Uy1whqEU6nNbpMPtkGZn4ukq9arsCdTB5QGR5h1vsWJA7ho8fmzbsrLBDNaV1SeqyeWo85v43YzVyjyv8WDF2ki46Wzvd1BYJ4gu9WJVNryMLknjq747oKsq8xT4tUSDSZNVcfzHN99d3FevzU8FHjyg7paSYdHW8HsDj16Hezzj",
       "HbyLbLGUai4zgdFm1FDq9qXRHjTC4kneK8UsoFDpi447SsJiL7Xr9i4wG6iEzEvGT2MdGXrqzAHHxojQRGKCsbfFNKpQMnZ2BDih9He5XD5ViTQGLQ6fYyF9mCpPkZn91vRAeBbWjPoxdcj5UYjJpKS4zRCfPFnYrRCW2y9k9GdA6N2Rcr9S9kgg96WQoiG4drtoiiYAmx3WqckQs4X3dbe4DV6SAH3ZmZJR8gi87DCSfb8xCerwsXeeT",
       "4kSrVZjKnonsMTFqJwaV7riKfLnxvek5RtF4WuyQGGoUqWVqqLveGjZivVZyn3NGseo6TvFfG1dZPA45V6rjvmKeBuVJdZztaoqifwnYxXH2H6LMMwvz89dHN74kjM5D9Ky7cvNSfEW6uVkiLkXi1aMmSP5gicZf2bWVQk9xA2Ab8WSqaDqEoNEQkTN2ULyxt1N1b9UqqDBQGp4XHrtwnXex6fbWQYkp8ji1gY1NKmz8W7E4KWhCM38ZE21qyzXjivtrny7mK5WbHP2ZM1BPhyNB2qo7fdGYVmhRq"
-    ]
+    ],
+    {
+      "encoding": "base58"
+    }
   ]
 }'
 ```
