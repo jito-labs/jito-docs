@@ -118,7 +118,7 @@ curl https://mainnet.block-engine.jito.wtf/api/v1/transactions -X POST -H "Conte
     {
       "encoding": "base58"
     }
-  ],
+  ]
 }'
 ```
 
