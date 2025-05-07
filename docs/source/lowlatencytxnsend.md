@@ -522,6 +522,42 @@ Welcome to the Jito MEV ecosystem! If you're looking to integrate Jito's advance
 
 These endpoints are specifically designed to optimize your MEV strategies, offering precise control over bundle and transaction management on Solana. Dive into the repos to get started, explore detailed documentation, and discover how you can integrate these powerful tools into your MEV workflows.
 
+## Sandwich Mitigation
+
+We're releasing a new feature that helps mitigate **sandwich attacks**—without needing to use the vote account method. (See disclaimer below)
+
+### How It Works
+
+In your Solana transaction, add **any valid Solana public key** that starts with `jitodontfront` to any of the instructions. For example: `jitodontfront111111111111111111111111111111` or `jitodontfront111111111111111111111111111123`
+
+Any bundle containing a transaction with the `jitodontfront` account will be rejected by the block engine unless that transaction appears first (at index 0) in the bundle. Transactions and bundles that do not contain this account are not impacted by this change.
+
+The following are bundle patterns the block engine will allow:
+- [tx_with_dont_front, tip]
+- [tx_with_dont_front, arbitrage, tip]
+
+The following are bundle patterns the block engine will NOT allow:
+- [tip, tx_with_dont_front]
+- [txA_with_dont_front, txB_with_dont_front]
+- [txA_with_dont_front, txB_with_dont_front, tip]
+- [trade, tx_with_dont_front, arbitrage, tip]
+
+### Important Points
+
+- The account **does not need to exist** on-chain but must be a valid pubkey
+- Mark the account as read-only to optimize landing speed
+- (Optional): Use a unique variation of `jitodontfront` for your application [note: use *your own* pubkey]`jitodontfront111111111114511111111111111123`, `jitodontfront111111111111234565432123456782`, etc.
+- This solution works with Jito’s sendBundle and sendTransaction endpoints (as opposed to the vote account method which was not compatible with those endpoints)
+- Supports AddressLookupTables
+
+### Example
+
+Check out this example bundle using the protection:
+[jitodontfront bundle](https://explorer.jito.wtf/bundle/0748de4fd7a60c419da9fb09781157ab08e7b0adfbd664193c91f51e49af5491)
+
+_Disclaimer: This feature may help reduce sandwich attacks but is not guaranteed to do so and is not a solution for all variations in transaction ordering, including any ordering conducted by third parties. In addition, this feature applies only to the block engine and not to any other software._
+
+
 ## Tips
 
 **Best Practices for Tipping:**
