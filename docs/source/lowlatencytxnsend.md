@@ -62,7 +62,7 @@ You can send JSON-RPC requests to any Block Engine using the following URLs. To 
 | 🇺🇸 **Salt Lake City** | `https://slc.mainnet.block-engine.jito.wtf`       | `64.130.53.8:1002`    | `http://slc.mainnet.relayer.jito.wtf:8100`       | `ntp.slc.jito.wtf`       |
 |                         |                                                   |                       |                                                  |                          |
 | 🌍 🌎 🌏 **Testnet**    | `https://testnet.block-engine.jito.wtf`           | -                     | -                                                | -                        |
-| 🇺🇸 **Dallas**         | `https://dallas.testnet.block-engine.jito.wtf`    | `141.98.218.45:1002`  | `http://dallas.testnet.relayer.jito.wtf:8100`    | `ntp.dallas.jito.wtf`    |
+| 🇺🇸 **Dallas**         | `https://dallas.testnet.block-engine.jito.wtf`    | `141.98.218.125:1002` | `http://dallas.testnet.relayer.jito.wtf:8100`    | `ntp.dallas.jito.wtf`    |
 | 🇺🇸 **New York**       | `https://ny.testnet.block-engine.jito.wtf`        | `141.98.216.132:1002` | `http://ny.testnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
 
 
