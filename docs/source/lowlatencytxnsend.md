@@ -151,7 +151,7 @@ Please include the following when authenticating with a URL using a UUID:
 
         Example: api/v1/bundles?uuid=<uuid>
 
-### 💼 Bundles (`/api/v1/bundles`)
+### 💼 Bundles (`/api/v1`)
 
 Bundles are a list of up to 5 transactions that execute sequentially and atomically, ensuring an all-or-nothing outcome. Here’s what that means:
 
@@ -161,7 +161,7 @@ Bundles are a list of up to 5 transactions that execute sequentially and atomica
 
 This guarantees that all transactions in a bundle are executed in sequence and either all succeed or none are executed.
 
-For bundle-related methods, use the URL path `/api/v1/bundles`. Refer to the documentation to see the available JSON-RPC endpoints for bundles.
+Below is the documentation to see the available JSON-RPC endpoints for bundles.
 
 #### sendBundle
 
