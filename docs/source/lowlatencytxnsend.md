@@ -58,12 +58,12 @@ You can send JSON-RPC requests to any Block Engine using the following URLs. To 
 | 🇩🇪 **Frankfurt**      | `https://frankfurt.mainnet.block-engine.jito.wtf` | `64.130.50.14:1002`   | `http://frankfurt.mainnet.relayer.jito.wtf:8100` | `ntp.frankfurt.jito.wtf` |
 | 🇬🇧 **London**         | `https://london.mainnet.block-engine.jito.wtf`    | `142.91.127.175:1002` | `http://london.mainnet.relayer.jito.wtf:8100`    | `ntp.london.jito.wtf`    |
 | 🇺🇸 **New York**       | `https://ny.mainnet.block-engine.jito.wtf`        | `141.98.216.96:1002`  | `http://ny.mainnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
-| 🇯🇵 **Tokyo**          | `https://tokyo.mainnet.block-engine.jito.wtf`     | `202.8.9.160:1002`    | `http://tokyo.mainnet.relayer.jito.wtf:8100`     | `ntp.tokyo.jito.wtf`     |
 | 🇺🇸 **Salt Lake City** | `https://slc.mainnet.block-engine.jito.wtf`       | `64.130.53.8:1002`    | `http://slc.mainnet.relayer.jito.wtf:8100`       | `ntp.slc.jito.wtf`       |
+| 🇯🇵 **Tokyo**          | `https://tokyo.mainnet.block-engine.jito.wtf`     | `202.8.9.160:1002`    | `http://tokyo.mainnet.relayer.jito.wtf:8100`     | `ntp.tokyo.jito.wtf`     |
 |                         |                                                   |                       |                                                  |                          |
 | 🌍 🌎 🌏 **Testnet**    | `https://testnet.block-engine.jito.wtf`           | -                     | -                                                | -                        |
-| 🇺🇸 **Dallas**         | `https://dallas.testnet.block-engine.jito.wtf`    | `141.98.218.125:1002` | `http://dallas.testnet.relayer.jito.wtf:8100`    | `ntp.dallas.jito.wtf`    |
-| 🇺🇸 **New York**       | `https://ny.testnet.block-engine.jito.wtf`        | `141.98.216.132:1002` | `http://ny.testnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
+| 🇺🇸 **Dallas**         | `https://dallas.testnet.block-engine.jito.wtf`    | `141.98.218.12:1002`  | `http://dallas.testnet.relayer.jito.wtf:8100`    | `ntp.dallas.jito.wtf`    |
+| 🇺🇸 **New York**       | `https://ny.testnet.block-engine.jito.wtf`        | `64.130.35.224:1002`  | `http://ny.testnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
 
 
 ### 📨 Transactions(`/api/v1/transactions`)
@@ -149,7 +149,7 @@ Please include the following when authenticating with a URL using a UUID:
 
     Query Parameter: Include the API key as a query parameter.
 
-        Example: api/v1/bundles?uuid=<uuid>
+        Example: api/v1/transactions?uuid=<uuid>
 
 ### 💼 Bundles (`/api/v1`)
 
