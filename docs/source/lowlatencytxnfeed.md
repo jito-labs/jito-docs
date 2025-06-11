@@ -36,7 +36,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 
 4. Run via docker or natively and set the following parameters
     - `BLOCK_ENGINE_URL`: https://mainnet.block-engine.jito.wtf
-    - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from. Same regions as for Block Engine
+    - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from. [Same regions as for Block Engine](/lowlatencytxnsend/#api)
     - `DEST_IP_PORTS`: Comma-delimited IP:Port combinations to receive shreds on
     - Note: these examples will receive shreds from `amsterdam` and `ny` regions
 
@@ -102,13 +102,14 @@ Decoding shreds lets you access transactions without running a full Solana node.
 
 If you use a firewall, allow access to the following IPs:
 
-| Location            | IP Addresses                                                                                                         |
-|---------------------|----------------------------------------------------------------------------------------------------------------------|
-| 🇳🇱 Amsterdam      | `74.118.140.240`, `64.130.52.138`, `202.8.8.177`, `64.130.55.26`, `64.130.55.174`, `64.130.55.28`                    |
-| 🇩🇪 Frankfurt      | `64.130.50.14`, `64.130.40.25`, `64.130.57.99`, `64.130.57.171`, `64.130.40.23`, `64.130.40.22`, `64.130.40.21`      |
-| 🇺🇸 New York       | `141.98.216.96`, `64.130.51.137`, `64.130.51.41`, `64.130.34.189`, `64.130.34.190`, `64.130.34.141`, `64.130.34.142` |
-| 🇺🇸 Salt Lake City | `64.130.53.8`, `64.130.53.88`, `64.130.53.90`, `64.130.53.82`                                                        |
-| 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.22`, `208.91.107.252`, `64.130.49.142`                                                       |
+| Location            | IP Addresses                                                                                                                          |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| 🇳🇱 Amsterdam      | `74.118.140.240`, `202.8.8.174`, `64.130.42.228`, `64.130.43.92`, `64.130.55.26`, `64.130.42.227`, `64.130.43.19`, `64.130.55.28`     |
+| 🇩🇪 Frankfurt      | `64.130.50.14`, `64.130.57.46`, `64.130.40.25`, `64.130.57.99`, `64.130.57.171`, `64.130.40.23`, `64.130.40.22`, `64.130.40.21`       |
+| 🇬🇧 London         | `142.91.127.175`, `88.211.250.116`, `88.211.250.140`, `88.211.250.172`, `88.211.250.108`, `88.211.250.76`, `88.211.251.36`            |
+| 🇺🇸 New York       | `141.98.216.96`, `64.130.48.56`, `64.130.34.186`, `64.130.34.143`, `64.130.34.142`, `64.130.34.189`, `64.130.34.190`, `64.130.34.141` |
+| 🇺🇸 Salt Lake City | `64.130.53.8`, `64.130.53.57`, `64.130.53.81`, `64.130.53.90`, `64.130.53.82`, `64.130.33.181`, `64.130.33.88`                        |
+| 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.19`, `202.8.9.22`, `64.130.49.109`, `208.91.109.102`                                                          |
 
 ## Troubleshooting
 
