@@ -48,6 +48,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 
 ---
 
+(api)=
 ## API
 You can send JSON-RPC requests to any Block Engine using the following URLs. To route to a specific region, specify the desired region:
 
@@ -59,8 +60,9 @@ You can send JSON-RPC requests to any Block Engine using the following URLs. To 
 | 🇬🇧 **London**         | `https://london.mainnet.block-engine.jito.wtf`    | `142.91.127.175:1002` | `http://london.mainnet.relayer.jito.wtf:8100`    | `ntp.london.jito.wtf`    |
 | 🇺🇸 **New York**       | `https://ny.mainnet.block-engine.jito.wtf`        | `141.98.216.96:1002`  | `http://ny.mainnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
 | 🇺🇸 **Salt Lake City** | `https://slc.mainnet.block-engine.jito.wtf`       | `64.130.53.8:1002`    | `http://slc.mainnet.relayer.jito.wtf:8100`       | `ntp.slc.jito.wtf`       |
+| 🇸🇬 **Singapore**      | `https://singapore.mainnet.block-engine.jito.wtf` | `202.8.11.224:1002`   | `http://singapore.mainnet.relayer.jito.wtf:8100` | `ntp.singapore.jito.wtf` |
 | 🇯🇵 **Tokyo**          | `https://tokyo.mainnet.block-engine.jito.wtf`     | `202.8.9.160:1002`    | `http://tokyo.mainnet.relayer.jito.wtf:8100`     | `ntp.tokyo.jito.wtf`     |
-|                         |                                                   |                       |                                                  |                          |
+|                         |
 | 🌍 🌎 🌏 **Testnet**    | `https://testnet.block-engine.jito.wtf`           | -                     | -                                                | -                        |
 | 🇺🇸 **Dallas**         | `https://dallas.testnet.block-engine.jito.wtf`    | `141.98.218.12:1002`  | `http://dallas.testnet.relayer.jito.wtf:8100`    | `ntp.dallas.jito.wtf`    |
 | 🇺🇸 **New York**       | `https://ny.testnet.block-engine.jito.wtf`        | `64.130.35.224:1002`  | `http://ny.testnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
