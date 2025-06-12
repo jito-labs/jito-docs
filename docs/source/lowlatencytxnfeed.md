@@ -36,7 +36,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 
 4. Run via docker or natively and set the following parameters
     - `BLOCK_ENGINE_URL`: https://mainnet.block-engine.jito.wtf
-    - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from. [Same regions as for Block Engine](//docs.jito.wtf/lowlatencytxnsend/#api)
+    - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from. [Same regions as for Block Engine](#api)
     - `DEST_IP_PORTS`: Comma-delimited IP:Port combinations to receive shreds on
     - Note: these examples will receive shreds from `amsterdam` and `ny` regions
 
@@ -109,6 +109,7 @@ If you use a firewall, allow access to the following IPs:
 | 🇬🇧 London         | `142.91.127.175`, `88.211.250.116`, `88.211.250.140`, `88.211.250.172`, `88.211.250.108`, `88.211.250.76`, `88.211.251.36`            |
 | 🇺🇸 New York       | `141.98.216.96`, `64.130.48.56`, `64.130.34.186`, `64.130.34.143`, `64.130.34.142`, `64.130.34.189`, `64.130.34.190`, `64.130.34.141` |
 | 🇺🇸 Salt Lake City | `64.130.53.8`, `64.130.53.57`, `64.130.53.81`, `64.130.53.90`, `64.130.53.82`, `64.130.33.181`, `64.130.33.88`                        |
+| 🇸🇬 Singapore      | `202.8.11.224`, `202.8.11.173`, `202.8.11.102`, `202.8.11.103`, `202.8.11.104`                                                        |
 | 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.19`, `202.8.9.22`, `64.130.49.109`, `208.91.109.102`                                                          |
 
 ## Troubleshooting
