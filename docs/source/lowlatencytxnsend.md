@@ -40,7 +40,7 @@ Jito provides Solana MEV users with superior transaction execution through fast 
   - An auction is needed since opportunities and blockspace are scarce
   - The auction creates a stream of bundles that maximizes tips in a block.
     Parallelism in locking patterns is leveraged where possible to allow for local state auctions.
-- Parallel auctions are run at 200ms ticks
+- Parallel auctions are run at 50ms ticks
   - Bundles with intersecting locking patterns on a particular account [(w, w) or (r, w) or (w, r)] are run in a single auction.
   - Bundles that do not touch the same accounts are run in separate auctions, as well as bundles that have non-intersecting locking patterns (r, r) on accounts.
   - Bundle orderings within a single auction are prioritized in the auction based on requested tip/cus-requested efficiency.
