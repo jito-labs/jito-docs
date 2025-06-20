@@ -29,4 +29,5 @@ These use cases offer a competitive edge to traders, bot developers, and anyone 
 
 ⚡ Low Latency Transaction Send <lowlatencytxnsend>
 ➤ Low Latency Block Updates (ShredStream) <lowlatencytxnfeed>
+⚖️ Legal <legal>
 ```
