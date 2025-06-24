@@ -2,15 +2,15 @@
 
 ## Terms of Use
 
-**Last Updated:** June 20, 2025
+**Last Updated:** June 24, 2025
 
 ### 1. Introduction
 
 These Terms of Use provide the terms and conditions under which you, whether personally or on behalf of an entity ("you" or "your"), are permitted to use, interact with or otherwise access the tools and services available via docs.jito.wtf (the "Tooling Site") (the "Tools" and together with the Tooling Site, any other website, application programming interface ("API"), code repository or other attendant tooling, information, services or technology, the "Services") hosted by Jito Labs, Inc. ("Jito", "we," "us," or "our").
 
-These Terms of Use, together with any documents and additional terms or policies that are appended hereto or that expressly incorporate these Terms of Use by reference as well as our Privacy Policy (collectively, the "Terms"), constitute a binding agreement between you and us. The term "user" as used in these Terms refers to someone who accesses or in any way uses or views the Services.
+These Terms of Use, together with any documents and additional terms or policies that are appended hereto or that expressly incorporate these Terms of Use by reference as well as the Privacy Policy on the Tooling Site (collectively, the "Terms"), constitute a binding agreement between you and us. The term "user" as used in these Terms refers to someone who accesses or in any way uses or views the Services.
 
-By accessing any Services, you agree to these Terms, the Privacy Policy as well as the Terms of Service posted to www.jito.wtf (the "Site" and the "Site Terms") as governing your use of the Services. These Terms apply to use of the Tools and Services, regardless of where or how they are accessed (including outside of or other than via the Tooling Site), and regardless of which device is used for access.
+By accessing any Services, you agree to these Terms and the Privacy Policy posted on the Tolling Site as well as the Terms of Service and Privacy Policy (the "Site Terms") posted to www.jito.wtf (the "Site") as governing your use of the Services. These Terms apply to use of the Tools and Services, regardless of where or how they are accessed (including outside of or other than via the Tooling Site), and regardless of which device is used for access.
 
 **NOTICE: PLEASE REVIEW THE TERMS CAREFULLY. BY ACCESSING, INTERACTING WITH OR USING ANY OF THE SERVICES, YOU AGREE THAT YOU ARE ABLE TO ENTER INTO A BINDING AGREEMENT AND, AS SUCH, HAVE READ, UNDERSTOOD, AND AGREE TO BE BOUND BY THE TERMS, INCLUDING THE BINDING ARBITRATION AGREEMENT AND CLASS ACTION WAIVER BELOW (SEE SECTION 9). IF YOU DO NOT AGREE TO BE BOUND BY EVERY PROVISION OF THE TERMS, YOU ARE NOT AUTHORIZED TO INTERACT WITH, ACCESS OR USE ANY OF THE SERVICES.**
 
@@ -18,7 +18,7 @@ By accessing any Services, you agree to these Terms, the Privacy Policy as well 
 
 Jito provides the Tools and Services, as well as certain software as set forth in Jito's GitHub repository (collectively with the Tools and Services, the "Software Programs"), to Solana Network node operators, validators, wallet and application providers, block builders, searchers and other participants.
 
-The Software Programs are technological and software systems designed for low-latency transaction sending, low latency blockchain/shred data, efficient transaction ordering, and/or cross-transaction atomicity.
+The Software Programs are technology designed for low-latency transaction sending, low latency blockchain/shred data, efficient transaction ordering, and/or cross-transaction atomicity.
 
 Jito does not represent that any of the Tools, Services or Software Programs will be available without interruption or for any particular duration, and the Jito Parties shall not be responsible for any losses, damages, costs, expenses, lost opportunities or other harm suffered by you in connection with any interruption or termination of the Tools, Services or Software Programs. **YOU SHOULD READ AND REVIEW THE LIMITATION OF LIABILITY (SECTION 8(d)) WHICH ADDRESSES THIS MORE FULLY.**
 
@@ -26,27 +26,27 @@ To the extent that we provide you with API authentication or similar credentials
 
 ### 3. Modifications
 
-We reserve the right, in our sole discretion, to modify the Terms at any time or from time to time. The modified Terms will be posted on the Tooling Site, and will provide the last updated date at the top of the Terms. Any modified Terms will become effective upon posting. By continuing to access, use or otherwise interact with any Services after the effective date of any modification to the Terms, you are providing your explicit agreement to be bound by the Terms as modified. If you do not agree to be bound by any updated Terms, you are prohibited from using, accessing, or otherwise interacting with the Services. It is your responsibility to check the Tooling Site for modifications to the Terms.
+We reserve the right, in our sole discretion, to modify the Terms at any time or from time to time. The modified Terms will be posted on the Tooling Site and will provide the last updated date at the top of the Terms. Any modified Terms will become effective upon posting. By continuing to access, use or otherwise interact with any Services after the effective date of any modification to the Terms, you are providing your explicit agreement to be bound by the Terms as modified. If you do not agree to be bound by any updated Terms, you are prohibited from using, accessing, or otherwise interacting with the Services. It is your responsibility to check the Tooling Site for modifications to the Terms.
 
 We also reserve the right, in our sole discretion, to modify the Services at any time and from time to time, with or without notice to you. We may also eliminate or terminate any Tool or Service in full or in part, at our sole discretion, with or without notice, including deleting or otherwise materially modifying information, access points, APIs or other information in GitHub repositories or with the Software Programs.
 
 ### 4. Your Representations & Responsibilities
 
-#### a. Your Representations & Sophistication
+#### a. Your Representations
 
 The Services are intended only for users who are 18 years of age or older and by using, accessing or interacting with the Tooling Site or the Services, you represent and warrant that you meet this requirement. If you are entering into or accepting these Terms on behalf of a legal entity, you represent and warrant that you have the right, authority and capacity to bind such entity and its affiliates to these Terms. If you do not meet these requirements, you are prohibited from accessing, using or otherwise interacting with the Services.
 
 You represent and warrant that you are not, and for the duration of time you use the Services will not be, (i) the subject of economic or trade sanctions administered or enforced by any governmental authority or otherwise designated on any list of prohibited or restricted parties; (ii) in contravention of any laws and regulations pertaining to anti-money laundering or terrorist financing; (iii) included on the List of Specially Designated Nationals and Blocked Persons maintained by the US Treasury Department's Office of Foreign Assets Control (OFAC) or on any list pursuant to European Union (EU) and/or United Kingdom (UK) regulations; or (iv) operationally based on domiciled in a country or territory in which sanctions imposed by the United Nations (whether through the Security Council or otherwise), OFAC, the EU and/or the UK apply, or otherwise pursuant to sanctions imposed by the U.N., OFAC, EU or the UK. If at any point the above is no longer true, then you must immediately cease using the Services.
 
-You acknowledge that you (A) are responsible for properly configuring and using the Services and for taking appropriate action to secure your data or the data of any third party for which you're responsible when doing so, (B) have the technical and financial know-how, experience and sophistication to properly use, access and interact with the Services, (C) understand the inherent risks of blockchain technology, tokens and smart contracts, among other related technologies, and (D) are facile, adept and able to use and configure the sophisticated hardware and software required for use, access and interaction with the Services.
+You acknowledge that you (A) are responsible for properly configuring and using the Services and for taking appropriate action to secure your data or the data of any third party for which you're responsible when doing so, (B) have the technical and financial know-how, experience and sophistication to properly use, access and interact with the Services, (C) understand the inherent risks of blockchain technology, cryptoassets/tokens and smart contracts, among other related technologies, and (D) are facile, adept and able to use and configure the sophisticated hardware and software required for use, access and interaction with the Services.
 
-You further acknowledge that (I) blockchains and their attendant technologies involved in using any Services are novel, technologically complex, and involve inherent risk, (II) protocol upgrades and other technological mechanisms may contain bugs or security vulnerabilities that may result in loss of functionality and ultimately of funds, and (III) the Services involve technological innovations and that the results of usage of or interaction with them depend on factors beyond our control, including but not limited to network health, congestion, latency, incentives, user configuration settings, operation of third party software or hardware, wallet or account compatibility, protocol upgrades or forks, the activities of searchers, block builders and others. You should also familiarize yourself with the risks associated with transacting on blockchain networks, including but not limited to smart contract vulnerabilities, front end vulnerabilities, hacks, phishing attacks, social engineering attacks, cryptoasset volatility and transaction irreversibility.
+You further acknowledge that (I) blockchains and their attendant technologies involved in using any Services are novel, technologically complex, and involve inherent risk, (II) protocol upgrades and other technological mechanisms may contain bugs or security vulnerabilities that may result in loss of functionality and ultimately of funds, and (III) the Services involve technological innovations such that the results of usage of or interaction with them depend on factors beyond our control, including but not limited to network health, congestion, latency, incentives, user configuration settings, operation of third party software or hardware, wallet or account compatibility, protocol upgrades or forks, the activities of searchers, block builders and others. You should also familiarize yourself with the risks associated with transacting on blockchain networks, including but not limited to smart contract vulnerabilities, front end vulnerabilities, hacks, phishing attacks, social engineering attacks, cryptoasset volatility and transaction irreversibility.
 
 You acknowledge and agree that you are using and accessing the Services on your own initiative and are responsible for compliance with all laws, including your local laws.
 
-#### b. Your Responsibilities & Prohibited Conduct
+#### b. Your Responsibilities
 
-You are responsible for all activities that occur with respect to your use of the Services, regardless of whether the activities are authorized by you or undertaken by you, your employees or a third party.
+You are responsible for all activities that occur with respect to your use of the Services, regardless of whether the activities are authorized by you or undertaken by you, your employees, your agents or a third party.
 
 You are solely responsible for configuring and using the Services and otherwise taking appropriate action to secure, protect, and backup your data and any other data for which you are responsible, as applicable in a manner that will provide appropriate security and protection.
 
@@ -55,28 +55,22 @@ You agree to access, use or otherwise interact with the Services only in an auth
 You agree that you will not:
 
 - violate any applicable laws or regulations through your access to or use of the Services;
-- violate the Terms;
+- violate the Terms or the Site Terms;
 - spam any API or otherwise make excessive API requests;
 - exploit the Services for any unauthorized purpose;
 - harvest or otherwise collect information from the Services for any unauthorized purpose;
 - use the Services in a way that could — on its own — disable, damage or impair them or otherwise interfere with the Services in any way;
 - sublicense, sell, or otherwise distribute the Services, or any portion thereof;
-- use any data mining tools, robots, crawlers, or similar data gathering and extraction tools to scrape or otherwise remove data from the Services;
-- use any manual process to monitor or copy any of the material on the Site or that is included in the Services or for any unauthorized purpose without our prior written consent;
+- use any data mining tools, robots, crawlers, or similar data gathering and extraction tools to scrape or otherwise remove data from the Services for improper purposes;
+- use any manual process to monitor or copy any of the material on the Tooling Site or that is included in the Services or for any unauthorized purpose without our prior written consent;
 - introduce any viruses, trojan horses, worms, logic bombs, or other material which is malicious or technologically harmful to the Services;
 - attempt to gain unauthorized access to, interfere with, damage, or disrupt any parts of the Services;
 - abuse the Services in a fraudulent manner, including by providing false or misleading simulations or other information; or
 - attack the Services via a denial-of-service attack or a distributed denial-of-service attack or otherwise attempt to interfere with the proper working of the Services.
 
-You acknowledge and agree that (i) we have the right to investigate violations of these Terms or conduct that affects the Services; (ii) in the event that you use a Service in a prohibited manner or for any other reason we determine is appropriate, in our sole discretion, we may investigate or take any other action we deem necessary, including but not limited to bringing legal action against you if your use or access of the Services results in harm or damage to us, to rectify the prohibited conduct or any consequences resulting therefrom; and (iii) we may consult and cooperate with law enforcement to prosecute users who violate the law.
+You acknowledge and agree that (i) we have the right to investigate violations of these Terms or conduct that affects the Services; (ii) in the event that you use a Service in a prohibited manner or for any other reason, in our sole discretion, we may investigate or take any other action we deem necessary, including but not limited to bringing legal action against you if your use or access of the Services results in harm or damage to us, to rectify the prohibited conduct or any consequences resulting therefrom; and (iii) we may consult and cooperate with law enforcement where and when appropriate and/or necessary.
 
 We are not obligated to monitor access to or use of the Services, although we reserve the right to do so in our sole discretion. We reserve the right, but are not obligated, to terminate, suspend, remove or disable access to any Services, at any time and without notice, including, but not limited to, if we, in our sole discretion, consider it objectionable or in violation of these Terms. You acknowledge and agree that we may do so.
-
-#### c. Your Feedback
-
-We appreciate feedback, comments, ideas, proposals and suggestions for improvements to the Services ("Feedback"). If you choose to submit Feedback, you agree that we are free to use it without any restriction or compensation to you, and you grant us and our affiliates and service providers, and each of their and our respective licensees, successors, and assigns the right to use, reproduce, modify, perform, display, distribute, and otherwise disclose to third parties any such material for any purpose.
-
-You acknowledge and agree that we will own all right, title, and interest in and to all Feedback you submit. You represent and warrant that (i) you own all right, title, and interest in and to your Feedback; and (ii) you will not violate any intellectual property or other rights of third parties in providing Feedback to us.
 
 ### 5. Intellectual Property Rights
 
@@ -98,13 +92,19 @@ Jito's name, and all trademarks, logos, taglines, service names, designs, and sl
 
 All other trademarks not owned by us that appear on this Site are the property of their respective owners, who may or may not be affiliated with, connected to, or sponsored by us.
 
+#### d. Your Feedback
+
+We appreciate feedback, comments, ideas, proposals and suggestions for improvements to the Services ("Feedback"). If you choose to submit Feedback, you agree that we are free to use it without any restriction or compensation to you, and you grant us and our affiliates and service providers, and each of their and our respective licensees, successors, and assigns the right to use, reproduce, modify, perform, display, distribute, and otherwise disclose to third parties any such material for any purpose.
+
+You acknowledge and agree that we will own all right, title, and interest in and to all Feedback you submit. You represent and warrant that (i) you own all right, title, and interest in and to your Feedback; and (ii) you will not violate any intellectual property or other rights of third parties in providing Feedback to us.
+
 ### 6. Third Party Information or Services
 
-As discussed throughout the Terms, the Services may be integrated with or otherwise give access to applications, services, sites, tools, technology, data, operations, features or resources that are provided or otherwise made available by third parties ("Third Party Services").
+The Services may be integrated with or otherwise give access to applications, services, sites, tools, technology, data, operations, features or resources that are provided or otherwise made available by third parties ("Third Party Services").
 
-If the Services contain links to such Third Party Services, they are provided for your convenience only. We have no control over the contest of those sites or resources, and accept no responsibility for them or for any loss or damage that may arise from your use of them. If you decide to access a Third Party Service integrated with or linked to any Service, you do so entirely at your own risk and subject to the terms and conditions of use for such websites. Please review any applicable terms, policies or agreements of Third Party Services prior to engaging with them. We reserve the right to withdraw linking permission without notice.
+If the Services contain links to such Third Party Services, they are provided for your convenience only. We have no control over those sites or resources and accept no responsibility for them or for any loss or damage that may arise from your use of them. If you decide to access a Third Party Service integrated with or linked to any Service, you do so entirely at your own risk and subject to the terms and conditions of use for such websites. Please review any applicable terms, policies or agreements of Third Party Services prior to engaging with them. We reserve the right to withdraw linking permission without notice.
 
-As further noted throughout these Terms, your access and use of Third Party Services may be subject to additional terms and conditions, privacy policies, or other agreements with those third parties, which we do not control and otherwise may have no relationship with. We have no control over and are not responsible for such Third Party Services, including the accuracy, availability, reliability, verification or completeness of information or content shared by or available through Third Party Services, or the privacy practices of such services.
+Your access and use of Third Party Services may be subject to additional terms and conditions, privacy policies, or other agreements with those third parties, which we do not control and otherwise may have no relationship with. We have no control over and are not responsible for such Third Party Services, including the accuracy, availability, reliability, verification or completeness of information or content shared by or available through Third Party Services, or the privacy practices of such services.
 
 Your use of Third Party Services is directly between you and that third party, and you acknowledge and agree that we are not responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with your use of or reliance on any Third Party Service.
 
@@ -138,11 +138,11 @@ Nothing contained in the Services or any other content on the Site or otherwise 
 
 #### c. No Representations or Warranties
 
-**THE SERVICES ARE PROVIDED "AS IS," EXCEPT TO THE EXTENT PROHIBITED BY LAW, OR TO THE EXTENT ANY STATUTORY RIGHTS APPLY THAT CANNOT BE EXCLUDED, LIMITED OR WAIVED, NEITHER WE NOR ANY OTHER JITO PARTY MAKES ANY REPRESENTATION OR WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE REGARDING THE SERVICES, AND THE JITO PARTIES EXPRESSLY DISCLAIM ALL WARRANTIES, INCLUDING ANY IMPLIED OR EXPRESS WARRANTIES (i) OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR QUIET ENJOYMENT; (ii) ARISING OUT OF ANY COURSE OF DEALING OR USAGE OR TRADE; (iii) THAT THE SERVICES WILL BE ACCURATE, UNINTERRUPTED, ERROR FREE OR FREE OF HARMFUL COMPONENTS; AND (iv) THAT ANY CONTENT OR FEEDBACK WILL BE SECURE OR NOT OTHERWISE LOST OR ALTERED.**
+THE SERVICES ARE PROVIDED "AS IS," EXCEPT TO THE EXTENT PROHIBITED BY LAW, OR TO THE EXTENT ANY STATUTORY RIGHTS APPLY THAT CANNOT BE EXCLUDED, LIMITED OR WAIVED, NEITHER WE NOR ANY OTHER JITO PARTY MAKES ANY REPRESENTATION OR WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY OR OTHERWISE REGARDING THE SERVICES, AND THE JITO PARTIES EXPRESSLY DISCLAIM ALL WARRANTIES, INCLUDING ANY IMPLIED OR EXPRESS WARRANTIES (i) OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR QUIET ENJOYMENT; (ii) ARISING OUT OF ANY COURSE OF DEALING OR USAGE OR TRADE; (iii) THAT THE SERVICES WILL BE ACCURATE, UNINTERRUPTED, ERROR FREE OR FREE OF HARMFUL COMPONENTS; AND (iv) THAT ANY CONTENT OR FEEDBACK WILL BE SECURE OR NOT OTHERWISE LOST OR ALTERED.
 
 #### d. Limitations of Liability
 
-**THE JITO PARTIES WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES (INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS OR USERS, OPPORTUNITIES, GOODWILL, USE, DATA, CONTENT OR OTHER ASSETS), EVEN IF ANY OF THE JITO PARTIES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. FURTHER, NONE OF THE JITO PARTIES WILL BE RESPONSIBLE FOR ANY COMPENSATION, REIMBURSEMENT, OR DAMAGES ARISING IN CONNECTION WITH (i) YOUR INABILITY TO USE, OR ANY DELAY IN THE USE OF, THE SERVICES, INCLUDING AS A RESULT OF ANY (A) TERMINATION OF THE TERMS OR YOUR USE OF OR ACCESS TO THE SERVICES, (B) OUR SUSPENSION OR DISCONTINUATION OF ANY OF THE SERVICES, OR (C) ANY UNANTICIPATED OR UNSCHEDULED DOWNTIME OF ALL OR A PORTION OF THE SERVICES FOR ANY REASON; (ii) COST OF PROCUREMENT OF SUBSTITUTE SERVICES; (iii) INVESTMENTS, EXPENDITURES, OR COMMITEMENTS BY YOU IN CONNECTION WITH THE TERMS OR YOUR USE OF OR ACCESS TO THE SERVICES; (iv) UNAUTHORIZED ACCESS TO, ALTERATION OF, OR THE DELETION, DESTRUCTION, DAMAGE, LOSS OR FAILURE TO STORE ANY OF YOUR DATA; OR (v) CHANGE IN VALUE OF ANY CRYPTOASSET. IN ANY CASE, THE JITO PARTIES' AGGREGATE LIABILITY UNDER THESE TERMS WILL NOT EXCEED $100. THE LIMITATIONS IN THIS SECTION APPLY ONLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.**
+THE JITO PARTIES WILL NOT BE LIABLE TO YOU FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES (INCLUDING DAMAGES FOR LOSS OF PROFITS, REVENUES, CUSTOMERS OR USERS, OPPORTUNITIES, GOODWILL, USE, DATA, CONTENT OR OTHER ASSETS), EVEN IF ANY OF THE JITO PARTIES HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. FURTHER, NONE OF THE JITO PARTIES WILL BE RESPONSIBLE FOR ANY COMPENSATION, REIMBURSEMENT, OR DAMAGES ARISING IN CONNECTION WITH (i) YOUR INABILITY TO USE, OR ANY DELAY IN THE USE OF, THE SERVICES, INCLUDING AS A RESULT OF ANY (A) TERMINATION OF THE TERMS OR YOUR USE OF OR ACCESS TO THE SERVICES, (B) OUR SUSPENSION OR DISCONTINUATION OF ANY OF THE SERVICES, OR (C) ANY UNANTICIPATED OR UNSCHEDULED DOWNTIME OF ALL OR A PORTION OF THE SERVICES FOR ANY REASON; (ii) COST OF PROCUREMENT OF SUBSTITUTE SERVICES; (iii) INVESTMENTS, EXPENDITURES, OR COMMITEMENTS BY YOU IN CONNECTION WITH THE TERMS OR YOUR USE OF OR ACCESS TO THE SERVICES; (iv) UNAUTHORIZED ACCESS TO, ALTERATION OF, OR THE DELETION, DESTRUCTION, DAMAGE, LOSS OR FAILURE TO STORE ANY OF YOUR DATA; OR (v) CHANGE IN VALUE OF ANY CRYPTOASSET. IN ANY CASE, THE JITO PARTIES' AGGREGATE LIABILITY UNDER THESE TERMS WILL NOT EXCEED $100. THE LIMITATIONS IN THIS SECTION APPLY ONLY TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW.
 
 ### 9. Governing Law, Dispute Resolution & Class Action Waiver
 
@@ -172,7 +172,7 @@ Any arbitration will not be permitted to be consolidated or aggregated with any 
 
 ### 10. No Relationship
 
-Nothing in the Terms shall be construed to create any relationship between you and us other than as defined herein. Neither you nor us is an agent of each other under these Terms or otherwise, and you shall have no right to hold yourself out as in any way having a relationship with us other than as someone using, accessing or otherwise interfacing with the Services.
+Nothing in the Terms shall be construed to create any relationship between you and us other than as defined herein. Neither you nor we are an agent of each other under these Terms or otherwise, and you shall have no right to hold yourself out as in any way having a relationship with us other than as someone using, accessing or otherwise interfacing with the Services.
 
 ### 11. Assignments
 
@@ -188,7 +188,7 @@ The failure by us to enforce any provision of the Terms will not constitute a pr
 
 ### 14. Severability
 
-If any portion of the Terms are held to be unenforceable or invalid, the remainder of the Terms will continue in full force and effect. Any invalid or unenforceable portions will be interpreted to effectuate the intent of the original portion. If such construction is not possible, the invalid or unenforceable portion will be severed from the Terms but the rest of the Terms will remain in full force and effect.
+If any portion of the Terms are held to be unenforceable or invalid, the remainder of the Terms will continue in full force and effect. Any invalid or unenforceable portions will be interpreted to effectuate the intent of the original portion. If such construction is not possible, the invalid or unenforceable portion will be severed from the Terms, but the rest of the Terms will remain in full force and effect.
 
 ### 15. Notice
 
@@ -202,11 +202,11 @@ If you have any questions about these Terms or the Services, you may contact us 
 
 ## Privacy Policy
 
-**Last Updated:** June 20, 2025
+**Last Updated:** June 24, 2025
 
 This Privacy Policy (the "Policy") explains how Jito Labs, Inc. ("Jito", "we", "us," or "our") may collect, use, process, and disclose information in connection with the tools and services available via docs.jito.wtf (the "Tooling Site") (the "Tools" and together with the Tooling Site, any other website, application programming interface ("API"), code repository or other attendant tooling, information, services or technology, the "Services") that we host.
 
-Your use of the Services is subject to this Policy, the Terms of Service for the Tooling Site (the "Tooling Terms") and the Terms of Service and Privacy Policy for the website available at www.jito.wtf (the "Site") (collectively with this Policy and the Tooling Terms, the "Terms").
+Your use of the Services is subject to this Policy, the Terms of Service for the Tooling Site (the "Tooling Terms") and the Terms of Service and Privacy Policy (collectively, the "Site Terms") for the website available at www.jito.wtf (the "Site") (collectively with this Policy and the Tooling Terms, the "Terms").
 
 This Policy does not apply to any products, services, websites, or content offered or provided by third parties and we are not responsible in any way for those third party offerings; please review any separate privacy policies or terms made available by those third parties.
 
@@ -217,14 +217,14 @@ We may update this Policy from time to time. If we make any changes, we will cha
 We may collect certain personal information when you use, access or otherwise interact with the Services, including:
 
 - Internet Protocol ("IP") addresses and other location information
-- Application programming interface ("API") keys
+- API keys
 - Unique Universal Identifier ("UUID") keys
 - Publicly available blockchain data, including time stamps and number of packets sent
 - Blockchain account information or wallet addresses, including signer and auth pubkeys as well as transaction signatures
 - Device user agent, client library version
 - Analytics about aggregate numbers of users and usage types, and information such as how many users in the aggregate are using certain features, as well as aggregate location data across users including countries and regions from which users access the Services
 - Any information you voluntarily provide to us
-- Any information about you provided to us by third parties with whom we work (including contractors, service providers and analytics providers).
+- Any information about you provided to us by third parties with whom we work (including contractors, service providers and analytics providers)
 
 All or any of this information may be combined with other information we collect or that you provide. We may also obtain information about you through our analysis of blockchain information.
 
@@ -236,13 +236,13 @@ Note that you are responsible for all of your use of or access to the Services, 
 
 We use your information for various business and administrative purposes, such as:
 
-- Provide, maintain, support and improve the Services, communication with you about and respond to inquiries regarding the Services and respond to your feedback about the Services;
+- Provide, maintain, support and improve the Services, communicate with you about and respond to inquiries regarding the Services and respond to your feedback about the Services;
 - Detect, investigate and prevent fraudulent, abusive or harmful activities, including detecting potential security incidents;
 - Analyze usage trends to permit access to the Services;
 - Ensure internal quality control and safety;
 - Take certain actions that you have asked us to and provided consent for us to take;
-- Enforce this Policy and/or other policies;
-- Comply with any legal or regulation obligations, including in the event we have a legal obligation to collect, use or retain information about you or comply with legal requests from government authorities or in private suits.
+- Enforce this Policy, the Terms and/or other policies or terms;
+- Comply with any legal or regulation obligations, including in the event we have a legal obligation to collect, use or retain information about you or comply with legal requests from government authorities or in private suits
 
 You agree and acknowledge that we may use information that does not identify you (including information that has been aggregated or de-identified) for any purpose except as prohibited by applicable law.
 
@@ -254,10 +254,10 @@ We may use personal information to create de-identified and/or aggregated inform
 
 We may share or disclose the data we collect, including your personal information:
 
-- To third parties as needed for the provision of the Services, including those third-party service providers and vendors that support the Services for functions such as IT support, hosting, and related services.
-- Via APIs and/or software development kits ("SDKs") as part of the functionality of the Services.
-- When we believe providing such information is necessary to comply with law, and other agreements with you, or protect the rights, property, or security of the Company, our agents and employees or users. This includes sharing information with other organizations for fraud prevention and detection purposes.
-- With business partners if we are involved in a merger, acquisition, financing, reorganization, bankruptcy, receivership, purchase or sale of assets, or transition of service to another provider.
+- To third parties as needed for the provision of the Services, including those third-party service providers and vendors that support the Services for functions such as IT support, hosting, and related services
+- Via APIs and/or software development kits ("SDKs") as part of the functionality of the Services
+- When we believe providing such information is necessary to comply with law, and other agreements with you, or protect the rights, property, or security of Jito, our agents and employees or users, including sharing information with other organizations for fraud prevention and detection purposes
+- With business partners if we are involved in a merger, acquisition, financing, reorganization, bankruptcy, receivership, purchase or sale of assets, or transition of service to another provider
 
 We do not share your information or other data about the Services for marketing purposes.
 
@@ -281,8 +281,6 @@ You may have choices about the collection and use of information about you. You 
 
 If you do not want to receive messages from us about the Services or other matters related to the Company and its technology, please adjust your communication preferences.
 
-The help feature on most browsers and devices will tell you how to prevent your browser or device from accepting new cookies, how to have the browser notify you when you receive a new cookie, or how to disable cookies altogether. Please see our Cookie Policy for more information.
-
 In accordance with applicable law, you may have the right to:
 
 - Confirm whether we are processing your personal information;
@@ -305,7 +303,7 @@ The Services are intended for general users who are 18 years of age or older, an
 
 ### 8. Notices
 
-If you have any questions about this Policy, please Contact Us at privacy@jito.wtf.
+If you have any questions about this Policy, please contact us at privacy@jito.wtf.
 
 If you interact with the Services on behalf of or through your organization, then your information may also be subject to your organization's privacy practices and you should direct privacy inquiries to your organization.
 
