@@ -36,7 +36,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 
 4. Run via docker or natively and set the following parameters
     - `BLOCK_ENGINE_URL`: https://mainnet.block-engine.jito.wtf
-    - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from, maximum of 2 regions, anything above will be ignored. [Same regions as for Block Engine](#api)
+    - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from, maximum of 2 regions, anything in excess will be ignored. [Same regions as for Block Engine](#api)
     - `DEST_IP_PORTS`: Comma-delimited IP:Port combinations to receive shreds on
     - Note: these examples will receive shreds from `amsterdam` and `ny` regions
 
