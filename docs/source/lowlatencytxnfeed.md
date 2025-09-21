@@ -19,7 +19,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 1. Get your Solana [public key approved](https://web.miniextensions.com/WV3gZjFwqNqITsMufIEp)
 
 2. Ensure your firewall is open.
-    - Default port for incoming shreds is 20000/udp.
+    - Default port for incoming unicast shreds is `20000/udp`.
     - NAT connections currently not supported.
     - If you use a firewall, see the firewall configuration section
 
@@ -39,6 +39,19 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
     - `DESIRED_REGIONS`: Comma-delimited regions you want to receive shreds from, maximum of 2 regions, anything in excess will be ignored. [Same regions as for Block Engine](#api)
     - `DEST_IP_PORTS`: Comma-delimited IP:Port combinations to receive shreds on
     - Note: these examples will receive shreds from `amsterdam` and `ny` regions
+
+
+### 🦾 Running Natively
+
+```bash
+git clone https://github.com/jito-labs/shredstream-proxy.git --recurse-submodules
+
+RUST_LOG=info cargo run --release --bin jito-shredstream-proxy -- shredstream \
+    --block-engine-url https://mainnet.block-engine.jito.wtf \
+    --auth-keypair my_keypair.json \
+    --desired-regions amsterdam,ny \
+    --dest-ip-ports 127.0.0.1:8001,10.0.0.1:8001
+```
 
 ## Running via Docker
 
@@ -64,7 +77,7 @@ jitolabs/jito-shredstream-proxy shredstream
 
 ### 🚝 Bridge Networking
 
-Use bridge networking in environments where Docker host networking is unavailable. This setup requires manual exposure of each destination. For shred listeners running locally on the Docker host, use Docker's bridge IP (typically `172.17.0.1`). For non-local endpoints, use their regular IP addresses. Note that Docker's bridge IP can vary, so confirm it by running: `ip -brief address show dev docker0`.
+Use bridge networking in environments where Docker host networking is unavailable. Note: This does **not** work with Multicast. This setup requires manual exposure of the listen port. For shred listeners running locally on the Docker host, use Docker's bridge IP (typically `172.17.0.1`). For non-local endpoints, use their regular IP addresses. Note that Docker's bridge IP can vary, so confirm it by running: `ip -brief address show dev docker0`.
 
 ```bash
 docker run -d \
@@ -82,17 +95,23 @@ docker run -d \
 jitolabs/jito-shredstream-proxy shredstream
 ```
 
-### 🦾 Running Natively
 
-```bash
-git clone https://github.com/jito-labs/shredstream-proxy.git --recurse-submodules
+### DoubleZero Multicast Setup
 
-RUST_LOG=info cargo run --release --bin jito-shredstream-proxy -- shredstream \
-    --block-engine-url https://mainnet.block-engine.jito.wtf \
-    --auth-keypair my_keypair.json \
-    --desired-regions amsterdam,ny \
-    --dest-ip-ports 127.0.0.1:8001,10.0.0.1:8001
-```
+- Multicast shreds are sent over `20001/udp`.
+- Note: this does **not** work with Docker bridge networking
+
+1. Install DoubleZero CLI: https://docs.malbeclabs.com/setup/#steps
+2. Connect to Shredstream multicast group
+
+   `doublezero connect multicast subscriber jito-shredstream-mainnet`
+3.  Verify shreds are coming in
+    
+   ```bash
+   IP=$(doublezero multicast group list --json | jq -r '.[] | select(.code|startswith("jito-shredstream-mainnet")) | .multicast_ip')
+   socat UDP4-RECVFROM:20001,ip-add-membership=${IP}:doublezero1 -
+   ```
+4. Start Shredstream Proxy using native or host networking mode (**not** bridge networking), grepping the logs for `Multicast`
 
 ### Decoding Shreds
 
@@ -105,7 +124,7 @@ If you use a firewall, allow access to the following IPs:
 | Location            | IP Addresses                                                                                                                          |
 |---------------------|---------------------------------------------------------------------------------------------------------------------------------------|
 | 🇳🇱 Amsterdam      | `74.118.140.240`, `202.8.8.174`, `64.130.42.228`, `64.130.43.92`, `64.130.55.26`, `64.130.42.227`, `64.130.43.19`, `64.130.55.28`     |
-| 🇮🇪 Dublin         | `64.130.61.138`, `64.130.61.139`, `64.130.61.140`                                                                                   |
+| 🇮🇪 Dublin         | `64.130.61.138`, `64.130.61.139`, `64.130.61.140`                                                                                     |
 | 🇩🇪 Frankfurt      | `64.130.50.14`, `64.130.57.46`, `64.130.40.25`, `64.130.57.99`, `64.130.57.171`, `64.130.40.23`, `64.130.40.22`, `64.130.40.21`       |
 | 🇬🇧 London         | `142.91.127.175`, `88.211.250.116`, `88.211.250.140`, `88.211.250.172`, `88.211.250.108`, `88.211.250.76`, `88.211.251.36`            |
 | 🇺🇸 New York       | `141.98.216.96`, `64.130.48.56`, `64.130.34.186`, `64.130.34.143`, `64.130.34.142`, `64.130.34.189`, `64.130.34.190`, `64.130.34.141` |
