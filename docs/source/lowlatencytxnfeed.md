@@ -77,7 +77,7 @@ jitolabs/jito-shredstream-proxy shredstream
 
 ### 🚝 Bridge Networking
 
-Use bridge networking in environments where Docker host networking is unavailable. Note: This does **not** work with Multicast. This setup requires manual exposure of the listen port. For shred listeners running locally on the Docker host, use Docker's bridge IP (typically `172.17.0.1`). For non-local endpoints, use their regular IP addresses. Note that Docker's bridge IP can vary, so confirm it by running: `ip -brief address show dev docker0`.
+Use bridge networking in environments where Docker host networking is unavailable. Note: This does **not** work with Multicast. This setup requires manual exposure of `SRC_BIND_PORT`. For shred listeners running locally on the Docker host, use Docker's bridge IP (typically `172.17.0.1`). For non-local endpoints, use their regular IP addresses. Note that Docker's bridge IP can vary, so confirm it by running: `ip -brief address show dev docker0`.
 
 ```bash
 docker run -d \
@@ -105,7 +105,7 @@ jitolabs/jito-shredstream-proxy shredstream
 2. Connect to Shredstream multicast group
 
    `doublezero connect multicast subscriber jito-shredstream-mainnet`
-3.  Verify shreds are coming in
+3.  Verify shreds are being received
     
    ```bash
    IP=$(doublezero multicast group list --json | jq -r '.[] | select(.code|startswith("jito-shredstream-mainnet")) | .multicast_ip')
