@@ -96,22 +96,23 @@ jitolabs/jito-shredstream-proxy shredstream
 ```
 
 
-### DoubleZero Multicast Setup
+### DoubleZero Multicast Setup (Coming Soon!)
 
 - Multicast shreds are sent over `20001/udp`.
 - Note: this does **not** work with Docker bridge networking
 
 1. Install DoubleZero CLI: https://docs.malbeclabs.com/setup/#steps
-2. Connect to Shredstream multicast group
+2. Get authorization from DoubleZero (TBD)
+3. Connect to Shredstream multicast group
 
    `doublezero connect multicast subscriber jito-shredstream-mainnet`
-3.  Verify shreds are being received
+4.  Verify shreds are being received
     
    ```bash
    IP=$(doublezero multicast group list --json | jq -r '.[] | select(.code|startswith("jito-shredstream-mainnet")) | .multicast_ip')
    socat UDP4-RECVFROM:20001,ip-add-membership=${IP}:doublezero1 -
    ```
-4. Start Shredstream Proxy using native or host networking mode (**not** bridge networking), grepping the logs for `Multicast`
+5. Start Shredstream Proxy using native or host networking mode (**not** bridge networking), grepping the logs for `Multicast`
 
 ### Decoding Shreds
 
