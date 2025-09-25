@@ -102,7 +102,7 @@ jitolabs/jito-shredstream-proxy shredstream
 - Note: this does **not** work with Docker bridge networking
 
 1. Install DoubleZero CLI: https://docs.malbeclabs.com/setup/#steps
-2. Get authorization from DoubleZero (TBD)
+2. Get authorization from DoubleZero (todo!)
 3. Connect to Shredstream multicast group
 
    `doublezero connect multicast subscriber jito-shredstream-mainnet`
