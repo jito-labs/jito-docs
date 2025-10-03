@@ -15,9 +15,8 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 
 ### 🌐 How does the system work?
 - Validators run a modified Agave validator client called Jito-Solana that enables higher value capture for them and their stakers
-  - The validator then connects to the Jito Block-Engine and Jito-Relayer
+  - The validator then connects to the Jito Block-Engine
   - The Block-Engine submits profitable bundles to the validator
-  - The Relayer acts as a proxy to filter and verify transactions for validators
 - Searchers, dApps, Telegram bots and others connect to the Block-Engine and submit transactions & bundles.
   - Submissions can be over gRPC or JSON-RPC
   - Bundles have tips bids associated with them; these bids are then redistributed to the validators and their stakers
@@ -52,21 +51,21 @@ Jito provides Solana MEV users with superior transaction execution through fast 
 ## API
 You can send JSON-RPC requests to any Block Engine using the following URLs. To route to a specific region, specify the desired region:
 
-| Location                | Block Engine URL                                  | Shred Receiver        | Relayer URL                                      | NTP Server               |
-|-------------------------|---------------------------------------------------|-----------------------|--------------------------------------------------|--------------------------|
-| 🌍 🌎 🌏 **Mainnet**    | `https://mainnet.block-engine.jito.wtf`           | -                     | -                                                | -                        |
-| 🇳🇱 **Amsterdam**      | `https://amsterdam.mainnet.block-engine.jito.wtf` | `74.118.140.240:1002` | `http://amsterdam.mainnet.relayer.jito.wtf:8100` | `ntp.amsterdam.jito.wtf` |
-| 🇮🇪 **Dublin**         | `https://dublin.mainnet.block-engine.jito.wtf`    | `64.130.61.8:1002`    | `http://dublin.mainnet.relayer.jito.wtf:8100`    | `ntp.dublin.jito.wtf`    |
-| 🇩🇪 **Frankfurt**      | `https://frankfurt.mainnet.block-engine.jito.wtf` | `64.130.50.14:1002`   | `http://frankfurt.mainnet.relayer.jito.wtf:8100` | `ntp.frankfurt.jito.wtf` |
-| 🇬🇧 **London**         | `https://london.mainnet.block-engine.jito.wtf`    | `142.91.127.175:1002` | `http://london.mainnet.relayer.jito.wtf:8100`    | `ntp.london.jito.wtf`    |
-| 🇺🇸 **New York**       | `https://ny.mainnet.block-engine.jito.wtf`        | `141.98.216.96:1002`  | `http://ny.mainnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
-| 🇺🇸 **Salt Lake City** | `https://slc.mainnet.block-engine.jito.wtf`       | `64.130.53.8:1002`    | `http://slc.mainnet.relayer.jito.wtf:8100`       | `ntp.slc.jito.wtf`       |
-| 🇸🇬 **Singapore**      | `https://singapore.mainnet.block-engine.jito.wtf` | `202.8.11.224:1002`   | `http://singapore.mainnet.relayer.jito.wtf:8100` | `ntp.singapore.jito.wtf` |
-| 🇯🇵 **Tokyo**          | `https://tokyo.mainnet.block-engine.jito.wtf`     | `202.8.9.160:1002`    | `http://tokyo.mainnet.relayer.jito.wtf:8100`     | `ntp.tokyo.jito.wtf`     |
+| Location                | Block Engine URL                                  | Shred Receiver        | NTP Server               |
+|-------------------------|---------------------------------------------------|-----------------------|--------------------------|
+| 🌍 🌎 🌏 **Mainnet**    | `https://mainnet.block-engine.jito.wtf`           | -                     | -                        |
+| 🇳🇱 **Amsterdam**      | `https://amsterdam.mainnet.block-engine.jito.wtf` | `74.118.140.240:1002` | `ntp.amsterdam.jito.wtf` |
+| 🇮🇪 **Dublin**         | `https://dublin.mainnet.block-engine.jito.wtf`    | `64.130.61.8:1002`    | `ntp.dublin.jito.wtf`    |
+| 🇩🇪 **Frankfurt**      | `https://frankfurt.mainnet.block-engine.jito.wtf` | `64.130.50.14:1002`   | `ntp.frankfurt.jito.wtf` |
+| 🇬🇧 **London**         | `https://london.mainnet.block-engine.jito.wtf`    | `142.91.127.175:1002` | `ntp.london.jito.wtf`    |
+| 🇺🇸 **New York**       | `https://ny.mainnet.block-engine.jito.wtf`        | `141.98.216.96:1002`  | `ntp.dallas.jito.wtf`    |
+| 🇺🇸 **Salt Lake City** | `https://slc.mainnet.block-engine.jito.wtf`       | `64.130.53.8:1002`    | `ntp.slc.jito.wtf`       |
+| 🇸🇬 **Singapore**      | `https://singapore.mainnet.block-engine.jito.wtf` | `202.8.11.224:1002`   | `ntp.singapore.jito.wtf` |
+| 🇯🇵 **Tokyo**          | `https://tokyo.mainnet.block-engine.jito.wtf`     | `202.8.9.160:1002`    | `ntp.tokyo.jito.wtf`     |
 |                         |
-| 🌍 🌎 🌏 **Testnet**    | `https://testnet.block-engine.jito.wtf`           | -                     | -                                                | -                        |
-| 🇺🇸 **Dallas**         | `https://dallas.testnet.block-engine.jito.wtf`    | `141.98.218.12:1002`  | `http://dallas.testnet.relayer.jito.wtf:8100`    | `ntp.dallas.jito.wtf`    |
-| 🇺🇸 **New York**       | `https://ny.testnet.block-engine.jito.wtf`        | `64.130.35.224:1002`  | `http://ny.testnet.relayer.jito.wtf:8100`        | `ntp.dallas.jito.wtf`    |
+| 🌍 🌎 🌏 **Testnet**    | `https://testnet.block-engine.jito.wtf`           | -                     | -                        |
+| 🇺🇸 **Dallas**         | `https://dallas.testnet.block-engine.jito.wtf`    | `141.98.218.12:1002`  | `ntp.dallas.jito.wtf`    |
+| 🇺🇸 **New York**       | `https://ny.testnet.block-engine.jito.wtf`        | `64.130.35.224:1002`  | `ntp.dallas.jito.wtf`    |
 
 
 ### 📨 Transactions(`/api/v1/transactions`)
