@@ -140,9 +140,10 @@ sudo tcpdump 'udp and dst port 20000'
 ```
 You should see many shreds of ~1200 bytes being received.
 
-2. Ensure your RPC is receiving shreds by configuring the `SOLANA_METRICS_CONFIG` in your systemd unit/startup script. Refer to [Solana Clusters Documentation](https://docs.solana.com/clusters) for details.
+2. Ensure your firewall allows UDP packets on your `SRC_BIND_PORT`
 
-To verify, query the number of packets received to your RPC before and after configuring ShredStream in InfluxDB:
+3. Ensure your RPC is receiving shreds by configuring the `SOLANA_METRICS_CONFIG` in your systemd unit/startup script. Refer to [Solana Clusters Documentation](https://docs.solana.com/clusters) for details.
+To verify, query the number of packets received by your RPC before and after configuring ShredStream in InfluxDB:
 ```sql
 SELECT shred_count FROM "shred_fetch" WHERE time > now() - 1h
 ```
