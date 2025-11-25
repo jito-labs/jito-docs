@@ -134,11 +134,15 @@ If you use a firewall, allow access to the following IPs:
 | 🇯🇵 Tokyo          | `202.8.9.160`, `202.8.9.19`, `202.8.9.22`, `64.130.49.109`, `208.91.109.102`                                                          |
 
 ## Troubleshooting
+1. Confirm shreds are reaching your server by inspecting packet flow (default `SRC_BIND_PORT` is `20000`, adjust accordingly):
+```bash
+sudo tcpdump 'udp and dst port 20000'
+```
+You should see many shreds of ~1200 bytes being received.
 
-Ensure ShredStream is running correctly by configuring the `SOLANA_METRICS_CONFIG` in your RPC setup. Refer to [Solana Clusters Documentation](https://docs.solana.com/clusters) for details.
+2. Ensure your RPC is receiving shreds by configuring the `SOLANA_METRICS_CONFIG` in your systemd unit/startup script. Refer to [Solana Clusters Documentation](https://docs.solana.com/clusters) for details.
 
-To verify, query the number of packets received before and after configuring ShredStream in InfluxDB:
-
+To verify, query the number of packets received to your RPC before and after configuring ShredStream in InfluxDB:
 ```sql
 SELECT shred_count FROM "shred_fetch" WHERE time > now() - 1h
 ```
