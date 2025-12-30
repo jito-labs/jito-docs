@@ -540,8 +540,10 @@ The following are bundle patterns using `jitodontfront` the block engine will al
 - [tx_with_dont_front_signer_1, tx_with_dont_front_singer_1_and_signer_2, tip]
 
 **Multiple transactions referencing `jitodontfront` can appear within a bundle given that they:**
-- Are all placed continuously at the front of the bundle (ex. [txA_with_dont_front, txB_with_dont_front, txC_with_dont_front, arbitrage, tip])
+- Are all placed continuously at the front of the bundle
+  - ex. [txA_with_dont_front, txB_with_dont_front, txC_with_dont_front, arbitrage, tip])
 - Have *at least* one overlapping signer with the first transaction in the bundle referencing `jitodontfront`
+  - ex. [txA_with_dont_front_signer1_signer2, txB_with_dont_front_signer1_signer_3, txB_with_dont_front_signer2_signer_4]
 
 The following are bundle patterns the block engine will NOT allow:
 - [tip, tx_with_dont_front]
