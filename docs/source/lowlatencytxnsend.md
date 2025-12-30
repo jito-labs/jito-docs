@@ -534,14 +534,21 @@ In your Solana transaction, add **any valid Solana public key** that starts with
 
 Any bundle containing a transaction with the `jitodontfront` account will be rejected by the block engine unless that transaction appears first (at index 0) in the bundle. Transactions and bundles that do not contain this account are not impacted by this change.
 
-The following are bundle patterns the block engine will allow:
+The following are bundle patterns using `jitodontfront` the block engine will allow:
 - [tx_with_dont_front, tip]
 - [tx_with_dont_front, arbitrage, tip]
+- [tx_with_dont_front_signer_1, tx_with_dont_front_singer_1_and_signer_2, tip]
+
+**Multiple transactions referencing `jitodontfront` can appear within a bundle given that they:**
+- Are all placed continuously at the front of the bundle
+  - ex. [txA_with_dont_front, txB_with_dont_front, txC_with_dont_front, arbitrage, tip])
+- Have *at least* one overlapping signer with the first transaction in the bundle referencing `jitodontfront`
+  - ex. [txA_with_dont_front_signer1_signer2, txB_with_dont_front_signer1_signer_3, txB_with_dont_front_signer2_signer_4]
 
 The following are bundle patterns the block engine will NOT allow:
 - [tip, tx_with_dont_front]
-- [txA_with_dont_front, txB_with_dont_front]
-- [txA_with_dont_front, txB_with_dont_front, tip]
+- [txA_with_dont_front_signer1, txB_with_dont_front_signer2]
+- [txA_with_dont_front_signer1, txB_with_dont_front_signer2, tip]
 - [trade, tx_with_dont_front, arbitrage, tip]
 
 ### Important Points
