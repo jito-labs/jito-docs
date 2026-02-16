@@ -28,3 +28,4 @@ firefox build/html/index.html
 ## CI
 This automatically triggers Read the Docs to update that domain every time main has a merge. 
 
+test 2
