@@ -57,7 +57,7 @@ You can send JSON-RPC requests to any Block Engine using the following URLs. To 
 | 🇳🇱 **Amsterdam**      | `https://amsterdam.mainnet.block-engine.jito.wtf` | `74.118.140.240:1002` | `ntp.amsterdam.jito.wtf` |
 | 🇮🇪 **Dublin**         | `https://dublin.mainnet.block-engine.jito.wtf`    | `64.130.61.8:1002`    | `ntp.dublin.jito.wtf`    |
 | 🇩🇪 **Frankfurt**      | `https://frankfurt.mainnet.block-engine.jito.wtf` | `64.130.50.14:1002`   | `ntp.frankfurt.jito.wtf` |
-| 🇬🇧 **London**         | `https://london.mainnet.block-engine.jito.wtf`    | `142.91.127.175:1002` | `ntp.london.jito.wtf`    |
+| 🇬🇧 **London**         | `https://london.mainnet.block-engine.jito.wtf`    | `64.130.46.153:1002`  | `ntp.london.jito.wtf`    |
 | 🇺🇸 **New York**       | `https://ny.mainnet.block-engine.jito.wtf`        | `141.98.216.96:1002`  | `ntp.dallas.jito.wtf`    |
 | 🇺🇸 **Salt Lake City** | `https://slc.mainnet.block-engine.jito.wtf`       | `64.130.53.8:1002`    | `ntp.slc.jito.wtf`       |
 | 🇸🇬 **Singapore**      | `https://singapore.mainnet.block-engine.jito.wtf` | `202.8.11.224:1002`   | `ntp.singapore.jito.wtf` |
