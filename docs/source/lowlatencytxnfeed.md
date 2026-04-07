@@ -16,7 +16,7 @@ The proxy client connects to the Jito Block Engine and authenticates using the p
 
 ## Preparation
 
-1. Get your Solana [public key approved](https://web.miniextensions.com/WV3gZjFwqNqITsMufIEp)
+1. Get your Solana [public key approved](https://discord.com/channels/938287290806042626/1336799632898134037)
 
 2. Ensure your firewall is open.
     - Default port for incoming unicast shreds is `20000/udp`.
@@ -77,7 +77,7 @@ jitolabs/jito-shredstream-proxy shredstream
 
 ### 🚝 Bridge Networking
 
-Use bridge networking in environments where Docker host networking is unavailable. Note: This does **not** work with Multicast. This setup requires manual exposure of `SRC_BIND_PORT`. For shred listeners running locally on the Docker host, use Docker's bridge IP (typically `172.17.0.1`). For non-local endpoints, use their regular IP addresses. Note that Docker's bridge IP can vary, so confirm it by running: `ip -brief address show dev docker0`.
+Use bridge networking in environments where Docker host networking is unavailable. Note: This setup requires manual exposure of `SRC_BIND_PORT`. For shred listeners running locally on the Docker host, use Docker's bridge IP (typically `172.17.0.1`). For non-local endpoints, use their regular IP addresses. Note that Docker's bridge IP can vary, so confirm it by running: `ip -brief address show dev docker0`.
 
 ```bash
 docker run -d \
@@ -94,25 +94,6 @@ docker run -d \
 -v $(pwd)/my_keypair.json:/app/my_keypair.json \
 jitolabs/jito-shredstream-proxy shredstream
 ```
-
-
-### DoubleZero Multicast Setup (Coming Soon!)
-
-- Multicast shreds are sent over `20001/udp`.
-- Note: this does **not** work with Docker bridge networking
-
-1. Install DoubleZero CLI: https://docs.malbeclabs.com/setup/#steps
-2. Get authorization from DoubleZero (todo!)
-3. Connect to Shredstream multicast group
-
-   `doublezero connect multicast subscriber jito-shredstream-mainnet`
-4.  Verify shreds are being received
-    
-   ```bash
-   IP=$(doublezero multicast group list --json | jq -r '.[] | select(.code|startswith("jito-shredstream-mainnet")) | .multicast_ip')
-   socat UDP4-RECVFROM:20001,ip-add-membership=${IP}:doublezero1 -
-   ```
-5. Start Shredstream Proxy using native or host networking mode (**not** bridge networking), grepping the logs for `Multicast`
 
 ### Decoding Shreds
 
