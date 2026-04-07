@@ -651,7 +651,7 @@ You no longer need an approved auth key for default sends.
 
 This indicates that you're either using the auth-key parameter or your keypair variable is being set to check for this key unnecessarily. In most cases, you can simply use Null or None for these fields. Many of the new SDKs will have this built-in by default, so you won't need to specify it manually.
 
-## Rate Limits Request
+## Custom Rate Limit Request
 
 Please open a ticket to request a new rate limit or a rate limit increase [Open a Ticket](https://discord.com/channels/938287290806042626/1336799632898134037)
 
