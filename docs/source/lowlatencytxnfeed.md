@@ -1,5 +1,15 @@
 # ➤ Low Latency Block Updates (Shredstream)
 
+> **🚨 Jito ShredStream Deprecation Notice 🚨**
+>
+> Jito ShredStream will be deprecated in 60 days (effective **September 5, 2026**).
+>
+> To ensure uninterrupted access to Solana shreds, we recommend transitioning to **DoubleZero Edge** as the path forward. DoubleZero has put together a comprehensive transition guide specifically for our users. Eligible existing Jito ShredStream validators have access to a **90-day free trial**, so we encourage you to check it out and begin migrating soon.
+>
+> 🔗 Full details on the migration, performance benchmarks, and how to claim your free trial can be found here: [DoubleZero migration guide](TODO-INSERT-DOUBLEZERO-URL).
+>
+> If you need any support getting set up, head over to the **#jito-shredstream** channel in the DoubleZero Discord.
+
 Jito's ShredStream service delivers the lowest latency shreds from leaders on the Solana network, optimizing performance for high-frequency trading, validation, and RPC operations. ShredStream ensures minimal latency for receiving shreds, which can save hundreds of milliseconds during trading on Solana—a critical advantage in high-frequency trading environments. Additionally, it provides a redundant shred path for servers in remote locations, enhancing reliability and performance for users operating in less connected regions. This makes ShredStream particularly valuable for traders, validators, and node operators who require the fastest and most reliable data to maintain a competitive edge.
 
 ## Shreds
