@@ -2,7 +2,7 @@
 
 > **🚨 Jito ShredStream Sunset Notice 🚨**
 >
-> We are officially deprecating Jito ShredStream, effective immediately. The service will be completely shut down in 60 days (**September 5, 2026**).
+> We are beginning the process of deprecating Jito ShredStream. The service will be completely shut down in 60 days (**September 5, 2026**), meaning you won't have access to Jito ShredStream at that time. You should begin the process of migrating off of Jito ShredStream.
 >
 > To ensure uninterrupted access to Solana shreds, we highly recommend transitioning to **DoubleZero Edge** before the shutdown date. DoubleZero has put together a comprehensive transition guide for our users, which includes details on how eligible existing ShredStream validators can claim a **90-day free trial**. We encourage you to review it and begin migrating as soon as possible.
 >
