@@ -6,7 +6,7 @@
 >
 > To ensure uninterrupted access to Solana shreds, we highly recommend transitioning to **DoubleZero Edge** before the shutdown date. DoubleZero has put together a comprehensive transition guide for our users, which includes details on how users can access a free trial. We encourage you to review it and begin migrating as soon as possible.
 >
-> 🔗 Full details on the migration, performance benchmarks, and how to get set up can be found here: [DoubleZero migration guide](http://doublezero.xyz/jito-shredstream).
+> 🔗 Full details on the migration, performance benchmarks, and how to get set up can be found here: [DoubleZero migration guide](https://doublezero.xyz/jito-shredstream).
 >
 > If you need any support during the transition, head over to the [**#jito-shredstream**](https://discord.com/invite/doublezerotech) channel in the DoubleZero Discord.
 
