@@ -676,6 +676,18 @@ If you have the `bundleID`, you can look over [Jito explorer](https://explorer.j
 
 The minimum tip is 1000 lamports, but if you're targeting a highly competitive MEV opportunity, you'll need to be strategic with your tip. Consider adjusting your tip amount, based on the [current pricing](#get-tip-information) of tips in the system, and also take into account the latency to each component you're interacting with to maximize your chances of success.
 
+### Simulation Failures
+**Q: Why did my bundle fail with `Blockhash not found` during simulation, but passes when I simulate it myself?**
+
+When the block engine receives a bundle, it simulates it against a recent bank in the region that received it. On the Jito explorer, a bundle's events show two slots: the slot on the `Received` event (the block engine's current slot when your bundle arrived) and the slot on the simulation event (the bank the simulation actually ran against).
+
+`Blockhash not found` is Solana's standard transaction age check: the transaction's recent blockhash must be present in the simulating bank's blockhash queue (roughly the last 150 slots). There are two distinct causes, and comparing the two slots on the explorer tells them apart:
+
+1. **Blockhash too old.** The simulation slot is close to the received slot. Your blockhash had already expired when the bundle arrived. Fix: fetch a fresher recent blockhash (use a `confirmed`-commitment `getLatestBlockhash`) and resubmit promptly.
+2. **Simulation state temporarily behind.** The simulation slot is far behind the received slot. The region's simulation state was briefly lagging the tip of the chain, so a perfectly fresh blockhash was "too new" to be visible to it yet. Your transaction is fine — re-simulating it against a caught-up node (e.g. `simulateBundle` with `replaceRecentBlockhash: false`) will pass. These episodes are transient and localized to a single region; resubmitting the bundle (or submitting to another region) is the correct response.
+
+A simulation failure in one region does not affect other regions — each region receives and simulates bundles independently.
+
 ### Failed Transactions
 **Q: Why is my transaction/bundle failing, but lands on explorers?**
 
