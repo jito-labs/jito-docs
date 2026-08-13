@@ -627,7 +627,7 @@ wscat -c wss://bundles.jito.wtf/api/v1/bundles/tip_stream
 ```
 
 #### Tip Dashboard
-To view dashboard please [click here](https://jito-labs.metabaseapp.com/public/dashboard/016d4d60-e168-4a8f-93c7-4cd5ec6c7c8d) .
+To view dashboard please [click here](https://explorer.jito.wtf/tip-floor) .
 
 ## Rate Limits
 
