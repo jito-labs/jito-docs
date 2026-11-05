@@ -153,6 +153,7 @@ Please include the following when authenticating with a URL using a UUID:
 
         Example: api/v1/transactions?uuid=<uuid>
 
+(be-sendbundle-api)=
 ### 💼 Bundles (`/api/v1`)
 
 Bundles are a list of up to 5 transactions that execute sequentially and atomically, ensuring an all-or-nothing outcome. Here’s what that means:

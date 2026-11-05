@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 360" width="920" height="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">DBI bundle flow</title>
+  <desc id="d">A searcher sends a bundle over JSON-RPC or QUIC directly to a BAM Node. The node verifies signatures, simulates the bundle, and ranks it in the auction, then sends winners to the BAM leader as one atomic batch. The Block Engine path is the fallback and also serves non-BAM leaders.</desc>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1f2937"/>
+    </marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  <rect width="920" height="360" fill="#ffffff"/>
+
+  <!-- Searcher -->
+  <rect x="20" y="70" width="150" height="80" rx="10" fill="#f3f4f6" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="95" y="105" text-anchor="middle" font-size="16" font-weight="600" fill="#111827">Searcher /</text>
+  <text x="95" y="126" text-anchor="middle" font-size="16" font-weight="600" fill="#111827">application</text>
+
+  <!-- DBI arrow -->
+  <line x1="170" y1="110" x2="300" y2="110" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+  <text x="235" y="96" text-anchor="middle" font-size="13" font-weight="600" fill="#047857">DBI</text>
+  <text x="235" y="132" text-anchor="middle" font-size="12" fill="#374151">JSON-RPC (UUID)</text>
+  <text x="235" y="148" text-anchor="middle" font-size="12" fill="#374151">or QUIC (keypair)</text>
+
+  <!-- BAM Node -->
+  <rect x="302" y="30" width="370" height="160" rx="10" fill="#ecfdf5" stroke="#047857" stroke-width="1.5"/>
+  <text x="487" y="56" text-anchor="middle" font-size="16" font-weight="600" fill="#065f46">BAM Node</text>
+  <g font-size="13" fill="#111827" text-anchor="middle">
+    <rect x="318" y="78" width="104" height="54" rx="6" fill="#ffffff" stroke="#047857"/>
+    <text x="370" y="101">1. Verify</text>
+    <text x="370" y="119">signatures</text>
+    <rect x="436" y="78" width="104" height="54" rx="6" fill="#ffffff" stroke="#047857"/>
+    <text x="488" y="101">2. Simulate</text>
+    <text x="488" y="119">all must pass</text>
+    <rect x="554" y="78" width="104" height="54" rx="6" fill="#ffffff" stroke="#047857"/>
+    <text x="606" y="101">3. Auction</text>
+    <text x="606" y="119">fees per CU</text>
+  </g>
+  <line x1="422" y1="105" x2="434" y2="105" stroke="#047857" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="540" y1="105" x2="552" y2="105" stroke="#047857" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="487" y="166" text-anchor="middle" font-size="12" fill="#374151">Bundles that fail simulation are dropped</text>
+
+  <!-- To leader -->
+  <line x1="672" y1="110" x2="752" y2="110" stroke="#1f2937" stroke-width="2" marker-end="url(#a)"/>
+  <text x="712" y="96" text-anchor="middle" font-size="12" fill="#374151">atomic</text>
+  <text x="712" y="132" text-anchor="middle" font-size="12" fill="#374151">batch</text>
+
+  <!-- BAM leader -->
+  <rect x="754" y="70" width="146" height="80" rx="10" fill="#f3f4f6" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="827" y="105" text-anchor="middle" font-size="16" font-weight="600" fill="#111827">BAM leader</text>
+  <text x="827" y="126" text-anchor="middle" font-size="12" fill="#374151">all-or-nothing</text>
+
+  <!-- Fallback path -->
+  <path d="M95,150 L95,290 L300,290" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="105" y="225" font-size="12" fill="#6b7280">Fallback: sendBundle</text>
+  <rect x="302" y="255" width="370" height="70" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="487" y="279" text-anchor="middle" font-size="16" font-weight="600" fill="#4b5563">Block Engine</text>
+  <text x="487" y="299" text-anchor="middle" font-size="12" fill="#6b7280">Serves BAM and non-BAM leaders,</text>
+  <text x="487" y="315" text-anchor="middle" font-size="12" fill="#6b7280">including during BAM maintenance</text>
+  <path d="M672,290 L827,290 L827,152" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="750" y="280" text-anchor="middle" font-size="12" fill="#6b7280">any leader</text>
+</svg>
