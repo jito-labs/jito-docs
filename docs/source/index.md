@@ -3,28 +3,49 @@ Turbocharged Solana trading experience.
 
 # What does Jito offer?
   - **Low latency transaction sending**
+  - **Market maker priority**
+  - **Preconfirmations**
   - **Developer support**
 
 # Who should use Jito?
-- **Solana Validators**
-- **Telegram Bots**
-- **High Frequency Traders & Searchers**
-- **dApps**
+- **Applications**
+- **High Frequency Traders**
+- **Transaction landing services**
 
 If your use case requires low-latency transaction sending, MEV protection, and/or cross-transaction
 atomicity, then Jito is right for you.
 
 ## Jito's Products
 Jito provides specialized solutions tailored to the needs of Solana MEV users:
-- 🌪️ **Fast Transaction Sending:** Essential for any Solana MEV user requiring rapid and reliable transaction execution.
-- 💼 **Bundles:** Offers MEV protection, fast transaction landing, support for multiple transactions, and revert protection, making it ideal for developers of Telegram bots and automated trading systems.
+- 🌪️ **FullSend:** Ultra low-latency transaction sending, essential for applications on Solana with high volume, throughput, and privacy needs.
+- 💼 **[Bundles](bundles.md):** Offers MEV protection, fast transaction landing, support for multiple transactions, and revert protection, making it ideal for developers of HFT and other automated trading systems.
+- 👨🏻‍🍳 **[Maker priority](https://bam.dev/docs/bam/maker-plugin/how-it-works/):** A dedicated, priority transaction ingress path for enrolled market makers. It provides top-of-batch scheduling for market maker transactions.
+- ⚡ **[Preconfirmations](https://bam.dev/docs/bam/preconfirmations/):** Ultra low-latency confirmation results from BAM nodes that are further upstream and faster than Solana shreds.
 
-These use cases offer a competitive edge to traders, bot developers, and anyone seeking MEV protection.
+These use cases offer a competitive edge to searchers, market makers, applications, and anyone seeking MEV protection.
 
 ```{toctree}
 :maxdepth: 6
 :hidden:
+:caption: Products
 
-⚡ Low Latency Transaction Send <lowlatencytxnsend>
+💼 Bundles <bundles>
+👨🏻‍🍳 Maker Priority (MPP) <mpp>
+⚡ Preconfirmations <preconfirmations>
+```
+
+```{toctree}
+:maxdepth: 6
+:hidden:
+:caption: Block Engine
+
+🌪️ Low Latency Transaction Send <lowlatencytxnsend>
+```
+
+```{toctree}
+:maxdepth: 6
+:hidden:
+:caption: Legal
+
 ⚖️ Legal <legal>
 ```
