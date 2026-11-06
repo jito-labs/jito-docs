@@ -27,7 +27,7 @@ These use cases offer a competitive edge to searchers, market makers, applicatio
 ```{toctree}
 :maxdepth: 6
 :hidden:
-:caption: Products
+:caption: BAM
 
 🌪️ FullSend <fullsend>
 💼 Bundles <bundles>

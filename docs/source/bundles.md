@@ -10,7 +10,9 @@ There are two ways to send a bundle:
 |---|---|---|
 | Path | Straight to a BAM Node | Through the Block Engine |
 | Leaders served | BAM leaders only | BAM and non-BAM leaders |
-| Access | Allowlisted; separate DBI credentials | Public; default 1 request/s per IP per region |
+| Access | Allowlisted; separate DBI credentials | Authorized Block Engine key, or none |
+| To BAM leaders | Direct | Authorized key: forwarded, no BE auction |
+| Without a key | Not available | 1 request/s per IP; BE auction first |
 | Docs | This page and [bam.dev](https://bam.dev/docs/bam/dbi/) | [Block Engine bundles](#be-sendbundle-api) |
 
 ## Direct Bundle Ingest (DBI)
@@ -22,9 +24,9 @@ JSON-RPC or QUIC, removing the Block Engine hop for the shortest path to BAM lea
 
 :::{figure} ../images/dbi-flow.svg
 :class: diagram
-:alt: DBI flow. A searcher sends a bundle over JSON-RPC or QUIC to a BAM Node, which verifies signatures, simulates, and runs the auction before sending the winning bundle to the BAM leader as one atomic batch. The Block Engine path stays available as a fallback and also serves non-BAM leaders.
+:alt: Bundle flow. With DBI, a searcher sends a bundle over JSON-RPC or QUIC straight to a BAM Node. With an authorized Block Engine key, the Block Engine forwards the bundle to the upcoming BAM leader's BAM Node, skipping the Block Engine auction. Without a Block Engine key, sends are limited to 1 request per second and the bundle goes through the Block Engine auction first; winners go to the BAM Node if the leader is BAM, or to the leader itself if not. The BAM Node verifies signatures, simulates, and runs its auction before sending the winning bundle to the BAM leader as one atomic batch.
 
-How a DBI bundle reaches the leader, and the Block Engine fallback.
+How a bundle reaches the leader: directly with DBI, forwarded by the Block Engine with an authorized key, or through the Block Engine auction without one.
 :::
 
 ### What happens to a DBI bundle
