@@ -25,7 +25,8 @@ at least **1 lamport per compute unit**.
 ## Who it is for
 
 MPP is for market makers who update on-chain market state at high frequency. Enrollment is
-managed by Jito; there is no self-serve registration. Each BAM Node publishes its live
+managed by Jito; there is no self-serve registration. To enroll, fill out the
+[MPP enrollment form](https://forms.gle/b4eTh2tD97rTnA2x9). Each BAM Node publishes its live
 enrollment config at `/api/v1/mpp/config`.
 
 ## Learn more

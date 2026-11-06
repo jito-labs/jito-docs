@@ -67,10 +67,10 @@ The service accepts Solana JSON-RPC `sendTransaction` requests, so standard Sola
 
 ### Endpoint
 
-Use either of these entrypoints:
+Send the request to either path. They accept the same JSON-RPC body and behave the same way:
 
-- `POST /` (JSON-RPC dispatcher)
-- `POST /api/v1/sendTransaction`
+- `POST /`: the root of the service URL. This is where standard Solana RPC clients send requests when you set the service URL as their RPC URL.
+- `POST /api/v1/sendTransaction`: the same `sendTransaction` call at an explicit path, for clients that build the request themselves.
 
 For most clients, set RPC URL to:
 

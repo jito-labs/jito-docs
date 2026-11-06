@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 360" width="920" height="360" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
-  <title id="t">DBI bundle flow</title>
-  <desc id="d">A searcher sends a bundle over JSON-RPC or QUIC directly to a BAM Node. The node verifies signatures, simulates the bundle, and ranks it in the auction, then sends winners to the BAM leader as one atomic batch. The Block Engine path is the fallback and also serves non-BAM leaders.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 470" width="920" height="470" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif" role="img" aria-labelledby="t d">
+  <title id="t">How a bundle reaches a BAM leader</title>
+  <desc id="d">Three ways a bundle reaches a BAM leader. With DBI, a searcher sends it over JSON-RPC or QUIC straight to the BAM Node. With an authorized Block Engine key, the searcher sends it to the Block Engine, which forwards it to the upcoming BAM leader's BAM Node without running the Block Engine auction. Without a key, the searcher is limited to 1 request per second and the bundle goes through the Block Engine auction first; winners are then forwarded on, to the BAM Node when the leader is BAM, or to the leader itself when it is not. In the BAM Node, every bundle is verified, simulated and ranked in the auction, and winners go to the BAM leader as one atomic batch.</desc>
   <defs>
     <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="#1f2937"/>
@@ -9,7 +9,7 @@
       <path d="M0,0 L10,5 L0,10 z" fill="#9ca3af"/>
     </marker>
   </defs>
-  <rect width="920" height="360" fill="#ffffff"/>
+  <rect width="920" height="470" fill="#ffffff"/>
 
   <!-- Searcher -->
   <rect x="20" y="70" width="150" height="80" rx="10" fill="#f3f4f6" stroke="#1f2937" stroke-width="1.5"/>
@@ -50,13 +50,36 @@
   <text x="827" y="105" text-anchor="middle" font-size="16" font-weight="600" fill="#111827">BAM leader</text>
   <text x="827" y="126" text-anchor="middle" font-size="12" fill="#374151">all-or-nothing</text>
 
-  <!-- Fallback path -->
-  <path d="M95,150 L95,290 L300,290" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
-  <text x="105" y="225" font-size="12" fill="#6b7280">Fallback: sendBundle</text>
-  <rect x="302" y="255" width="370" height="70" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
-  <text x="487" y="279" text-anchor="middle" font-size="16" font-weight="600" fill="#4b5563">Block Engine</text>
-  <text x="487" y="299" text-anchor="middle" font-size="12" fill="#6b7280">Serves BAM and non-BAM leaders,</text>
-  <text x="487" y="315" text-anchor="middle" font-size="12" fill="#6b7280">including during BAM maintenance</text>
-  <path d="M672,290 L827,290 L827,152" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
-  <text x="750" y="280" text-anchor="middle" font-size="12" fill="#6b7280">any leader</text>
+  <!-- Block Engine (container) -->
+  <rect x="302" y="250" width="370" height="200" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="487" y="274" text-anchor="middle" font-size="16" font-weight="600" fill="#4b5563">Block Engine</text>
+
+  <!-- Path A: authorized key, skips the Block Engine auction -->
+  <path d="M95,150 L95,310 L318,310" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="105" y="282" font-size="12" font-weight="600" fill="#4b5563">With authorized</text>
+  <text x="105" y="298" font-size="12" font-weight="600" fill="#4b5563">Block Engine key</text>
+  <rect x="320" y="290" width="200" height="40" rx="6" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="420" y="308" text-anchor="middle" font-size="12" fill="#111827">Forward to the upcoming</text>
+  <text x="420" y="323" text-anchor="middle" font-size="12" fill="#111827">BAM leader's BAM Node</text>
+  <path d="M420,290 L420,193" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="430" y="216" font-size="12" font-weight="600" fill="#4b5563">Skips the Block Engine auction</text>
+
+  <!-- Path B: no key, 1 rps, Block Engine auction first -->
+  <path d="M60,150 L60,400 L318,400" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="70" y="372" font-size="12" font-weight="600" fill="#4b5563">No Block Engine key:</text>
+  <text x="70" y="388" font-size="12" font-weight="600" fill="#4b5563">1 request/s</text>
+  <rect x="320" y="380" width="200" height="40" rx="6" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="420" y="398" text-anchor="middle" font-size="12" fill="#111827">Block Engine auction</text>
+  <text x="420" y="413" text-anchor="middle" font-size="12" fill="#111827">(tips per CU)</text>
+
+  <!-- Auction winners: BAM leader -> BAM Node -->
+  <path d="M520,400 L640,400 L640,193" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="650" y="216" font-size="12" font-weight="600" fill="#4b5563">Auction winners,</text>
+  <text x="650" y="232" font-size="12" fill="#4b5563">if the leader is BAM</text>
+
+  <!-- Auction winners: non-BAM leader -->
+  <path d="M640,400 L827,400 L827,418" fill="none" stroke="#9ca3af" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#g)"/>
+  <text x="760" y="390" text-anchor="middle" font-size="12" fill="#6b7280">otherwise</text>
+  <rect x="754" y="420" width="146" height="40" rx="10" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="827" y="445" text-anchor="middle" font-size="13" font-weight="600" fill="#4b5563">Non-BAM leader</text>
 </svg>
